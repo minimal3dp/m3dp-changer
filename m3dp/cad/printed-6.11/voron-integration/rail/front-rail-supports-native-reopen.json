@@ -1,0 +1,26 @@
+[
+  {
+    "name": "front-rail-support-left",
+    "reopened_recomputed": true,
+    "distinct_disk_copy_opened": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/rail/native-reopen-nq4d95xo/front-rail-support-left.FCStd",
+    "original_unchanged_sha256": "e86b608280e1f3e640304a503d6ed5312c9912c8e151342c821253fffa2dfa4d",
+    "native_bore_edit_roundtrip": true,
+    "volume_mm3": 23831.865861947063
+  },
+  {
+    "name": "front-rail-support-right",
+    "reopened_recomputed": true,
+    "distinct_disk_copy_opened": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/rail/native-reopen-nq4d95xo/front-rail-support-right.FCStd",
+    "original_unchanged_sha256": "4f727a56752e0ddce963bdb0691cd0da0f8b07fc1be45fea2021413956cf91ab",
+    "native_bore_edit_roundtrip": true,
+    "volume_mm3": 23817.571125041755
+  },
+  {
+    "name": "front-gantry-fit-coupon",
+    "reopened_recomputed": true,
+    "distinct_disk_copy_opened": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/rail/native-reopen-nq4d95xo/front-gantry-fit-coupon.FCStd",
+    "original_unchanged_sha256": "5aa8a905f3183360ab58492f293522e99e303231904a4c8c24dd30e5b09d367a",
+    "native_bore_edit_roundtrip": true,
+    "volume_mm3": 11169.468617741077
+  }
+]

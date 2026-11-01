@@ -1,0 +1,59 @@
+[
+  {
+    "file": "two-station-dock.FCStd",
+    "reopened_and_recomputed": true,
+    "valid": true,
+    "closed": true,
+    "solids": 1,
+    "volume_mm3": 18040.613657001155,
+    "side_clearance_expression_edit_roundtrip_passed": true,
+    "restored_side_clearance_mm": 0.15,
+    "native_feature_types": [
+      "Part::Feature",
+      "Part::Box",
+      "Part::Common",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::MultiFuse",
+      "Part::Cylinder",
+      "Part::Cut",
+      "Part::Cylinder",
+      "Part::Cut",
+      "Part::Cylinder",
+      "Part::Cut",
+      "Part::Cylinder",
+      "Part::Cut",
+      "Part::Cylinder",
+      "Part::Cut",
+      "Part::Cylinder",
+      "Part::Cut"
+    ]
+  },
+  {
+    "file": "2020-rail-fit-coupon.FCStd",
+    "reopened_and_recomputed": true,
+    "valid": true,
+    "closed": true,
+    "solids": 1,
+    "volume_mm3": 3628.5000090433055,
+    "side_clearance_expression_edit_roundtrip_passed": true,
+    "restored_side_clearance_mm": 0.15,
+    "native_feature_types": [
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::Box",
+      "Part::MultiFuse",
+      "Part::Cylinder",
+      "Part::Cut",
+      "Part::Cylinder",
+      "Part::Cut"
+    ]
+  }
+]

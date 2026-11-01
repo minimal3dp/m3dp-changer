@@ -1,0 +1,62 @@
+{
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "native_reopened_and_recomputed": true,
+  "parts": [
+    {
+      "name": "P1_Final",
+      "stem": "p1-magnet-plate-integral-pillars",
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "volume_mm3": 1949.3742706117125,
+      "step_volume_difference_mm3": 1.3296357792569324e-08,
+      "step_center_difference_mm": 2.6573327477934608e-11
+    },
+    {
+      "name": "P5_Final",
+      "status": "superseded_for_4p6",
+      "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+      "prior_result": {
+        "name": "P5_Final",
+        "stem": "p5-backplate-two-inserts-through-bolt",
+        "valid": true,
+        "closed": true,
+        "solids": 1,
+        "volume_mm3": 10199.47108867654,
+        "step_volume_difference_mm3": 1.3478711480274796e-09,
+        "step_center_difference_mm": 2.4423609766836287e-12
+      }
+    },
+    {
+      "name": "P3_Final",
+      "stem": "p3-cover-left-clamp-web",
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "volume_mm3": 776.5734534533096,
+      "step_volume_difference_mm3": 9.63018464972265e-09,
+      "step_center_difference_mm": 1.1171738976835596e-10
+    },
+    {
+      "name": "P4_Final",
+      "stem": "p4-cover-right-clamp-web",
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "volume_mm3": 617.0731327815272,
+      "step_volume_difference_mm3": 5.74962655264244e-07,
+      "step_center_difference_mm": 7.151479297340913e-09
+    }
+  ],
+  "step_readback_method": "mass properties; independent surface checks supplement this report",
+  "insert_bore_revision_receipt": "insert-bore-4p6-validation.json"
+}

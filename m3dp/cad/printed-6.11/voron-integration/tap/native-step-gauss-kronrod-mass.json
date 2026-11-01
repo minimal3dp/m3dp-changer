@@ -1,0 +1,26 @@
+[
+  {
+    "file": "tap-top-fan-duct-PROTOTYPE-native.brep",
+    "sha256": "5efbbb339a160aeb8bfe5ebe46e2340eb6f85d0430204cacdc56be68058bfe76",
+    "volume": 16079.647661656543,
+    "center": [
+      43.77657382277094,
+      2.1510310206575243,
+      1.3942686675609266
+    ],
+    "error_estimate": 1.4077656820260364e-09,
+    "method": "adaptive Gauss-Kronrod with BSpline knot spans, eps1e-10"
+  },
+  {
+    "file": "tap-top-fan-duct-PROTOTYPE.step",
+    "sha256": "75df4e7feb0fdbe771250ba251f82c589fe81f2975d0de45f938eeaa80ba62dc",
+    "volume": 16079.56996904198,
+    "center": [
+      43.776596446603484,
+      2.1508345105052147,
+      1.3942997567096576
+    ],
+    "error_estimate": 1.553949506962755e-09,
+    "method": "adaptive Gauss-Kronrod with BSpline knot spans, eps1e-10"
+  }
+]

@@ -1,0 +1,64 @@
+"""Editable prototype raised-rail paired dock, fan retainers and cage fit coupon."""
+from pathlib import Path
+import json,math,traceback
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part,MeshPart
+OUT=Path(__file__).resolve().parent
+SPEC=json.loads((OUT/'raised-carrier-spec.json').read_text())
+LOG=OUT/'raised-carrier-native.log';LOG.write_text('Started\n')
+def primitive(doc,e):
+ v=e['values'];o=doc.addObject('Part::Box'if e['type']=='box'else'Part::Cylinder',e['name'])
+ if e['type']=='box':o.Length,o.Width,o.Height=v[3:]
+ else:
+  o.Radius,o.Height=v[3:];o.Placement.Rotation=App.Rotation(App.Vector(0,0,1),App.Vector(*e['axis']))
+ o.Placement.Base=App.Vector(*v[:3]);return o
+def bb(s):
+ b=s.BoundBox;return[b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax]
+try:
+ report=[]
+ for d in SPEC['designs']:
+  name=d['basename'];doc=App.newDocument(name.replace('-','_'));doc.Label='CxChanger prototype - '+name
+  doc.Comment='Raised front rail; original dock datum retained. ASA fit coupon and physical motion/thermal validation required. Fan size, cable exit and source-model geometry require actual hardware verification.'
+  adds=[]
+  if d.get('source'):
+   source=doc.addObject('Part::Feature','Original34mmPair');source.Label='Unmodified 34 mm pair source';source.Shape=Part.read(str(OUT/SPEC['source_dock']));adds.append(source)
+  adds += [primitive(doc,e)for e in d['add']];cuts=[primitive(doc,e)for e in d['cut']]
+  doc.recompute()
+  primitive_diagnostics=[]
+  for o in adds+cuts:
+   primitive_diagnostics.append({'name':o.Name,'type':o.TypeId,'state':list(o.State),'null':o.Shape.isNull(),'volume':None if o.Shape.isNull()else o.Shape.Volume})
+  (OUT/(name+'-primitive-diagnostics.json')).write_text(json.dumps(primitive_diagnostics,indent=2))
+  blank=adds[0]
+  for i,o in enumerate(adds[1:],1):
+   f=doc.addObject('Part::Fuse','Union'+str(i));f.Base=blank;f.Tool=o;f.Refine=False;blank=f
+  final=blank
+  for i,o in enumerate(cuts):
+   f=doc.addObject('Part::Cut','AssemblyPart'if i==len(cuts)-1 else'Cut'+str(i));f.Base=final;f.Tool=o;f.Refine=False;final=f
+  doc.recompute()
+  feature_diagnostics=[{'name':o.Name,'type':o.TypeId,'state':list(o.State),'null':o.Shape.isNull()if hasattr(o,'Shape')else None}for o in doc.Objects]
+  (OUT/(name+'-feature-diagnostics.json')).write_text(json.dumps(feature_diagnostics,indent=2))
+  assert final.Shape.isValid()and len(final.Shape.Solids)==1
+  volume=final.Shape.Volume
+  test=next(o for o in cuts if o.TypeId=='Part::Cylinder');radius=test.Radius.Value;test.Radius=radius+.05;doc.recompute();assert final.Shape.isValid()
+  test.Radius=radius;doc.recompute();assert abs(final.Shape.Volume-volume)<1e-5
+  bounds=bb(final.Shape);p=doc.addObject('Part::Compound','PrintOrientation');p.Links=[final]
+  if name.startswith('fan-retainer'):
+   p.Placement=App.Placement(App.Vector(-bounds[0],bounds[4],bounds[5]),App.Rotation(App.Vector(1,0,0),180))
+  elif name=='raised-2020-saddle-fit-coupon':
+   p.Placement=App.Placement(App.Vector(-bounds[2],-bounds[1],bounds[3]),App.Rotation(App.Vector(0,1,0),90))
+  else:p.Placement.Base=App.Vector(-bounds[0],-bounds[1],-bounds[2])
+  doc.recompute()
+  for o in doc.Objects:
+   if hasattr(o,'Visibility'):o.Visibility=o==final
+  final.ViewObject.ShapeColor=(.2,.58,.75)
+  Gui.activeDocument().activeView().viewAxonometric();Gui.activeDocument().activeView().fitAll()
+  doc.saveAs(str(OUT/(name+'.FCStd')));Part.export([final],str(OUT/(name+'.step')))
+  mesh=MeshPart.meshFromShape(Shape=p.Shape,LinearDeflection=.04,AngularDeflection=math.radians(8),Relative=False);mesh.write(str(OUT/(name+'-print.stl')))
+  Gui.activeDocument().activeView().saveImage(str(OUT/(name+'-preview.png')),1400,1000,'White')
+  imported=Part.read(str(OUT/(name+'.step')));delta=final.Shape.cut(imported).Volume+imported.cut(final.Shape).Volume
+  assert imported.isValid()and len(imported.Solids)==1 and delta<.0001
+  report.append({'name':name,'valid':True,'solids':1,'volume_mm3':volume,'assembly_bbox':bb(final.Shape),'print_bbox':bb(p.Shape),'step_roundtrip_difference_mm3':delta,'edit_restore_passed':True})
+  doc.save()
+ (OUT/'raised-carrier-native-validation.json').write_text(json.dumps(report,indent=2));LOG.write_text('PASS\n'+json.dumps(report,indent=2))
+except Exception:LOG.write_text(traceback.format_exc());raise

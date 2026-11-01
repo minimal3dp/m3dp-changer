@@ -1,0 +1,66 @@
+[
+  {
+    "name": "two-station-raised-rail-dock-prototype",
+    "status": "superseded_for_4p6",
+    "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+    "prior_result": {
+      "name": "two-station-raised-rail-dock-prototype",
+      "reopened_valid_closed_single_solid": true,
+      "edit_restore_passed": true,
+      "volume": 49017.02598310991,
+      "step_difference_mm3": 0.0,
+      "original_sha256": "c9fc04b7be201984346adb606cdfc3d32e4c050d99ee2836b3e6b267f2e75824",
+      "verified_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/dock-fans/verification-work/two-station-raised-rail-dock-prototype-81feade5e31d4d4292719731226bf665.FCStd"
+    }
+  },
+  {
+    "name": "fan-retainer-left",
+    "reopened_valid_closed_single_solid": true,
+    "edit_restore_passed": true,
+    "volume": 134.25687695423798,
+    "step_difference_mm3": 0.0,
+    "original_sha256": "01530cfc024ef7f903a9bdc51a9408e78461703d5784db243114b9d13262fec3",
+    "verified_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/dock-fans/verification-work/fan-retainer-left-b54f0dfa9af4480b98b7a6a407d3e524.FCStd"
+  },
+  {
+    "name": "fan-retainer-middle",
+    "reopened_valid_closed_single_solid": true,
+    "edit_restore_passed": true,
+    "volume": 516.2568769542381,
+    "step_difference_mm3": 0.0,
+    "original_sha256": "d90a9b93a756cf7c6a0a5fff1d15da0a241814aa9f58dc032127c31cea16b59c",
+    "verified_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/dock-fans/verification-work/fan-retainer-middle-02cc0c11f2cb40bc94d2500d9dc96440.FCStd"
+  },
+  {
+    "name": "fan-retainer-right",
+    "reopened_valid_closed_single_solid": true,
+    "edit_restore_passed": true,
+    "volume": 134.25687695423804,
+    "step_difference_mm3": 0.0,
+    "original_sha256": "71dc05fdb94db2640efd754c9d48bc73c1cba996d10ee4268a4cf3832d9e4e21",
+    "verified_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/dock-fans/verification-work/fan-retainer-right-38cf446367cf4e64bf0253ddcff96b49.FCStd"
+  },
+  {
+    "name": "2510-cage-fit-coupon",
+    "status": "superseded_for_4p6",
+    "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+    "prior_result": {
+      "name": "2510-cage-fit-coupon",
+      "reopened_valid_closed_single_solid": true,
+      "edit_restore_passed": true,
+      "volume": 3560.8496154566374,
+      "step_difference_mm3": 0.0,
+      "original_sha256": "49bfc45bf0f4c40556dbbdd1bf81d57691082c0dfee6aa88fc431b38c04eb2ad",
+      "verified_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/dock-fans/verification-work/2510-cage-fit-coupon-d74272aa64d4400bad71e34d24639036.FCStd"
+    }
+  },
+  {
+    "name": "raised-2020-saddle-fit-coupon",
+    "reopened_valid_closed_single_solid": true,
+    "edit_restore_passed": true,
+    "volume": 4349.2223916933735,
+    "step_difference_mm3": 0.0,
+    "original_sha256": "bbee63a6d816d107cb8db44b5751218e2b1ba8a70db5aa49be1a2d2549c91f46",
+    "verified_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/dock-fans/verification-work/raised-2020-saddle-fit-coupon-4cb1fb9ec64e420fb2aa5d857ecd45a6.FCStd"
+  }
+]

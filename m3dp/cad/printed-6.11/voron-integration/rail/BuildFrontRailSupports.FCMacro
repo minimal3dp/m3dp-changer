@@ -1,0 +1,116 @@
+"""Native editable front support pair for the raised400mm2020 rail.
+
+Prototype based on official Voron2.4r2 geometry. Retain the original Z-belt
+clamps; replace their M5x16 button heads with M5x40. Fit-check before loading.
+Run from this directory beside front_bracket_geometry.py.
+"""
+from pathlib import Path
+import importlib.util,json,math,traceback
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part,MeshPart,Sketcher
+OUT=Path(__file__).resolve().parent
+LOG=OUT/'front-rail-supports-native.log'
+LOG.write_text('Started\n')
+spec=importlib.util.spec_from_file_location('front_dimensions',OUT/'front_bracket_geometry.py')
+g=importlib.util.module_from_spec(spec);spec.loader.exec_module(g)
+
+
+def valid(s):
+    assert s.isValid() and len(s.Solids)==1 and s.Solids[0].isClosed()
+
+
+def make(side):
+    design=g.geometry(side)
+    doc=App.newDocument('CxFrontRailSupport'+side.title())
+    doc.Label='PROTOTYPE - raised front2020 support '+side
+    doc.Comment='Standard350 Voron2.4r2 reference; keeps stock idlers/Z-belt clamps. Added24mm at existing M5 bearing planes.11mm TAP stand-off, original source head height and raised/inboard rail required. Physical fit, fastener engagement and motion checks are mandatory before use.'
+    boxes=[]
+    for name,p,s in design['boxes']:
+        o=doc.addObject('Part::Box',name);o.Length,o.Width,o.Height=s;o.Placement.Base=App.Vector(*p);boxes.append(o)
+    for triangle in design['gussets']:
+        sketch=doc.addObject('Sketcher::SketchObject',triangle['name']+'Sketch')
+        pts=triangle['vertices']
+        if triangle['plane']=='xz':
+            sketch.Placement=App.Placement(App.Vector(0,pts[0][1],0),App.Rotation(App.Vector(1,0,0),90))
+            points=[App.Vector(p[0],p[2],0) for p in pts]
+        else:
+            sketch.Placement=App.Placement(App.Vector(pts[0][0],0,0),App.Rotation(App.Vector(1,1,1),120))
+            points=[App.Vector(p[1],p[2],0) for p in pts]
+        for i in range(3):sketch.addGeometry(Part.LineSegment(points[i],points[(i+1)%3]),False)
+        for i in range(3):sketch.addConstraint(Sketcher.Constraint('Coincident',i,2,(i+1)%3,1))
+        extrusion=doc.addObject('Part::Extrusion',triangle['name'])
+        extrusion.Base=sketch;extrusion.DirMode='Custom'
+        length=math.sqrt(sum(a*a for a in triangle['direction']))
+        extrusion.Dir=App.Vector(*[a/length for a in triangle['direction']])
+        extrusion.LengthFwd=length;extrusion.Solid=True
+        boxes.append(extrusion)
+    fuse=doc.addObject('Part::MultiFuse','SupportBlank');fuse.Shapes=boxes;fuse.Refine=True
+    current=fuse
+    for name,p,r,h,d in design['holes']:
+        hole=doc.addObject('Part::Cylinder',name);hole.Radius=r;hole.Height=h
+        hole.Placement=App.Placement(App.Vector(*p),App.Rotation(App.Vector(0,0,1),App.Vector(*d)))
+        cut=doc.addObject('Part::Cut',name+'Cut');cut.Base,cut.Tool,cut.Refine=current,hole,True;current=cut
+    current.Label='MOUNT POSE - '+side+' support'
+    current.addProperty('App::PropertyString','Hardware','Prototype')
+    current.Hardware='2 M5x40 BHCS replacing stock M5x16;2 M5 top-rail screws and matching2020 T-nuts. Determine top-rail screw engagement using the actual profile.'
+    doc.recompute();valid(current.Shape)
+    printable=doc.addObject('Part::Compound','PrintOrientation');printable.Links=[current]
+    b=current.Shape.BoundBox;printable.Placement.Base=App.Vector(-b.XMin,-b.YMin,-b.ZMin)
+    printable.Label='PRINT x1 - '+side+' support (supports required below raised arms)'
+    doc.recompute();valid(printable.Shape)
+    for o in doc.Objects:
+        if hasattr(o,'Visibility'):o.Visibility=o==printable
+    printable.ViewObject.ShapeColor=(.21,.57,.76)
+    return doc,current,printable
+
+
+def save(doc,mount,printable,name):
+    doc.recompute();valid(printable.Shape)
+    doc.saveAs(str(OUT/(name+'.FCStd')))
+    Part.export([printable],str(OUT/(name+'.step')))
+    mesh=MeshPart.meshFromShape(Shape=printable.Shape,LinearDeflection=.04,AngularDeflection=math.radians(8),Relative=False)
+    mesh.write(str(OUT/(name+'.stl')))
+    check=Part.read(str(OUT/(name+'.step')));valid(check)
+    difference=check.cut(printable.Shape).Volume+printable.Shape.cut(check).Volume
+    assert difference<.0001
+    b=printable.Shape.BoundBox
+    return {'name':name,'valid':True,'solids':1,'volume_mm3':printable.Shape.Volume,
+            'print_bounds_mm':[b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax],
+            'print_translation_mm':[printable.Placement.Base.x,printable.Placement.Base.y,printable.Placement.Base.z],
+            'step_roundtrip_difference_mm3':difference,'stl_facets':mesh.CountFacets}
+
+
+try:
+    rows=[];views=[]
+    for side in ['left','right']:
+        doc,mount,printable=make(side)
+        rows.append(save(doc,mount,printable,'front-rail-support-'+side));views.append((doc,printable,'front-rail-support-'+side))
+    # One small right-side interface coupon reproduces the bolt stack and both
+    # belt forks. It is for checking stock clamp alignment/belt clearance only.
+    doc,mount,printable=make('right')
+    doc.Label='FIT ONLY - front gantry bolt stack and Z-belt fork'
+    printable.Visibility=False
+    clip=doc.addObject('Part::Box','InterfaceCouponRegion')
+    clip.Length,clip.Width,clip.Height=32,32,26
+    clip.Placement.Base=App.Vector(222,-467,20.504002)
+    coupon=doc.addObject('Part::Common','InterfaceCoupon');coupon.Base,coupon.Tool,coupon.Refine=mount,clip,True
+    doc.recompute();valid(coupon.Shape)
+    coupon_print=doc.addObject('Part::Compound','CouponPrint');coupon_print.Links=[coupon]
+    b=coupon.Shape.BoundBox;coupon_print.Placement.Base=App.Vector(-b.XMin,-b.YMin,-b.ZMin)
+    coupon_print.Label='PRINT FIRST - check M5 stack and unobstructed vertical Z belt'
+    doc.recompute();valid(coupon_print.Shape)
+    for o in doc.Objects:
+        if hasattr(o,'Visibility'):o.Visibility=o==coupon_print
+    coupon_print.ViewObject.ShapeColor=(.72,.43,.18)
+    rows.append(save(doc,coupon,coupon_print,'front-gantry-fit-coupon'));views.append((doc,coupon_print,'front-gantry-fit-coupon'))
+    (OUT/'front-rail-supports-native-validation.json').write_text(json.dumps(rows,indent=2))
+    LOG.write_text('Geometry, native files and exports completed successfully\n')
+    # Save all geometry/report data before optional GUI preview operations.
+    for doc,obj,name in views:
+        App.setActiveDocument(doc.Name);view=Gui.activeDocument().activeView();view.viewAxonometric();view.fitAll()
+        view.saveImage(str(OUT/(name+'-preview.png')),1400,900,'White')
+        doc.save()
+    LOG.write_text('Completed successfully\n')
+except Exception:
+    LOG.write_text(LOG.read_text()+traceback.format_exc());raise

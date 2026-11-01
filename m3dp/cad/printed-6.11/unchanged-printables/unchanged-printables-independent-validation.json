@@ -1,0 +1,146 @@
+[
+  {
+    "basename": "p2-spring-support-plate",
+    "quantity_for_six_tools": 1,
+    "source_to_print_position_difference_mm3": 0.0,
+    "native_reopened": true,
+    "step_valid": true,
+    "step_solids": 1,
+    "volume_mm3": 266.287503843405,
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      8.0,
+      16.0,
+      3.0
+    ],
+    "mesh": {
+      "triangles": 1304,
+      "vertices": 652,
+      "edges": 1956,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 266.315032014055,
+      "bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        8.0,
+        16.0,
+        3.0
+      ],
+      "relative_volume_error": 0.00010337762851324812
+    },
+    "orientation": "Broad flat source face placed on bed; inspect overhangs and bearing/pin fits in slicer."
+  },
+  {
+    "basename": "p8-printed-bearing-arm",
+    "quantity_for_six_tools": 1,
+    "source_to_print_position_difference_mm3": 0.0,
+    "native_reopened": true,
+    "step_valid": true,
+    "step_solids": 1,
+    "volume_mm3": 3125.980672780605,
+    "print_bounds_mm": [
+      0.0,
+      -4.456613967112087e-16,
+      -1e-07,
+      13.587329328993,
+      41.777243203267,
+      19.5
+    ],
+    "mesh": {
+      "triangles": 3924,
+      "vertices": 1946,
+      "edges": 5886,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 3125.8083214958815,
+      "bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        13.58646,
+        41.77594,
+        19.5
+      ],
+      "relative_volume_error": 5.5135108871316727e-05
+    },
+    "orientation": "Broad flat source face placed on bed; inspect overhangs and bearing/pin fits in slicer."
+  },
+  {
+    "basename": "hotend-holder",
+    "quantity_for_six_tools": 6,
+    "source_to_print_position_difference_mm3": 0.0,
+    "native_reopened": true,
+    "step_valid": true,
+    "step_solids": 1,
+    "volume_mm3": 6582.694252402446,
+    "print_bounds_mm": [
+      -5.2041704279317505e-15,
+      -4.650237759660006e-15,
+      -5.2230486395803714e-12,
+      21.000000000000004,
+      62.20000000000001,
+      18.180000000003275
+    ],
+    "mesh": {
+      "triangles": 8300,
+      "vertices": 4132,
+      "edges": 12450,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 6583.185232253916,
+      "bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        21.0,
+        62.2,
+        18.18
+      ],
+      "relative_volume_error": 7.458645846885741e-05
+    },
+    "orientation": "Broad coplanar rear faces at source Y=13.68 placed on bed; inspect supports and pocket quality in slicer."
+  },
+  {
+    "basename": "4020-part-cooling-duct",
+    "quantity_for_six_tools": 1,
+    "source_to_print_position_difference_mm3": 0.0,
+    "native_reopened": true,
+    "step_valid": true,
+    "step_solids": 1,
+    "volume_mm3": 8439.600255857384,
+    "print_bounds_mm": [
+      -0.005002170719508405,
+      -1e-07,
+      -1.0000000003991388e-07,
+      41.85963631597508,
+      49.000000100008975,
+      54.7
+    ],
+    "mesh": {
+      "triangles": 20710,
+      "vertices": 10337,
+      "edges": 31065,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 8456.687288971381,
+      "bounds_mm": [
+        -0.00278,
+        0.0,
+        0.0,
+        41.85741,
+        49.0,
+        54.7
+      ],
+      "relative_volume_error": 0.0020246258822671924
+    },
+    "orientation": "SOURCE ORIENTATION, Z lowered to bed only. Print orientation/supports still need slicer review; thin source membrane retained."
+  }
+]

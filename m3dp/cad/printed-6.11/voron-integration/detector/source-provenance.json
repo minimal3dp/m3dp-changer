@@ -1,0 +1,13 @@
+{
+  "source": "CxChanger earlier 6.11 assembly, named with tool-change failure and filament-runout detection; excludes bottom Z microswitch",
+  "source_assembly_sha256": "1539bc5008e2ffb62ab361fd6eff173e5709cea3054337031170c060708df038",
+  "source_placement": 84,
+  "source_product_name": "微动固定",
+  "license": "GPL-3.0; retain CxChanger license and attribution",
+  "changes": [
+    "Original Z=2 mounting face retained; seats on the motor mounting ear, with no added boss",
+    "M3 clearance3.4 mm",
+    "M2 through-bolts with2.2mm pivot/arcslot"
+  ],
+  "function_status": "Physical validation of the binary switch response in three conditions is required: empty head, tool with filament, and tool without filament. No new actuator invented."
+}

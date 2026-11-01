@@ -1,0 +1,48 @@
+{
+  "duct_sha256": "9cbd292cb9c38839e38a553398bbadb7e5c7dd3708a95d6893dab87f59628763",
+  "prior_12_snapshot_duct_sha256": "e380a1b1511671e07b97a9e989e7d3951453e2f9d7169f53afa358d57c11e485",
+  "reported_change": "Seal two obsolete lower-switch holes using two cylinders. Exterior envelope unchanged according to CAD-agent freeze; added-volume bounding cylinders checked here.",
+  "plug_checks": [
+    {
+      "source_cylinder": {
+        "x": 16.7,
+        "y": 46.2,
+        "z_min": 0,
+        "z_max": 2,
+        "radius": 1.05
+      },
+      "volume_outside_final_duct_mm3": 0.0,
+      "dock_bounds_station48_maxpress": [
+        50.2,
+        -34.75,
+        31.50608593,
+        52.3,
+        -32.65,
+        33.50608593
+      ]
+    },
+    {
+      "source_cylinder": {
+        "x": 23.2,
+        "y": 46.2,
+        "z_min": 0,
+        "z_max": 2,
+        "radius": 1.05
+      },
+      "volume_outside_final_duct_mm3": 0.0,
+      "dock_bounds_station48_maxpress": [
+        43.7,
+        -34.75,
+        31.50608593,
+        45.8,
+        -32.65,
+        33.50608593
+      ]
+    }
+  ],
+  "minimum_added_material_dock_z_at_maxpress": 31.50608593,
+  "complete_parked_tools_dock_max_z": 26.03,
+  "conservative_depth_clearance_mm": 5.47608593,
+  "conclusion": "Added cylinders are fully contained in final duct and remain at least5.47608593mm behind the entire parked/dock/hardware envelope at maximal0.85mm press, independent of lateral position. Positive-depth withdrawal increases the gap. Prior12-snapshot collision result is preserved for this bounded revision.",
+  "native_or_cad_modified": false
+}

@@ -1,0 +1,25 @@
+{
+  "upstream": "https://github.com/cx330-TXY/CxChanger",
+  "files": [
+    {
+      "source": "m3dp/cad/dock-6.11-EN.STEP",
+      "sha256": "c9e277f00668af6bc849b046ac89260e1d2b5de1eff2a78e84f0da779f2381f8"
+    },
+    {
+      "source": "m3dp/cad/m3dp_cnc_6_p1.step",
+      "sha256": "f4d33541e3c4723e792e54d9e97a40bd15d0110dedfc8c122359efc9f796769d"
+    },
+    {
+      "source": "m3dp/cad/m3dp_cnc_6_p5.step",
+      "sha256": "94315e439453dd8370042f2a764030e13933933d5eaf0f70ab91c0de5159c91c"
+    },
+    {
+      "source": "m3dp/cad/m3dp_cnc_6_p3.step",
+      "sha256": "f6f37c380164c0e69ca9a5f6e2560bad6caeecaeb22092be099158ea49177fc0"
+    },
+    {
+      "source": "m3dp/cad/m3dp_cnc_6_p4.step",
+      "sha256": "a23cdde20a07c73d04a05dc4dba1c83f54b01a9ac857049c972026bca8b4140b"
+    }
+  ]
+}

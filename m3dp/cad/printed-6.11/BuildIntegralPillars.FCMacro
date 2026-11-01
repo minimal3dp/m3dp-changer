@@ -1,0 +1,116 @@
+# Four matched mounting prototypes: no plastic threads and no metal standoffs.
+from pathlib import Path
+import math
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+import MeshPart
+HERE = Path(__file__).resolve().parent
+SOURCE_DIR = HERE / 'source'
+if not SOURCE_DIR.exists():
+    SOURCE_DIR = HERE.parent
+INSERT_BORE = 4.6  # Selected from the user's heat-set/cool-down coupon test (4p6).
+PILLAR_BORE = 3.2
+COVER_BORE = 3.4
+PILLAR_AF = 6.0
+WASHER_SUPPORT_DIAMETER = 7.0
+P1_AXIS = (1.7282272905404, -33.7609025868121)
+REAR_AXIS = (26.78, -36.45)
+doc = App.newDocument('CxChanger611IntegralPillars')
+def source(n):
+    o = doc.addObject('Part::Feature', 'P%dSource' % n)
+    o.Shape = Part.read(str(SOURCE_DIR / ('m3dp_cnc_6_p%d.step' % n)))
+    o.Label = 'P%d — original CNC reference' % n
+    return o
+
+def cylinder(name, xy, z, radius, height):
+    o = doc.addObject('Part::Cylinder', name)
+    o.Radius, o.Height = radius, height
+    o.Placement.Base = App.Vector(xy[0], xy[1], z)
+    return o
+
+def countersink(name, xy, top, mouth):
+    o = doc.addObject('Part::Cone', name)
+    o.Radius1, o.Radius2 = 1.6, mouth/2
+    o.Height = (mouth - 3.2)/2
+    o.Placement.Base = App.Vector(xy[0], xy[1], top-o.Height.Value)
+    return o
+
+def operation(kind, name, base, tool):
+    o = doc.addObject('Part::'+kind, name)
+    o.Base, o.Tool = base, tool
+    doc.recompute()
+    base.ViewObject.Visibility = tool.ViewObject.Visibility = False
+    return o
+
+def pillar(name, xy, z, height):
+    o = doc.addObject('Part::Prism', name)
+    o.Polygon = 6
+    o.Circumradius = PILLAR_AF/math.sqrt(3)
+    o.Height = height
+    o.Placement = App.Placement(App.Vector(xy[0], xy[1], z), App.Rotation(App.Vector(0,0,1),30))
+    return o
+
+p1 = source(1)
+p1 = operation('Cut', 'P1_LeftClearance', p1, cylinder('P1_LeftHole',P1_AXIS,-12,1.6,6))
+p1 = operation('Cut', 'P1_FlushTopScrew', p1, countersink('P1_90DegreeSeat',P1_AXIS,-7,5.8))
+p1 = operation('Cut', 'P1_RearPassThrough', p1, cylinder('P1_RearHole',REAR_AXIS,-12,1.6,6))
+for label,xy,z,h in [('Left',P1_AXIS,-20,10),('Rear',REAR_AXIS,-23.5,14)]:
+    p1 = operation('Fuse','P1_'+label+'Pillar',p1,pillar('P1_'+label+'Hex_AF6',xy,z,h))
+    p1 = operation('Cut','P1_PillarBoresComplete' if label=='Rear' else 'P1_LeftPillarBore',p1,cylinder('P1_'+label+'ThroughBore',xy,z-.1,PILLAR_BORE/2,-6-(z-.1)))
+# The old rounded hex pockets are no longer needed. Sharp hex vertices otherwise
+# touch their corners along zero-width slits. Fill only those obsolete reliefs,
+# clipped by a translated copy of the original plate's exterior profile.
+for label,xy,depth in [('Left',P1_AXIS,.5),('Rear',REAR_AXIS,1.0)]:
+    reference = doc.addObject('Part::Feature','P1_'+label+'PocketProfileReference')
+    reference.Shape = doc.getObject('P1Source').Shape.copy()
+    reference.Placement.Base = App.Vector(0,0,-depth)
+    reference.Label = label+' pocket fill: original plate profile shifted down'
+    cap = operation('Common','P1_'+label+'PocketFill',reference,cylinder('P1_'+label+'PocketRegion',xy,-10.5,3.5,depth+.05))
+    p1 = operation('Fuse','P1_'+label+'PocketClosed',p1,cap)
+    p1 = operation('Cut','P1_Final' if label=='Rear' else 'P1_LeftFilledPocketBore',p1,cylinder('P1_'+label+'FilledPocketThroughBore',xy,-25,PILLAR_BORE/2,20))
+p1.Label = 'P1 — integral 10 mm and 14 mm pillars; through-bolts only'
+
+p5 = source(5)
+for label,xy in [('Left',(2.45,3)),('Right',(37.45,3))]:
+    p5 = operation('Fuse','P5_'+label+'Boss',p5,cylinder('P5_'+label+'Boss_OD10',xy,-5,5,5))
+    p5 = operation('Cut','P5_'+label+'Insert',p5,cylinder('P5_'+label+'TrialBore',xy,-5.1,INSERT_BORE/2,5.2))
+p5 = operation('Cut','P5_RearM3Through',p5,cylinder('P5_RearClearance',REAR_AXIS,-9,1.6,10))
+p5 = operation('Cut','P5_Final',p5,countersink('P5_Rear90DegreeSeat',REAR_AXIS,0,6.2))
+p5.Label = 'P5 — two front inserts; rear through-bolt into lower nut'
+
+covers=[]
+for n,xy,zlo,zhi in [(3,P1_AXIS,-22.5,-20),(4,REAR_AXIS,-25.5,-23.5)]:
+    o = source(n)
+    o = operation('Fuse','P%d_ClampWeb' % n,o,cylinder('P%d_WasherSupport_OD7' % n,xy,zlo,WASHER_SUPPORT_DIAMETER/2,zhi-zlo))
+    o = operation('Cut','P%d_Final' % n,o,cylinder('P%d_M3Clearance' % n,xy,zlo-.1,COVER_BORE/2,10))
+    o.Label = 'P%d — reinforced washer seat and3.4mm through-hole' % n
+    covers.append(o)
+
+items=[(p1,'p1-magnet-plate-integral-pillars',True),(p5,'p5-backplate-two-inserts-through-bolt',True),(covers[0],'p3-cover-left-clamp-web',False),(covers[1],'p4-cover-right-clamp-web',False)]
+notes=[
+ 'Left:M3x20 small90deg headOD<=5.6; rear:M3x30 throughP5/P1. Both clamp via lower washer+metalnut. Pillars have clearance holes, not threads.',
+ 'Two FRONT5ODx4L inserts in selected4.6mm bores only. Rear:M3x30 headOD<=5.6 throughP5/P1 integral14mm pillar, reinforcedP4, washer+M3nut.',
+ 'Use only with matching integralP1: M3x20 bolt,3.2ID washerOD<=7x0.5,M3nutAF5.5x2.4. Keep original lowerface.',
+ 'Use only with matching integralP1: M3x30 bolt,3.2ID washerOD<=7x0.5,M3nutAF5.5x2.4. Keep original lowerface.']
+for (o,stem,flip),note,color in zip(items,notes,[(.85,.65,.2),(.25,.55,.85),(.55,.75,.45),(.65,.55,.8)]):
+    o.addProperty('App::PropertyString','FastenerNote','Review');o.FastenerNote=note
+    o.addProperty('App::PropertyString','ManufacturingStatus','Review')
+    o.ManufacturingStatus='Printed mounting prototype; coupon, clearance, clamping and thermal-creep tests required. No plastic threads.'
+    o.ViewObject.ShapeColor=color
+    doc.recompute()
+    if not o.Shape.isValid() or len(o.Shape.Solids)!=1 or not o.Shape.Solids[0].isClosed():
+        raise RuntimeError('Invalid or disconnected final part: '+o.Name)
+    Part.export([o],str(HERE/(stem+'.step')))
+    mesh=MeshPart.meshFromShape(Shape=o.Shape,LinearDeflection=.05,AngularDeflection=.2,Relative=False)
+    mesh.write(str(HERE/(stem+'-assembly.stl')))
+    flat=o.Shape.copy()
+    if flip:flat.rotate(App.Vector(),App.Vector(1,0,0),180)
+    b=flat.BoundBox;flat.translate(App.Vector(-b.XMin,-b.YMin,-b.ZMin))
+    mesh=MeshPart.meshFromShape(Shape=flat,LinearDeflection=.05,AngularDeflection=.2,Relative=False)
+    mesh.write(str(HERE/(stem+'-print-flat.stl')))
+doc.recompute()
+doc.saveAs(str(HERE/'CxChanger6_11IntegralPillars.FCStd'))
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+App.Console.PrintMessage('Saved four matched integral-pillar mounting parts. Only the frontP5 holes take inserts.\n')

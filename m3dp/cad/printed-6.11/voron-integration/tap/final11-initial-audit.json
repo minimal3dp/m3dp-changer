@@ -1,0 +1,39 @@
+{
+  "adapter_carrier": {
+    "valid": true,
+    "solids": 1,
+    "volume": 22898.529376253664,
+    "bbox": [
+      -9.5,
+      -68.05,
+      -15.25,
+      49.400000000000006,
+      29.09342,
+      28.75
+    ],
+    "source_collisions": []
+  },
+  "duct": {
+    "valid": true,
+    "solids": 1,
+    "volume": 16101.508769846094,
+    "bbox": [
+      -1.8399999999999999,
+      -87.2500001,
+      -24.00000010000003,
+      68.7000001,
+      54.70000010000067,
+      25.0000001
+    ],
+    "source_collisions": []
+  },
+  "adapter_duct_overlap": 0.0,
+  "adapter_fan_overlap": 0.0,
+  "duct_fan_overlap": 0.0,
+  "adapter_detector83_overlap": 0.0,
+  "duct_detector83_overlap": 0.0,
+  "fan_detector83_overlap": 0.0,
+  "adapter_detector84_overlap": 0.0,
+  "duct_detector84_overlap": 0.0,
+  "fan_detector84_overlap": 0.0
+}

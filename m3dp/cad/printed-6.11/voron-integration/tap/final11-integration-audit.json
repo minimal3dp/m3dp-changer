@@ -1,0 +1,53 @@
+{
+  "gap": 11,
+  "probe_travel_samples": [
+    0,
+    1.5,
+    3
+  ],
+  "results": [
+    {
+      "test": "XYjoint",
+      "side": "right",
+      "nozzleX": 175,
+      "part": "top-adapter-carrier",
+      "overlap": 0.0
+    },
+    {
+      "test": "XYjoint",
+      "side": "right",
+      "nozzleX": 175,
+      "part": "top-duct",
+      "overlap": 0.0
+    },
+    {
+      "test": "XYjoint",
+      "side": "right",
+      "nozzleX": 175,
+      "part": "top-fan-reference",
+      "overlap": 0.0
+    },
+    {
+      "test": "XYjoint",
+      "side": "left",
+      "nozzleX": -175,
+      "part": "top-adapter-carrier",
+      "overlap": 0.0
+    },
+    {
+      "test": "XYjoint",
+      "side": "left",
+      "nozzleX": -175,
+      "part": "top-duct",
+      "overlap": 0.0
+    },
+    {
+      "test": "XYjoint",
+      "side": "left",
+      "nozzleX": -175,
+      "part": "top-fan-reference",
+      "overlap": 0
+    }
+  ],
+  "limitations": "V2measuredreferenceapproximate; fixed/movinghardwaregroupassumptions; noFEAorhardwaretest"
+}

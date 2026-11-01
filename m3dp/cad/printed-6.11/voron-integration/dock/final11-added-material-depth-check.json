@@ -1,0 +1,136 @@
+[
+  {
+    "region": "lower_fan_and_retainer_hardware",
+    "y_band": [
+      -30.5,
+      -3
+    ],
+    "new_material_rear_z": 5,
+    "closest_parts": [
+      {
+        "part": "16",
+        "front_z": 7.0549999
+      },
+      {
+        "part": "top-duct",
+        "front_z": 16.04743441
+      },
+      {
+        "part": "46",
+        "front_z": 20.00608593
+      }
+    ],
+    "minimum_depth_gap": 2.0549999000000003
+  },
+  {
+    "region": "fan_ties",
+    "y_band": [
+      -3,
+      5
+    ],
+    "new_material_rear_z": -0.5,
+    "closest_parts": [
+      {
+        "part": "16",
+        "front_z": 7.43618441
+      },
+      {
+        "part": "5",
+        "front_z": 23.50608593
+      },
+      {
+        "part": "8",
+        "front_z": 23.50608593
+      }
+    ],
+    "minimum_depth_gap": 7.93618441
+  },
+  {
+    "region": "lower_hanger_legs",
+    "y_band": [
+      -2.15,
+      31
+    ],
+    "new_material_rear_z": -2.5,
+    "closest_parts": [
+      {
+        "part": "16",
+        "front_z": -0.85
+      },
+      {
+        "part": "74",
+        "front_z": 5.86608593
+      },
+      {
+        "part": "72",
+        "front_z": 6.00608593
+      }
+    ],
+    "minimum_depth_gap": 1.65
+  },
+  {
+    "region": "upper_leg_gussets",
+    "y_band": [
+      31,
+      61.85
+    ],
+    "new_material_rear_z": 4,
+    "closest_parts": [
+      {
+        "part": "16",
+        "front_z": 6.0
+      },
+      {
+        "part": "72",
+        "front_z": 6.00608593
+      },
+      {
+        "part": "p4-cover-right-clamp-web",
+        "front_z": 6.00608593
+      }
+    ],
+    "minimum_depth_gap": 2.0
+  },
+  {
+    "region": "shelf_and_rear_spine",
+    "y_band": [
+      61.85,
+      88
+    ],
+    "new_material_rear_z": 11,
+    "closest_parts": [
+      {
+        "part": "72",
+        "front_z": 13.50608593
+      },
+      {
+        "part": "40",
+        "front_z": 15.52320742
+      },
+      {
+        "part": "top-adapter-carrier",
+        "front_z": 16.25608593
+      }
+    ],
+    "minimum_depth_gap": 2.5060859299999994
+  },
+  {
+    "region": "top_clamp_hardware",
+    "y_band": [
+      88,
+      91.5
+    ],
+    "new_material_rear_z": 2,
+    "closest_parts": [
+      {
+        "part": "top-fan-reference",
+        "front_z": 17.04608593
+      },
+      {
+        "part": "top-duct",
+        "front_z": 18.05608583
+      }
+    ],
+    "minimum_depth_gap": 15.04608593
+  }
+]

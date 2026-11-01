@@ -1,0 +1,21 @@
+{
+  "status": "final11_native_exports_independently_verified",
+  "adapter_standoff_mm": 11,
+  "rail_center_mm": [
+    0,
+    -482.530002,
+    48.91343
+  ],
+  "verified_volumes_mm3": {
+    "front-rail-support-left": 23831.865861947,
+    "front-rail-support-right": 23817.571125041,
+    "front-gantry-fit-coupon": 11169.468617741
+  },
+  "checks": [
+    "native valid closed single solids",
+    "distinct saved-copy reopen and native dimension edit/restore",
+    "exact STEP/preflight geometry comparison",
+    "watertight single-component consistently oriented meshes"
+  ],
+  "physical_qualification": false
+}

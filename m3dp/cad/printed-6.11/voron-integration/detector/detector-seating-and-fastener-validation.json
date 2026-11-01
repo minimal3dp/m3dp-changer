@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "preflight": false,
+  "unexpected_intersections": [],
+  "thread_representation_intersections": [
+    {
+      "part": "M3-anchor-shaft",
+      "retained": "14",
+      "intersection_mm3": 4.319689898685956
+    },
+    {
+      "part": "M3-anchor-shaft",
+      "retained": "61",
+      "intersection_mm3": 3.3372290559758646
+    }
+  ],
+  "mount_volume_mm3": 922.9211078839677,
+  "M3_anchor_additional_nut": true,
+  "M3_anchor_tip_z": 8,
+  "M3_anchor_nut_top_z": 7.4,
+  "M3_anchor_nominal_protrusion_mm": 0.6,
+  "M2_nominal_protrusion_mm": 0.75,
+  "physical_switch_actuation_verified": false
+}

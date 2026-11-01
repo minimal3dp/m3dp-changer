@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-29",
+  "units": "mm",
+  "software": {
+    "build123d": "0.13.0",
+    "build123d-mcp": "0.3.91"
+  },
+  "reference": {
+    "path": "../2510-cage-fit-coupon.step",
+    "sha256": "d5e64d12955a1f9760faad6acc871c55d3dc75cde19b47bc395b11d412151986"
+  },
+  "source": {
+    "path": "build_2510_cage_fit_coupon.py",
+    "sha256": "bb8b2526504cc0dd43611ba86aa9c4ea8c3369d7fc3b4c2e035a146c3e26ebb1",
+    "execute_file_ok": true
+  },
+  "exports": {
+    "step": {
+      "path": "2510-cage-fit-coupon-build123d-4p6.step",
+      "bytes": 117798,
+      "sha256": "cbedb757e347ae599cdcd7ade6f12225e9b8f018afa86538b2ff4074a8b196de",
+      "object": "cage_rebuilt",
+      "coordinates": "original dock datum",
+      "written_and_reimported_gate_passed": true
+    },
+    "stl": {
+      "path": "2510-cage-fit-coupon-build123d-4p6.stl",
+      "bytes": 131484,
+      "sha256": "0ae6c5ebbe30a2410676f02352ea01f85a8860fbe034176dd5e2e630a5599104",
+      "object": "cage_print",
+      "coordinates": "translated to positive XYZ with front lip on Z=0"
+    }
+  },
+  "geometry": {
+    "volume_mm3": 3552.558952443813,
+    "surface_area_mm2": 3866.4619985588733,
+    "insert_seats": [
+      {
+        "center_xy": [
+          31,
+          -24
+        ],
+        "diameter_mm": 4.6,
+        "z_min": -5.5,
+        "z_max": 0.2999999999999998,
+        "depth_mm": 5.8
+      },
+      {
+        "center_xy": [
+          65,
+          -16
+        ],
+        "diameter_mm": 4.6,
+        "z_min": -5.5,
+        "z_max": 0.2999999999999998,
+        "depth_mm": 5.8
+      }
+    ],
+    "tip_diameter_mm": 3.4,
+    "bottom_floor_mm": 3.5,
+    "print_translation_mm": [
+      -27,
+      30.5,
+      11.5
+    ],
+    "print_size_mm": [
+      42,
+      29,
+      11.8
+    ]
+  },
+  "reference_comparison": {
+    "method": "exact_boolean",
+    "volume_delta_mm3": 0,
+    "bbox_size_delta_mm": [
+      0,
+      0,
+      0
+    ],
+    "center_offset_mm": 0,
+    "added_volume_mm3": 0,
+    "removed_volume_mm3": 0,
+    "reference_faces": 68,
+    "rebuilt_faces": 40,
+    "mesh_sample_raw_max_mm": 2.15,
+    "mesh_sample_regions": 29,
+    "note": "Exact Boolean comparison reports zero added and removed material. Coplanar face subdivision differs (68 vs 40 faces). The separate mesh sampler flagged 29 regions with raw max 2.15 mm; the tool identifies this as likely tessellation noise. Agreement is supported by exact Boolean volumes, bounds, mass properties, and explicit bore geometry checks, not by the noisy mesh sampling."
+  },
+  "final_model_validity": {
+    "passes_gate": true,
+    "n_solids": 1,
+    "volume": 3552.559,
+    "overlap_check": "exact",
+    "overlapping_pairs": 0,
+    "pairwise_overlap_volume": 0,
+    "watertight_manifold": true,
+    "open_edges": 0,
+    "nonmanifold_edges": 0,
+    "mesh_nonmanifold_edges": 0,
+    "mesh_nonmanifold_vertices": 0,
+    "mesh_open_edges": 0,
+    "mesh_vertex_deflection_defects": 0,
+    "untriangulated_faces": 0,
+    "refined_untriangulated_faces": 0,
+    "refined_untriangulated_faces_verified": true,
+    "mesh_check": "exact",
+    "brep_valid": true,
+    "warnings": [],
+    "reasons": []
+  },
+  "parameter_audit": {
+    "parameter": "insert_diameter",
+    "scope": "Only insert_diameter was perturbed; this is not a full parameter audit.",
+    "results": [
+      {
+        "delta_pct": 10,
+        "new_value": 5.06,
+        "rebuilt": true,
+        "passes_gate": true,
+        "n_solids": 1,
+        "volume": 3512.075,
+        "volume_delta_pct": -1.1
+      },
+      {
+        "delta_pct": -10,
+        "new_value": 4.14,
+        "rebuilt": true,
+        "passes_gate": true,
+        "n_solids": 1,
+        "volume": 3589.1873,
+        "volume_delta_pct": 1
+      }
+    ],
+    "verdict": "robust"
+  },
+  "printability": {
+    "nozzle_mm": 0.4,
+    "min_perimeters": 2,
+    "warnings": [
+      "Tool detected a 0.70 mm wall, below two 0.4 mm perimeters. The 6 mm wide raised keys around the 4.6 mm holes account for a 0.7 mm ligament on each side; this geometry is inherited from the reference."
+    ],
+    "physical_fit_tested": true,
+    "physical_fit_test": {
+      "date": "2026-10-30",
+      "artifact": "2510-cage-fit-coupon-build123d-4p6.stl",
+      "scope": "2510 fan body fit only",
+      "result": "pass",
+      "evidence": "User printed the coupon and reported: the fan fit perfectly.",
+      "unreported_checks": [
+        "Heat-set insert retention in this cage coupon",
+        "Retainer fit and clamping",
+        "Cable exit clearance"
+      ]
+    },
+    "physical_retainer_fit_test": {
+      "date": "2026-10-31",
+      "artifact": "2510-cage-fit-coupon-build123d-4p6.stl",
+      "scope": "Installed cage retainer fit only",
+      "result": "pass",
+      "evidence": "User reported of the installed cage retainers: It fits great.",
+      "unreported_checks": [
+        "Heat-set insert retention in this cage coupon",
+        "Clamping strength, torque and pullout",
+        "Cable exit clearance",
+        "Heated operation"
+      ]
+    }
+  }
+}

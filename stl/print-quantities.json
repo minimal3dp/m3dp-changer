@@ -1,0 +1,33 @@
+{
+  "status": "fit_prototype_requires_physical_acceptance",
+  "material": "ASA",
+  "tool_count": 6,
+  "production_parts": {
+    "p1-magnet-plate-integral-pillars-print-flat.stl": 1,
+    "p5-backplate-two-inserts-through-bolt-print-flat.stl": 1,
+    "p3-cover-left-clamp-web-print-flat.stl": 1,
+    "p4-cover-right-clamp-web-print-flat.stl": 1,
+    "p8-printed-bearing-arm.stl": 1,
+    "hotend-holder.stl": 6,
+    "two-station-dock.stl": 3,
+    "fan-retainer-left.stl": 3,
+    "fan-retainer-middle.stl": 3,
+    "fan-retainer-right.stl": 3,
+    "tap-adapter-top-fan-carrier-PROTOTYPE.stl": 1,
+    "tap-top-fan-duct-PROTOTYPE.stl": 1,
+    "front-rail-support-left.stl": 1,
+    "front-rail-support-right.stl": 1,
+    "tool-detector-mount-PROTOTYPE.stl": 1
+  },
+  "coupons": {
+    "insert-coupon-4p3.stl": 1,
+    "insert-coupon-4p4.stl": 1,
+    "insert-coupon-4p5.stl": 1,
+    "insert-coupon-4p6.stl": 1,
+    "insert-coupon-4p7.stl": 1,
+    "chaoticlab-v2-interface-fit-gauge.stl": 1,
+    "front-gantry-fit-coupon.stl": 1,
+    "raised-2020-saddle-fit-coupon.stl": 1,
+    "2510-cage-fit-coupon.stl": 1
+  }
+}

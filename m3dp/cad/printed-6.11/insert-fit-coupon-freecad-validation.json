@@ -1,0 +1,65 @@
+{
+  "native_reopened_and_recomputed": true,
+  "specimens": [
+    {
+      "basename": "insert-coupon-4p3",
+      "bore_mm": 4.3,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore": true,
+      "entry_chamfer": false,
+      "floor": false,
+      "volume_mm3": 320.0890214926301,
+      "step_difference_mm3": 0.0,
+      "stl_facets": 720
+    },
+    {
+      "basename": "insert-coupon-4p4",
+      "bore_mm": 4.4,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore": true,
+      "entry_chamfer": false,
+      "floor": false,
+      "volume_mm3": 316.6725394818511,
+      "step_difference_mm3": 0.0,
+      "stl_facets": 720
+    },
+    {
+      "basename": "insert-coupon-4p5",
+      "bore_mm": 4.5,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore": true,
+      "entry_chamfer": false,
+      "floor": false,
+      "volume_mm3": 313.17751765473247,
+      "step_difference_mm3": 0.0,
+      "stl_facets": 720
+    },
+    {
+      "basename": "insert-coupon-4p6",
+      "bore_mm": 4.6,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore": true,
+      "entry_chamfer": false,
+      "floor": false,
+      "volume_mm3": 309.60395601127414,
+      "step_difference_mm3": 0.0,
+      "stl_facets": 720
+    },
+    {
+      "basename": "insert-coupon-4p7",
+      "bore_mm": 4.7,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore": true,
+      "entry_chamfer": false,
+      "floor": false,
+      "volume_mm3": 305.95185455147595,
+      "step_difference_mm3": 0.0,
+      "stl_facets": 720
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "path": "BuildFrontRailSupports.FCMacro",
+    "sha256": "d8c0739f87a680d76863bfd5f24b02bf5334d9b6beb0a7002638f57e0cdfb2a4"
+  },
+  {
+    "path": "VerifyFrontRailSupports.FCMacro",
+    "sha256": "c725a35215a5da620038f462809f16c83e9387df9f9a564fad00e9e86baf7b04"
+  },
+  {
+    "path": "front_bracket_geometry.py",
+    "sha256": "6d77b3e80eda304ae6e7dab5a1cf54385a8d0e7df78bf897e687be9f1e57447f"
+  },
+  {
+    "path": "preflight_front_brackets.py",
+    "sha256": "782c3baa5519eb94edef9dd43a260664f94c60213fee2fe04c409eca1cb2f699"
+  },
+  {
+    "path": "check_enclosure_and_bed.py",
+    "sha256": "329aa9b00dfc201de35bc26082a0f07da763e454c108125d9b63434968f2265c"
+  },
+  {
+    "path": "validate_front_support_exports.py",
+    "sha256": "fa17b2e1b4a6d7edbade17aa60483c31472dee12fbf7822e171f98f394816f21"
+  },
+  {
+    "path": "cad_checks.py",
+    "sha256": "77558eebf3fd5e075f66d2ab33f7d01f484977a29e9ec6d9e8944443587cf604"
+  },
+  {
+    "path": "front-rail-support-notes.md",
+    "sha256": "8f8ccbf00a053bfb995847bc9e1467ef04dedae1963e1d66e9150e63af084c78"
+  },
+  {
+    "path": "REFERENCE-ATTRIBUTION.md",
+    "sha256": "255835bdcc19db0d71d6bade56ec17bc03e90ae052a95d4a7a2d147ccfc1acfd"
+  },
+  {
+    "path": "front-bracket-preflight.json",
+    "sha256": "2f580d51b5d05d4fae1782f65b42d249e3758b5fbc6b737a585499f9cca0595a"
+  },
+  {
+    "path": "raised-rail-enclosure-and-bed-validation.json",
+    "sha256": "3e41fe633594e022fb5bf7c5e4128db2a105c1dc7529a8630a9854318b09eb88"
+  },
+  {
+    "path": "front-print-envelope.json",
+    "sha256": "6569d166bc9e5214b9117b5c590e7c03856eed1bef7e04dfa522775f71ca8c56"
+  },
+  {
+    "path": "front-rail-support-left-preflight.brep",
+    "sha256": "f76c8ef991ab2581edd9a4cf4e34f024aad1dfa1f7abfbc69fd7ca01efe02677"
+  },
+  {
+    "path": "front-rail-support-right-preflight.brep",
+    "sha256": "e72d7b4c9f3917d79e8b63f5c7f3023920559feaf6a7886451c766b5c801961a"
+  },
+  {
+    "path": "reference/placed-9.brep",
+    "sha256": "718150a19dd5968aa353fdf5eef2c060639a7205953115a20250935b519479ed"
+  },
+  {
+    "path": "reference/placed-20.brep",
+    "sha256": "69672dc751016b514d3a83547693544053295b01141f77f4d5920088af2ae29c"
+  },
+  {
+    "path": "reference/Front-Idler-A-350.brep",
+    "sha256": "850c4f3de1ef5c83c70319c440f310fde1cffb631e2f8422aafe82865dc8fe9e"
+  },
+  {
+    "path": "reference/Front-Idler-B-350.brep",
+    "sha256": "826320f90bf4eb227c2a829befd7bd8d1bdacc2860e31c7585c68cedc9fabb53"
+  },
+  {
+    "path": "reference/new400mm-raised-rail.brep",
+    "sha256": "c4caa31cf94977df08424c7210f9961f3d9c1e2151700bfd8f931105e44f1fa2"
+  },
+  {
+    "path": "reference/VORON-LICENSE",
+    "sha256": "e57f1c320b8cf8798a7d2ff83a6f9e06a33a03585f6e065fea97f1d86db84052"
+  }
+]

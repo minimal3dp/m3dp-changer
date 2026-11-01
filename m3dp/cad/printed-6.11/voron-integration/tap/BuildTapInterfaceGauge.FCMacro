@@ -1,0 +1,35 @@
+# Verifies the measured external V2 pattern; this is not a structural adapter.
+from pathlib import Path
+import math
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part, MeshPart
+HERE=Path(__file__).resolve().parent
+HOLE_DIAMETER=3.3
+THICKNESS=2.0
+POINTS=[(-15.5,12.903),(15.5,12.903),(17.54,63.46),(-17.54,63.46)]
+doc=App.newDocument('ChaoticlabV2InterfaceGauge')
+def cylinder(name,xy,r):
+ o=doc.addObject('Part::Cylinder',name);o.Radius=r;o.Height=THICKNESS;o.Placement.Base=App.Vector(*xy,0);return o
+def boolean(kind,name,base,tool):
+ o=doc.addObject('Part::'+kind,name);o.Base=base;o.Tool=tool;o.Refine=True;doc.recompute();base.Visibility=False;tool.Visibility=False;return o
+out=None
+for i,xy in enumerate(POINTS):
+ ring=cylinder('MountPad%d'%i,xy,4)
+ out=ring if out is None else boolean('Fuse','Pads%d'%i,out,ring)
+for i,(a,b) in enumerate(zip(POINTS,POINTS[1:]+POINTS[:1])):
+ dx,dy=b[0]-a[0],b[1]-a[1];length=math.hypot(dx,dy);angle=math.degrees(math.atan2(dy,dx))
+ bar=doc.addObject('Part::Box','FrameBar%d'%i);bar.Length=length;bar.Width=6;bar.Height=THICKNESS
+ bar.Placement=App.Placement(App.Vector(a[0]+3*dy/length,a[1]-3*dx/length,0),App.Rotation(App.Vector(0,0,1),angle))
+ out=boolean('Fuse','ConnectedFrame%d'%i,out,bar)
+for i,xy in enumerate(POINTS):out=boolean('Cut','GaugeFinal' if i==3 else 'GaugeHole%d'%i,out,cylinder('HoleTool%d'%i,xy,HOLE_DIAMETER/2))
+out.Label='V2 mounting-pattern gauge — fit verification only'
+out.addProperty('App::PropertyString','Use','Review');out.Use='Nonstructural fit gauge. Four M3 clearance holes from Techne unofficial measured V2 reference. Verify all four screws fit by hand without bending; do not use as an adapter.'
+out.addProperty('App::PropertyString','Dimensions','Review');out.Dimensions='Top pair31mm; bottom pair35.08mm; vertical separation50.557mm; bore3.3mm; thickness2mm.'
+doc.recompute()
+if not out.Shape.isValid() or len(out.Shape.Solids)!=1:raise RuntimeError('Invalid fit gauge')
+Part.export([out],str(HERE/'chaoticlab-v2-interface-fit-gauge.step'))
+s=out.Shape.copy();b=s.BoundBox;s.translate(App.Vector(-b.XMin,-b.YMin,-b.ZMin))
+MeshPart.meshFromShape(Shape=s,LinearDeflection=.03,AngularDeflection=.15,Relative=False).write(str(HERE/'chaoticlab-v2-interface-fit-gauge.stl'))
+doc.saveAs(str(HERE/'ChaoticlabV2InterfaceGauge.FCStd'))
+Gui.activeDocument().activeView().viewTop();Gui.activeDocument().activeView().fitAll()

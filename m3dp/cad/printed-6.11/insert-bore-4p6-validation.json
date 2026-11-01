@@ -1,0 +1,911 @@
+{
+  "date": "2026-10-29",
+  "status": "passed",
+  "revision": "user_selected_4p6",
+  "bore_diameter_mm": 4.6,
+  "production_insert_seats": 14,
+  "cage_coupon_insert_seats": 2,
+  "physical_evidence": {
+    "cold_fit_preference": "4p6",
+    "after_heat_setting_and_cooling_best_fit": [
+      "4p5",
+      "4p6"
+    ],
+    "screws_thread_through_easily": true,
+    "user_selected": "4p6",
+    "retention_load_or_thermal_qualification": false
+  },
+  "native": {
+    "status": "passed",
+    "method": "Native parameter edit, exact mass/area and bidirectional sampled boundary agreement; independent OCC comparison required for Boolean proof",
+    "bore_diameter_mm": 4.6,
+    "parts": [
+      {
+        "stem": "p5-backplate-two-inserts-through-bolt",
+        "native": "m3dp/cad/printed-6.11/CxChanger6_11IntegralPillars.FCStd",
+        "baseline_native_sha256": "f47fca17e44dc4f0523cc5751a1b7eb11a4c53384ad1cef304ef4b8c1875177b",
+        "native_sha256": "aa0fb03d31cedc386572cd22c98274fcc9407ed7011e81c33726a0c9b1f30bc0",
+        "baseline_step_sha256": "aa31f507e88b4bb9f961d10510946ccd5116f469addfefedc6b964d277419e3d",
+        "valid_closed_single_solid": true,
+        "native_reopened": true,
+        "native_edit_restores": true,
+        "insert_seats": 2,
+        "diameters_mm": [
+          4.6,
+          4.6
+        ],
+        "removed_volume_mm3": 7.14712328692076,
+        "bore_only_sampled_surface_distance_mm": 5.733914510257978e-14,
+        "step_roundtrip_sampled_surface_distance_mm": 9.29141083440715e-12,
+        "volume_mm3": 10192.32396538962,
+        "bounds_mm": [
+          -4.975000000002007,
+          -48.49999999999,
+          -7.500000000000032,
+          44.874999999998,
+          14.50000000000201,
+          6.730171975277699e-13
+        ],
+        "unchanged_other_native_parts": [
+          "P1_Final",
+          "P3_Final",
+          "P4_Final"
+        ],
+        "files": {
+          "m3dp/cad/printed-6.11/CxChanger6_11IntegralPillars.FCStd": "aa0fb03d31cedc386572cd22c98274fcc9407ed7011e81c33726a0c9b1f30bc0",
+          "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt.step": "25fd0c1d34b69937af60434e572c0207b0659b4bf1ee6f00b6cd7e0bcc41f773",
+          "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt-assembly.stl": "c414869710c48e047f803127a3a17566c46976b5e005786aef5f5a9c037c9442",
+          "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt-print-flat.stl": "9cae8285f245bea0024f529e1ceba618169390d30fde42ac2ad0347cbd047c98"
+        },
+        "gui_display_metadata_preserved": true
+      },
+      {
+        "stem": "tap-adapter-top-fan-carrier-PROTOTYPE",
+        "native": "m3dp/cad/printed-6.11/voron-integration/tap/CxChangerTopTapPrototype.FCStd",
+        "baseline_native_sha256": "6b20b58602ac0ea041d6aed0d4bf57ab496936667f49323796f2c965b59e1e5f",
+        "native_sha256": "e7841a2cb19acd9a9be14b37b2fac59fa5abad96f245b059e090bd76cce615a4",
+        "baseline_step_sha256": "a2310ee3bf1c18479e98a829f21e3622c8ab505bbcdaff524a6ed91de59bcf05",
+        "valid_closed_single_solid": true,
+        "native_reopened": true,
+        "native_edit_restores": true,
+        "insert_seats": 3,
+        "diameters_mm": [
+          4.6,
+          4.6,
+          4.6
+        ],
+        "removed_volume_mm3": 10.93509862899009,
+        "bore_only_sampled_surface_distance_mm": 1.5888218580782548e-14,
+        "step_roundtrip_sampled_surface_distance_mm": 8.758479818791277e-12,
+        "volume_mm3": 22887.594277624743,
+        "bounds_mm": [
+          -9.5,
+          -68.05,
+          -15.25,
+          49.4,
+          29.09342,
+          28.75
+        ],
+        "unchanged_other_native_parts": [
+          "Cut147"
+        ],
+        "files": {
+          "m3dp/cad/printed-6.11/voron-integration/tap/CxChangerTopTapPrototype.FCStd": "e7841a2cb19acd9a9be14b37b2fac59fa5abad96f245b059e090bd76cce615a4",
+          "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE.step": "b59a51569bb9c465418a831b8660eb79bc436629e59c29233882a46935ecd17b",
+          "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE-assembly.stl": "afa6ccc375dd3b230af64be86510f6559a1ae05aac8ea8b6e109835cc2b34ade",
+          "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports.stl": "ec15b2cae714926e88d44879ce55026691f06fbe6ed65f9da8f883902f3c9a99"
+        },
+        "gui_display_metadata_preserved": true
+      },
+      {
+        "stem": "two-station-raised-rail-dock-prototype",
+        "native": "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.FCStd",
+        "baseline_native_sha256": "c9fc04b7be201984346adb606cdfc3d32e4c050d99ee2836b3e6b267f2e75824",
+        "native_sha256": "cd0244fedfe9b7d2976de9b6597233affbd115a05f4f9a663de2669de1de1959",
+        "baseline_step_sha256": "1d346bce280241c372bf5dda0dd8eaabb7f643be4df109057d50e8eb82130b0c",
+        "valid_closed_single_solid": true,
+        "native_reopened": true,
+        "native_edit_restores": true,
+        "insert_seats": 3,
+        "diameters_mm": [
+          4.6,
+          4.6,
+          4.6
+        ],
+        "removed_volume_mm3": 12.435994519219093,
+        "bore_only_sampled_surface_distance_mm": 1.0658141036401503e-14,
+        "step_roundtrip_sampled_surface_distance_mm": 3.517186542012496e-13,
+        "volume_mm3": 49004.58998859069,
+        "bounds_mm": [
+          26.0,
+          -50.3,
+          -11.5,
+          103.0,
+          88.0,
+          21.153684484622
+        ],
+        "unchanged_other_native_parts": [],
+        "files": {
+          "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.FCStd": "cd0244fedfe9b7d2976de9b6597233affbd115a05f4f9a663de2669de1de1959",
+          "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.step": "eb48ef41ae68ea793fde9aa767dcac5f7fdcee0fd80ad5ff85c59121df94edb3",
+          "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype-print.stl": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293"
+        },
+        "gui_display_metadata_preserved": true
+      },
+      {
+        "stem": "2510-cage-fit-coupon",
+        "native": "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.FCStd",
+        "baseline_native_sha256": "49bfc45bf0f4c40556dbbdd1bf81d57691082c0dfee6aa88fc431b38c04eb2ad",
+        "native_sha256": "46b983dee904bab8b5fd66d60559782dee0dac7be29c1a882b2d692c88895d49",
+        "baseline_step_sha256": "50d871c6b554d7cf553d1f5049175c98919d3300143dac6d9ea7aa0b3342e398",
+        "valid_closed_single_solid": true,
+        "native_reopened": true,
+        "native_edit_restores": true,
+        "insert_seats": 2,
+        "diameters_mm": [
+          4.6,
+          4.6
+        ],
+        "removed_volume_mm3": 8.290663012823643,
+        "bore_only_sampled_surface_distance_mm": 4.085620730620576e-14,
+        "step_roundtrip_sampled_surface_distance_mm": 7.107378653578542e-15,
+        "volume_mm3": 3552.5589524438137,
+        "bounds_mm": [
+          27.0,
+          -30.5,
+          -11.5,
+          69.0,
+          -1.5,
+          0.30000000000000004
+        ],
+        "unchanged_other_native_parts": [],
+        "files": {
+          "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.FCStd": "46b983dee904bab8b5fd66d60559782dee0dac7be29c1a882b2d692c88895d49",
+          "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.step": "d5e64d12955a1f9760faad6acc871c55d3dc75cde19b47bc395b11d412151986",
+          "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon-print.stl": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+        },
+        "gui_display_metadata_preserved": true
+      }
+    ]
+  },
+  "independent": {
+    "status": "passed",
+    "method": "Independent PythonOCC: baseline minus only specified 4.6 mm cylinders; valid bidirectional Boolean comparison where available; strict mass/bounds/one-to-one-face correspondence, all-face boundary samples and solid classification; exact STEP cylinders; oriented STL topology and surface checks",
+    "boolean_limitation": "P5 cross-shape Boolean comparison reproducibly returns invalid whole-solid results even for two reads of the identical BREP. Invalid comparisons are recorded as unavailable, never as passing volume differences. Strict face/surface/mass/classification checks remain required.",
+    "parts": [
+      {
+        "file": "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt.step",
+        "baseline_sha256": "aa31f507e88b4bb9f961d10510946ccd5116f469addfefedc6b964d277419e3d",
+        "sha256": "25fd0c1d34b69937af60434e572c0207b0659b4bf1ee6f00b6cd7e0bcc41f773",
+        "valid_single_closed_solid": true,
+        "volume_mm3": 10192.323965388312,
+        "material_removed_mm3": 7.147123286880742,
+        "boolean_comparison": {
+          "status": "unavailable_invalid_kernel_result",
+          "directions": [
+            {
+              "direction": "actual_minus_expected",
+              "valid_result": false,
+              "volume_mm3": null
+            },
+            {
+              "direction": "expected_minus_actual",
+              "valid_result": false,
+              "volume_mm3": null
+            }
+          ]
+        },
+        "expected_volume_mm3": 10192.323965388274,
+        "volume_difference_from_expected_mm3": 3.8198777474462986e-11,
+        "face_correspondence": {
+          "raw_face_counts_actual_expected": [
+            168,
+            168
+          ],
+          "canonicalization": "UnifySameDomain on both shapes; original all-face surface checks retained",
+          "matched_faces": 168,
+          "max_face_area_difference_mm2": 3.183231456205249e-11,
+          "max_face_centroid_distance_mm": 8.995879510349789e-13,
+          "every_face_type_matches": true
+        },
+        "solid_classification": {
+          "grid_samples": 125,
+          "bore_region_samples": 192,
+          "mismatches": 0
+        },
+        "max_bbox_change_mm": 1.7763568394002505e-15,
+        "surface_comparison": [
+          {
+            "faces": 168,
+            "faces_with_interior_sample": 168,
+            "points": 952,
+            "direction": "new_to_expected",
+            "max_distance_mm": 1.001866922058447e-12
+          },
+          {
+            "faces": 168,
+            "faces_with_interior_sample": 168,
+            "points": 952,
+            "direction": "expected_to_new",
+            "max_distance_mm": 1.001866922058447e-12
+          }
+        ],
+        "cylindrical_seats": [
+          {
+            "axis_xy_mm": [
+              2.45,
+              3
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                0.15000000000000036,
+                0.7000000000000002,
+                -5.0,
+                4.75,
+                5.3,
+                7.993605777301e-15
+              ]
+            ]
+          },
+          {
+            "axis_xy_mm": [
+              37.45,
+              3
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                35.150000000000006,
+                0.7000000000000002,
+                -5.0,
+                39.75,
+                5.3,
+                -2.22044604925e-14
+              ]
+            ]
+          }
+        ],
+        "meshes": {
+          "p5-backplate-two-inserts-through-bolt-assembly.stl": {
+            "triangles": 9564,
+            "vertices": 4752,
+            "edges": 14346,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 10194.393873876399,
+            "bounds_mm": [
+              -4.97318,
+              -48.49893,
+              -7.5,
+              44.87318,
+              14.5,
+              0.0
+            ],
+            "sha256": "c414869710c48e047f803127a3a17566c46976b5e005786aef5f5a9c037c9442",
+            "max_bbox_difference_mm": 0.0018200000019996665,
+            "surface_sample_count": 966,
+            "max_sampled_mesh_to_expected_surface_mm": 0.01198335923023081,
+            "relative_volume_difference": 0.0002030850368489277,
+            "bore_vertices": [
+              {
+                "assembly_xy_mm": [
+                  2.45,
+                  3
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 126
+              },
+              {
+                "assembly_xy_mm": [
+                  37.45,
+                  3
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 126
+              }
+            ]
+          },
+          "p5-backplate-two-inserts-through-bolt-print-flat.stl": {
+            "triangles": 9564,
+            "vertices": 4752,
+            "edges": 14346,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 10194.393895159616,
+            "bounds_mm": [
+              0.00182,
+              0.0,
+              0.0,
+              49.84818,
+              62.99893,
+              7.5
+            ],
+            "sha256": "9cae8285f245bea0024f529e1ceba618169390d30fde42ac2ad0347cbd047c98",
+            "max_bbox_difference_mm": 0.0018200000000021532,
+            "surface_sample_count": 967,
+            "max_sampled_mesh_to_expected_surface_mm": 0.0119839672731629,
+            "relative_volume_difference": 0.00020308712500915883,
+            "bore_vertices": [
+              {
+                "assembly_xy_mm": [
+                  2.45,
+                  3
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 126
+              },
+              {
+                "assembly_xy_mm": [
+                  37.45,
+                  3
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 126
+              }
+            ]
+          }
+        },
+        "passed": true
+      },
+      {
+        "file": "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE.step",
+        "baseline_sha256": "a2310ee3bf1c18479e98a829f21e3622c8ab505bbcdaff524a6ed91de59bcf05",
+        "sha256": "b59a51569bb9c465418a831b8660eb79bc436629e59c29233882a46935ecd17b",
+        "valid_single_closed_solid": true,
+        "volume_mm3": 22887.594277624525,
+        "material_removed_mm3": 10.935098628982814,
+        "boolean_comparison": {
+          "status": "passed",
+          "directions": [
+            {
+              "direction": "actual_minus_expected",
+              "valid_result": true,
+              "volume_mm3": 0.0
+            },
+            {
+              "direction": "expected_minus_actual",
+              "valid_result": true,
+              "volume_mm3": 0.0
+            }
+          ]
+        },
+        "expected_volume_mm3": 22887.59427762454,
+        "volume_difference_from_expected_mm3": 1.4551915228366852e-11,
+        "face_correspondence": {
+          "raw_face_counts_actual_expected": [
+            80,
+            83
+          ],
+          "canonicalization": "UnifySameDomain on both shapes; original all-face surface checks retained",
+          "matched_faces": 80,
+          "max_face_area_difference_mm2": 1.7053025658242404e-13,
+          "max_face_centroid_distance_mm": 3.972054645195637e-15,
+          "every_face_type_matches": true
+        },
+        "solid_classification": {
+          "grid_samples": 125,
+          "bore_region_samples": 288,
+          "mismatches": 0
+        },
+        "max_bbox_change_mm": 0.0,
+        "surface_comparison": [
+          {
+            "faces": 80,
+            "faces_with_interior_sample": 80,
+            "points": 462,
+            "direction": "new_to_expected",
+            "max_distance_mm": 7.9966891354784e-15
+          },
+          {
+            "faces": 83,
+            "faces_with_interior_sample": 83,
+            "points": 471,
+            "direction": "expected_to_new",
+            "max_distance_mm": 7.9966891354784e-15
+          }
+        ],
+        "cylindrical_seats": [
+          {
+            "axis_xy_mm": [
+              9.95,
+              -3.5
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                7.6499999999999995,
+                -5.8,
+                0.0,
+                12.25,
+                -1.2000000000000002,
+                5.1
+              ]
+            ]
+          },
+          {
+            "axis_xy_mm": [
+              29.95,
+              -3.5
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                27.65,
+                -5.8,
+                0.0,
+                32.25,
+                -1.2000000000000002,
+                5.1
+              ]
+            ]
+          },
+          {
+            "axis_xy_mm": [
+              29.95,
+              -23.5
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                27.65,
+                -25.8,
+                0.0,
+                32.25,
+                -21.2,
+                5.1
+              ]
+            ]
+          }
+        ],
+        "meshes": {
+          "tap-adapter-top-fan-carrier-PROTOTYPE-assembly.stl": {
+            "triangles": 6894,
+            "vertices": 3427,
+            "edges": 10341,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 22891.036418915217,
+            "bounds_mm": [
+              -9.5,
+              -68.05,
+              -15.24906,
+              49.4,
+              29.09201,
+              28.74788
+            ],
+            "sha256": "afa6ccc375dd3b230af64be86510f6559a1ae05aac8ea8b6e109835cc2b34ade",
+            "max_bbox_difference_mm": 0.002120000000001454,
+            "surface_sample_count": 987,
+            "max_sampled_mesh_to_expected_surface_mm": 0.011666573569406877,
+            "relative_volume_difference": 0.0001503933200204163,
+            "bore_vertices": [
+              {
+                "assembly_xy_mm": [
+                  9.95,
+                  -3.5
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 168
+              },
+              {
+                "assembly_xy_mm": [
+                  29.95,
+                  -3.5
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 168
+              },
+              {
+                "assembly_xy_mm": [
+                  29.95,
+                  -23.5
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 168
+              }
+            ]
+          },
+          "tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports.stl": {
+            "triangles": 6894,
+            "vertices": 3427,
+            "edges": 10341,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 22891.0370304104,
+            "bounds_mm": [
+              0.00212,
+              0.0,
+              -0.0,
+              43.99906,
+              97.14201,
+              58.9
+            ],
+            "sha256": "ec15b2cae714926e88d44879ce55026691f06fbe6ed65f9da8f883902f3c9a99",
+            "max_bbox_difference_mm": 0.00212,
+            "surface_sample_count": 982,
+            "max_sampled_mesh_to_expected_surface_mm": 0.01166669882282314,
+            "relative_volume_difference": 0.00015042003734037183,
+            "bore_vertices": [
+              {
+                "assembly_xy_mm": [
+                  9.95,
+                  -3.5
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 168
+              },
+              {
+                "assembly_xy_mm": [
+                  29.95,
+                  -3.5
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 168
+              },
+              {
+                "assembly_xy_mm": [
+                  29.95,
+                  -23.5
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 168
+              }
+            ]
+          }
+        },
+        "passed": true
+      },
+      {
+        "file": "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.step",
+        "baseline_sha256": "1d346bce280241c372bf5dda0dd8eaabb7f643be4df109057d50e8eb82130b0c",
+        "sha256": "eb48ef41ae68ea793fde9aa767dcac5f7fdcee0fd80ad5ff85c59121df94edb3",
+        "valid_single_closed_solid": true,
+        "volume_mm3": 49004.58998859069,
+        "material_removed_mm3": 12.435994519211818,
+        "boolean_comparison": {
+          "status": "passed",
+          "directions": [
+            {
+              "direction": "actual_minus_expected",
+              "valid_result": true,
+              "volume_mm3": 0.0
+            },
+            {
+              "direction": "expected_minus_actual",
+              "valid_result": true,
+              "volume_mm3": 0.0
+            }
+          ]
+        },
+        "expected_volume_mm3": 49004.58998859067,
+        "volume_difference_from_expected_mm3": 2.1827872842550278e-11,
+        "face_correspondence": {
+          "raw_face_counts_actual_expected": [
+            347,
+            350
+          ],
+          "canonicalization": "UnifySameDomain on both shapes; original all-face surface checks retained",
+          "matched_faces": 255,
+          "max_face_area_difference_mm2": 3.197442310920451e-14,
+          "max_face_centroid_distance_mm": 7.105427357601002e-15,
+          "every_face_type_matches": true
+        },
+        "solid_classification": {
+          "grid_samples": 125,
+          "bore_region_samples": 288,
+          "mismatches": 0
+        },
+        "max_bbox_change_mm": 0.0,
+        "surface_comparison": [
+          {
+            "faces": 347,
+            "faces_with_interior_sample": 347,
+            "points": 1892,
+            "direction": "new_to_expected",
+            "max_distance_mm": 1.5888218580782548e-14
+          },
+          {
+            "faces": 350,
+            "faces_with_interior_sample": 350,
+            "points": 1901,
+            "direction": "expected_to_new",
+            "max_distance_mm": 1.5888218580782548e-14
+          }
+        ],
+        "cylindrical_seats": [
+          {
+            "axis_xy_mm": [
+              31,
+              -24
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                28.7,
+                -26.3,
+                -5.5,
+                33.3,
+                -21.7,
+                0.3
+              ]
+            ]
+          },
+          {
+            "axis_xy_mm": [
+              65,
+              -16
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                62.7,
+                -18.3,
+                -5.5,
+                67.3,
+                -13.7,
+                0.3
+              ]
+            ]
+          },
+          {
+            "axis_xy_mm": [
+              99,
+              -8
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                96.7,
+                -10.3,
+                -5.5,
+                101.3,
+                -5.7,
+                0.3
+              ]
+            ]
+          }
+        ],
+        "meshes": {
+          "two-station-raised-rail-dock-prototype-print.stl": {
+            "triangles": 9486,
+            "vertices": 4709,
+            "edges": 14229,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 49006.049912951574,
+            "bounds_mm": [
+              0.0,
+              0.0,
+              0.0,
+              77.0,
+              138.3,
+              32.65339
+            ],
+            "sha256": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293",
+            "max_bbox_difference_mm": 0.00029448462200321046,
+            "surface_sample_count": 977,
+            "max_sampled_mesh_to_expected_surface_mm": 0.006498150215939766,
+            "relative_volume_difference": 2.9791584038239144e-05,
+            "bore_vertices": [
+              {
+                "assembly_xy_mm": [
+                  31,
+                  -24
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 180
+              },
+              {
+                "assembly_xy_mm": [
+                  65,
+                  -16
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 180
+              },
+              {
+                "assembly_xy_mm": [
+                  99,
+                  -8
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 180
+              }
+            ]
+          }
+        },
+        "passed": true
+      },
+      {
+        "file": "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.step",
+        "baseline_sha256": "50d871c6b554d7cf553d1f5049175c98919d3300143dac6d9ea7aa0b3342e398",
+        "sha256": "d5e64d12955a1f9760faad6acc871c55d3dc75cde19b47bc395b11d412151986",
+        "valid_single_closed_solid": true,
+        "volume_mm3": 3552.558952443814,
+        "material_removed_mm3": 8.290663012823188,
+        "boolean_comparison": {
+          "status": "passed",
+          "directions": [
+            {
+              "direction": "actual_minus_expected",
+              "valid_result": true,
+              "volume_mm3": 0.0
+            },
+            {
+              "direction": "expected_minus_actual",
+              "valid_result": true,
+              "volume_mm3": 0.0
+            }
+          ]
+        },
+        "expected_volume_mm3": 3552.5589524438155,
+        "volume_difference_from_expected_mm3": 1.3642420526593924e-12,
+        "face_correspondence": {
+          "raw_face_counts_actual_expected": [
+            68,
+            70
+          ],
+          "canonicalization": "UnifySameDomain on both shapes; original all-face surface checks retained",
+          "matched_faces": 40,
+          "max_face_area_difference_mm2": 3.197442310920451e-14,
+          "max_face_centroid_distance_mm": 1.3877787807814457e-17,
+          "every_face_type_matches": true
+        },
+        "solid_classification": {
+          "grid_samples": 125,
+          "bore_region_samples": 192,
+          "mismatches": 0
+        },
+        "max_bbox_change_mm": 0.0,
+        "surface_comparison": [
+          {
+            "faces": 68,
+            "faces_with_interior_sample": 68,
+            "points": 328,
+            "direction": "new_to_expected",
+            "max_distance_mm": 3.5566146649215975e-15
+          },
+          {
+            "faces": 70,
+            "faces_with_interior_sample": 70,
+            "points": 334,
+            "direction": "expected_to_new",
+            "max_distance_mm": 3.5566146649215975e-15
+          }
+        ],
+        "cylindrical_seats": [
+          {
+            "axis_xy_mm": [
+              31,
+              -24
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                28.7,
+                -26.3,
+                -5.5,
+                33.3,
+                -21.7,
+                0.3
+              ]
+            ]
+          },
+          {
+            "axis_xy_mm": [
+              65,
+              -16
+            ],
+            "diameter_mm": 4.6,
+            "face_bounds_mm": [
+              [
+                62.7,
+                -18.3,
+                -5.5,
+                67.3,
+                -13.7,
+                0.3
+              ]
+            ]
+          }
+        ],
+        "meshes": {
+          "2510-cage-fit-coupon-print.stl": {
+            "triangles": 1978,
+            "vertices": 989,
+            "edges": 2967,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 3553.119606691349,
+            "bounds_mm": [
+              0.0,
+              0.0,
+              0.0,
+              42.0,
+              29.0,
+              11.8
+            ],
+            "sha256": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae",
+            "max_bbox_difference_mm": 0.0,
+            "surface_sample_count": 913,
+            "max_sampled_mesh_to_expected_surface_mm": 0.006498413983988872,
+            "relative_volume_difference": 0.00015781701445069887,
+            "bore_vertices": [
+              {
+                "assembly_xy_mm": [
+                  31,
+                  -24
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 180
+              },
+              {
+                "assembly_xy_mm": [
+                  65,
+                  -16
+                ],
+                "radius_mm": 2.3,
+                "vertices_on_radius": 180
+              }
+            ]
+          }
+        },
+        "passed": true
+      }
+    ]
+  },
+  "active_stl_copies": {
+    "stl/p5-backplate-two-inserts-through-bolt-print-flat.stl": {
+      "source": "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt-print-flat.stl",
+      "sha256": "9cae8285f245bea0024f529e1ceba618169390d30fde42ac2ad0347cbd047c98"
+    },
+    "stl/tap-adapter-top-fan-carrier-PROTOTYPE.stl": {
+      "source": "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports.stl",
+      "sha256": "ec15b2cae714926e88d44879ce55026691f06fbe6ed65f9da8f883902f3c9a99"
+    },
+    "stl/two-station-dock.stl": {
+      "source": "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype-print.stl",
+      "sha256": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293"
+    },
+    "stl/coupons/2510-cage-fit-coupon.stl": {
+      "source": "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon-print.stl",
+      "sha256": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+    }
+  },
+  "changed_model_and_export_sha256": {
+    "m3dp/cad/printed-6.11/CxChanger6_11IntegralPillars.FCStd": "aa0fb03d31cedc386572cd22c98274fcc9407ed7011e81c33726a0c9b1f30bc0",
+    "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt.step": "25fd0c1d34b69937af60434e572c0207b0659b4bf1ee6f00b6cd7e0bcc41f773",
+    "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt-assembly.stl": "c414869710c48e047f803127a3a17566c46976b5e005786aef5f5a9c037c9442",
+    "m3dp/cad/printed-6.11/p5-backplate-two-inserts-through-bolt-print-flat.stl": "9cae8285f245bea0024f529e1ceba618169390d30fde42ac2ad0347cbd047c98",
+    "m3dp/cad/printed-6.11/voron-integration/tap/CxChangerTopTapPrototype.FCStd": "e7841a2cb19acd9a9be14b37b2fac59fa5abad96f245b059e090bd76cce615a4",
+    "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE.step": "b59a51569bb9c465418a831b8660eb79bc436629e59c29233882a46935ecd17b",
+    "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE-assembly.stl": "afa6ccc375dd3b230af64be86510f6559a1ae05aac8ea8b6e109835cc2b34ade",
+    "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports.stl": "ec15b2cae714926e88d44879ce55026691f06fbe6ed65f9da8f883902f3c9a99",
+    "m3dp/cad/printed-6.11/voron-integration/tap/tap-adapter-top-fan-carrier-PROTOTYPE-native.brep": "8ec5fc46b3b3d27c372b85d220ca07bb0dd29e5a98f9844bc895a702e003d6f2",
+    "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.FCStd": "cd0244fedfe9b7d2976de9b6597233affbd115a05f4f9a663de2669de1de1959",
+    "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.step": "eb48ef41ae68ea793fde9aa767dcac5f7fdcee0fd80ad5ff85c59121df94edb3",
+    "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype-print.stl": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293",
+    "m3dp/cad/printed-6.11/voron-integration/dock/two-station-raised-rail-dock-prototype.brep": "dd062057f9b7954bf5804acf2e7295c755bf6d54a03e8d7789ff25866f6cc636",
+    "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.FCStd": "46b983dee904bab8b5fd66d60559782dee0dac7be29c1a882b2d692c88895d49",
+    "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.step": "d5e64d12955a1f9760faad6acc871c55d3dc75cde19b47bc395b11d412151986",
+    "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon-print.stl": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae",
+    "m3dp/cad/printed-6.11/voron-integration/dock/2510-cage-fit-coupon.brep": "ba8335c97bb47c7bd5d23a5cba2b716c625d40dd4c35d3a6f6146fc7d79dda18",
+    "stl/p5-backplate-two-inserts-through-bolt-print-flat.stl": "9cae8285f245bea0024f529e1ceba618169390d30fde42ac2ad0347cbd047c98",
+    "stl/tap-adapter-top-fan-carrier-PROTOTYPE.stl": "ec15b2cae714926e88d44879ce55026691f06fbe6ed65f9da8f883902f3c9a99",
+    "stl/two-station-dock.stl": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293",
+    "stl/coupons/2510-cage-fit-coupon.stl": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+  },
+  "next_print": {
+    "file": "stl/coupons/chaoticlab-v2-interface-fit-gauge.stl",
+    "quantity": 1,
+    "sha256": "990e0c4c44dd4344a6c85be452009c3f09f24bb9db5127b7b8291481df157682"
+  },
+  "historical_checks": "Affected 4.5 mm rows are retained as prior_result with a superseded marker. Unchanged export receipts remain applicable."
+}

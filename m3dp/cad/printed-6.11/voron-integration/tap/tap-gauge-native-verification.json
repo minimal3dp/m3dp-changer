@@ -1,0 +1,12 @@
+{
+  "reopened_valid_single_solid": true,
+  "editable_bore_propagates_and_restores": true,
+  "native_volume_mm3": 1996.3758175532996,
+  "step_volume_mm3": 1996.3758175528478,
+  "dimensions_mm": [
+    43.073344386183884,
+    58.5554937480718,
+    2.0
+  ],
+  "purpose": "Nonstructural fit gauge; not a load-bearing TAP adapter."
+}

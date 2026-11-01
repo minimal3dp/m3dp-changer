@@ -1,0 +1,59 @@
+{
+  "duct_sha256": "9cbd292cb9c38839e38a553398bbadb7e5c7dd3708a95d6893dab87f59628763",
+  "air_valid": true,
+  "method": "diagnostic cap fuses use coplanar-face refinement and1e-6mm Boolean tolerance; original duct unchanged; raw exact cap operations gave invalid overlapping air partitions",
+  "temporary_caps": "onefaninlet+twooriginaljetouterrims,0.5mmjetcapthickness",
+  "air_solid_volumes": [
+    525382.477750077,
+    35354.76125692739
+  ],
+  "all_air_solids_positive": true,
+  "fan_seed_component": [
+    1
+  ],
+  "original_jet_areas": [
+    {
+      "area": [
+        27.140636043377032
+      ],
+      "bbox": [
+        27.81602530378426,
+        51.23589828486223,
+        -24.00000010000003,
+        29.81602550378443,
+        54.700000099999905,
+        -7.999999900000028
+      ]
+    },
+    {
+      "area": [
+        27.14226031665986
+      ],
+      "bbox": [
+        10.083974496215665,
+        51.23589828486277,
+        -24.00000010000001,
+        12.08397469621566,
+        54.70000010000067,
+        -7.999999900000005
+      ]
+    }
+  ],
+  "cavity_bbox": [
+    0.019019476535860728,
+    -85.97876855553098,
+    -22.999183931115468,
+    67.5000001,
+    53.70880638118859,
+    23.75084577805912
+  ],
+  "points": {
+    "neck": true,
+    "side_port": true,
+    "original_plenum": true,
+    "left_jet": true,
+    "right_jet": true
+  },
+  "enclosed": true,
+  "pass": true
+}

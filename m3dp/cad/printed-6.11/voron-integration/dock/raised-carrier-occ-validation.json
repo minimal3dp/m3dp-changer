@@ -1,0 +1,100 @@
+[
+  {
+    "name": "two-station-raised-rail-dock-prototype",
+    "status": "superseded_for_4p6",
+    "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+    "prior_result": {
+      "name": "two-station-raised-rail-dock-prototype",
+      "valid": true,
+      "solids": 1,
+      "volume": 49017.02598310989,
+      "bbox": [
+        26.0,
+        -50.3,
+        -11.5,
+        103.0,
+        88.0,
+        21.153684484622
+      ],
+      "rail_overlap_mm3": 0.0,
+      "source_material_removed_mm3": 0.0,
+      "latch_pin_region_added_mm3": 0.0,
+      "next_carrier_overlap_mm3": 0.0
+    }
+  },
+  {
+    "name": "fan-retainer-left",
+    "valid": true,
+    "solids": 1,
+    "volume": 134.25687695423798,
+    "bbox": [
+      27.0,
+      -29.0,
+      -0.5,
+      36.5,
+      -19.0,
+      1.5
+    ]
+  },
+  {
+    "name": "fan-retainer-middle",
+    "valid": true,
+    "solids": 1,
+    "volume": 516.2568769542381,
+    "bbox": [
+      59.5,
+      -29.0,
+      -0.5,
+      70.5,
+      -3.0,
+      1.5
+    ]
+  },
+  {
+    "name": "fan-retainer-right",
+    "valid": true,
+    "solids": 1,
+    "volume": 134.25687695423804,
+    "bbox": [
+      93.5,
+      -13.0,
+      -0.5,
+      103.0,
+      -3.0,
+      1.5
+    ]
+  },
+  {
+    "name": "2510-cage-fit-coupon",
+    "status": "superseded_for_4p6",
+    "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+    "prior_result": {
+      "name": "2510-cage-fit-coupon",
+      "valid": true,
+      "solids": 1,
+      "volume": 3560.8496154566374,
+      "bbox": [
+        27.0,
+        -30.5,
+        -11.5,
+        69.0,
+        -1.5,
+        0.30000000000000004
+      ]
+    }
+  },
+  {
+    "name": "raised-2020-saddle-fit-coupon",
+    "valid": true,
+    "solids": 1,
+    "volume": 4349.222391693373,
+    "bbox": [
+      0.0,
+      61.85,
+      -11.5,
+      24.0,
+      88.0,
+      11.0
+    ]
+  }
+]

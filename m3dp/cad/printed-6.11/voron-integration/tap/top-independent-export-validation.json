@@ -1,0 +1,123 @@
+[
+  {
+    "part": "tap-adapter-top-fan-carrier-PROTOTYPE",
+    "status": "superseded_for_4p6",
+    "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+    "prior_result": {
+      "part": "tap-adapter-top-fan-carrier-PROTOTYPE",
+      "valid_single_solid": true,
+      "step_volume_mm3": 22898.529376253508,
+      "step_bounds_mm": [
+        -9.5,
+        -68.05,
+        -15.25,
+        49.4,
+        29.09342,
+        28.75
+      ],
+      "step_sha256": "a2310ee3bf1c18479e98a829f21e3622c8ab505bbcdaff524a6ed91de59bcf05",
+      "meshes": [
+        {
+          "file": "tap-adapter-top-fan-carrier-PROTOTYPE-assembly.stl",
+          "sha256": "297c3f027734cd329a05be4de420f1b7a560a984539400e03e2249df4adc3f2b",
+          "checks": {
+            "triangles": 6894,
+            "vertices": 3427,
+            "edges": 10341,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 22901.961305534554,
+            "bounds_mm": [
+              -9.5,
+              -68.05,
+              -15.24906,
+              49.4,
+              29.09201,
+              28.74788
+            ]
+          }
+        },
+        {
+          "file": "tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports.stl",
+          "sha256": "c7089a48e64bb4ce14f9f3980fe29061ee6f1302d8c7e991e18acc772561923a",
+          "checks": {
+            "triangles": 6894,
+            "vertices": 3427,
+            "edges": 10341,
+            "connected_components": 1,
+            "watertight": true,
+            "consistent_winding": true,
+            "signed_volume_mm3": 22901.961921132068,
+            "bounds_mm": [
+              0.00212,
+              0.0,
+              -0.0,
+              43.99906,
+              97.14201,
+              58.9
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "part": "tap-top-fan-duct-PROTOTYPE",
+    "valid_single_solid": true,
+    "step_volume_mm3": 16100.730400448945,
+    "step_bounds_mm": [
+      -1.8400001,
+      -87.2500001,
+      -24.0000001,
+      68.7000001,
+      54.700000100000004,
+      25.00000010000898
+    ],
+    "step_sha256": "75df4e7feb0fdbe771250ba251f82c589fe81f2975d0de45f938eeaa80ba62dc",
+    "meshes": [
+      {
+        "file": "tap-top-fan-duct-PROTOTYPE-assembly.stl",
+        "sha256": "338c410cc88e81277c25031b96007a0693333f6cc6a1a91b981c9e4f84aac3d6",
+        "checks": {
+          "triangles": 28160,
+          "vertices": 14074,
+          "edges": 42240,
+          "connected_components": 1,
+          "watertight": true,
+          "consistent_winding": true,
+          "signed_volume_mm3": 16077.549218866303,
+          "bounds_mm": [
+            -1.83997,
+            -87.25,
+            -24.0,
+            68.7,
+            54.7,
+            25.0
+          ]
+        }
+      },
+      {
+        "file": "tap-top-fan-duct-PROTOTYPE-print-with-external-supports.stl",
+        "sha256": "29b16af664648ec1a25ae491f59f149e16eb7af7611832bfb69814e7d2d5b3a3",
+        "checks": {
+          "triangles": 28192,
+          "vertices": 14090,
+          "edges": 42288,
+          "connected_components": 1,
+          "watertight": true,
+          "consistent_winding": true,
+          "signed_volume_mm3": 16077.437095837498,
+          "bounds_mm": [
+            0.0,
+            0.0,
+            0.0,
+            49.0,
+            141.95,
+            70.53996
+          ]
+        }
+      }
+    ]
+  }
+]

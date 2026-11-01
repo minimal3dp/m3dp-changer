@@ -1,0 +1,395 @@
+{
+  "date": "2026-10-26",
+  "status": "digital_checks_passed_fit_prototype",
+  "physical_qualification": false,
+  "new_exports": [
+    {
+      "name": "detector/tool-detector-mount",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        32.449601213279955,
+        -64.29711563067247,
+        -4.000000000000012,
+        47.874755599894,
+        -39.342997789256366,
+        5.000000000000004
+      ],
+      "step_volume_mm3": 922.9211078839677,
+      "mesh": {
+        "triangles": 1130,
+        "vertices": 561,
+        "edges": 1695,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 923.5291439991092,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          0.0,
+          15.42515,
+          24.95412,
+          9.0
+        ]
+      },
+      "stl_sha256": "03b1a2969901a0657a0cb9b17615a72b19bf5f6e0c21bd9738a6ff73f38d5394"
+    },
+    {
+      "name": "rail/front-gantry-fit-coupon",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        24.977387,
+        28.220982000000003,
+        26.00000000000761
+      ],
+      "step_volume_mm3": 11169.46861774122,
+      "mesh": {
+        "triangles": 784,
+        "vertices": 388,
+        "edges": 1176,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 11170.394116694108,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          0.0,
+          24.97739,
+          28.22098,
+          26.0
+        ]
+      },
+      "stl_sha256": "79568ec0b11f71445bef8e2a3e5f94d1c925d2297e84a6aa2f103337ff8b14b0"
+    },
+    {
+      "name": "rail/front-rail-support-left",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        74.977205,
+        49.750984,
+        44.513413
+      ],
+      "step_volume_mm3": 23831.865861947004,
+      "mesh": {
+        "triangles": 1542,
+        "vertices": 763,
+        "edges": 2313,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 23833.023351444128,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          0.0,
+          74.9772,
+          49.75098,
+          44.51341
+        ]
+      },
+      "stl_sha256": "9401acc68fc31d5e50b2ce04b7b7933a5b2af02fa36a20bc783d3d445d7d215c"
+    },
+    {
+      "name": "rail/front-rail-support-right",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        74.977387,
+        49.750984,
+        44.409428
+      ],
+      "step_volume_mm3": 23817.571125041286,
+      "mesh": {
+        "triangles": 1542,
+        "vertices": 763,
+        "edges": 2313,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 23818.728942819955,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          0.0,
+          74.97739,
+          49.75098,
+          44.40943
+        ]
+      },
+      "stl_sha256": "c4aa76a9a703f1049d099d45cf5fc85850276f58c1f4bdc72bf1c864d3442af9"
+    },
+    {
+      "name": "dock-fans/two-station-raised-rail-dock-prototype=dock-fans/two-station-raised-rail-dock-prototype-print",
+      "status": "superseded_for_4p6",
+      "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+      "prior_result": {
+        "name": "dock-fans/two-station-raised-rail-dock-prototype=dock-fans/two-station-raised-rail-dock-prototype-print",
+        "valid_single_solid": true,
+        "step_bounds_mm": [
+          26.0,
+          -50.3,
+          -11.5,
+          103.0,
+          88.0,
+          21.153684484622
+        ],
+        "step_volume_mm3": 49017.0259831099,
+        "mesh": {
+          "triangles": 9486,
+          "vertices": 4709,
+          "edges": 14229,
+          "connected_components": 1,
+          "watertight": true,
+          "consistent_winding": true,
+          "signed_volume_mm3": 49018.4757910141,
+          "bounds_mm": [
+            0.0,
+            0.0,
+            0.0,
+            77.0,
+            138.3,
+            32.65339
+          ]
+        },
+        "stl_sha256": "77dc0034cce037609b00a48fc02bfff344ef08d984a6db6f78f5591700ae227f"
+      }
+    },
+    {
+      "name": "dock-fans/fan-retainer-left=dock-fans/fan-retainer-left-print",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        27.0,
+        -29.0,
+        -0.5,
+        36.5,
+        -19.0,
+        1.5
+      ],
+      "step_volume_mm3": 134.25687695423798,
+      "mesh": {
+        "triangles": 392,
+        "vertices": 196,
+        "edges": 588,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 134.2649868149093,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          -0.0,
+          9.5,
+          10.0,
+          2.0
+        ]
+      },
+      "stl_sha256": "fba70b1efb13df328f168437b920a175c8a6fe444896ee39810709bea84d7d0f"
+    },
+    {
+      "name": "dock-fans/fan-retainer-middle=dock-fans/fan-retainer-middle-print",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        59.5,
+        -29.0,
+        -0.5,
+        70.5,
+        -3.0,
+        1.5
+      ],
+      "step_volume_mm3": 516.2568769542381,
+      "mesh": {
+        "triangles": 392,
+        "vertices": 196,
+        "edges": 588,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 516.2649811701829,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          -0.0,
+          11.0,
+          26.0,
+          2.0
+        ]
+      },
+      "stl_sha256": "dded61ab5aca82b32d2652925f765c71ff68f25a8e79e4bffc56dbb896e3520f"
+    },
+    {
+      "name": "dock-fans/fan-retainer-right=dock-fans/fan-retainer-right-print",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        93.5,
+        -13.0,
+        -0.5,
+        103.0,
+        -3.0,
+        1.5
+      ],
+      "step_volume_mm3": 134.25687695423815,
+      "mesh": {
+        "triangles": 392,
+        "vertices": 196,
+        "edges": 588,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 134.2649840827156,
+        "bounds_mm": [
+          0.0,
+          -0.0,
+          -0.0,
+          9.5,
+          10.0,
+          2.0
+        ]
+      },
+      "stl_sha256": "427634f6939e98de44816e4b5f3ef8906aa4b2666204fff78657d9c73083920d"
+    },
+    {
+      "name": "dock-fans/2510-cage-fit-coupon=dock-fans/2510-cage-fit-coupon-print",
+      "status": "superseded_for_4p6",
+      "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+      "prior_result": {
+        "name": "dock-fans/2510-cage-fit-coupon=dock-fans/2510-cage-fit-coupon-print",
+        "valid_single_solid": true,
+        "step_bounds_mm": [
+          27.0,
+          -30.5,
+          -11.5,
+          69.0,
+          -1.5,
+          0.30000000000000004
+        ],
+        "step_volume_mm3": 3560.8496154566374,
+        "mesh": {
+          "triangles": 1978,
+          "vertices": 989,
+          "edges": 2967,
+          "connected_components": 1,
+          "watertight": true,
+          "consistent_winding": true,
+          "signed_volume_mm3": 3561.4035706314808,
+          "bounds_mm": [
+            0.0,
+            0.0,
+            0.0,
+            42.0,
+            29.0,
+            11.8
+          ]
+        },
+        "stl_sha256": "4e68929029c8bc9b8293a65d7e6bb630ae6aed543b2e54436a752b14e3f4ca8f"
+      }
+    },
+    {
+      "name": "dock-fans/raised-2020-saddle-fit-coupon=dock-fans/raised-2020-saddle-fit-coupon-print",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        0.0,
+        61.85,
+        -11.5,
+        24.0,
+        88.0,
+        11.0
+      ],
+      "step_volume_mm3": 4349.222391693373,
+      "mesh": {
+        "triangles": 408,
+        "vertices": 204,
+        "edges": 612,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 4349.244671773181,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          -0.0,
+          22.5,
+          26.15,
+          24.0
+        ]
+      },
+      "stl_sha256": "6f11768add8773325f30cb7ec4cd090b81100f6105859c015cd1490725247c0a"
+    },
+    {
+      "name": "tap/tap-adapter-top-fan-carrier-PROTOTYPE=tap/tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports",
+      "status": "superseded_for_4p6",
+      "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+      "prior_result": {
+        "name": "tap/tap-adapter-top-fan-carrier-PROTOTYPE=tap/tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports",
+        "valid_single_solid": true,
+        "step_bounds_mm": [
+          -9.5,
+          -68.05,
+          -15.25,
+          49.4,
+          29.09342,
+          28.75
+        ],
+        "step_volume_mm3": 22898.529376253508,
+        "mesh": {
+          "triangles": 6894,
+          "vertices": 3427,
+          "edges": 10341,
+          "connected_components": 1,
+          "watertight": true,
+          "consistent_winding": true,
+          "signed_volume_mm3": 22901.961921132068,
+          "bounds_mm": [
+            0.00212,
+            0.0,
+            -0.0,
+            43.99906,
+            97.14201,
+            58.9
+          ]
+        },
+        "stl_sha256": "c7089a48e64bb4ce14f9f3980fe29061ee6f1302d8c7e991e18acc772561923a"
+      }
+    },
+    {
+      "name": "tap/tap-top-fan-duct-PROTOTYPE=tap/tap-top-fan-duct-PROTOTYPE-print-with-external-supports",
+      "valid_single_solid": true,
+      "step_bounds_mm": [
+        -1.8400001,
+        -87.2500001,
+        -24.0000001,
+        68.7000001,
+        54.700000100000004,
+        25.00000010000898
+      ],
+      "step_volume_mm3": 16100.730400448945,
+      "mesh": {
+        "triangles": 28192,
+        "vertices": 14090,
+        "edges": 42288,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 16077.437095837498,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          0.0,
+          49.0,
+          141.95,
+          70.53996
+        ]
+      },
+      "stl_sha256": "29b16af664648ec1a25ae491f59f149e16eb7af7611832bfb69814e7d2d5b3a3"
+    }
+  ],
+  "insert_bore_revision_receipt": "insert-bore-4p6-validation.json"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "basename": "p2-spring-support-plate",
+    "quantity_for_six_tools": 1,
+    "valid": true,
+    "closed": true,
+    "solids": 1,
+    "volume_mm3": 266.28750384340356,
+    "facets": 1304,
+    "orientation": "Broad flat source face placed on bed; inspect overhangs and bearing/pin fits in slicer.",
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      8.0,
+      16.0,
+      3.0
+    ]
+  },
+  {
+    "basename": "p8-printed-bearing-arm",
+    "quantity_for_six_tools": 1,
+    "valid": true,
+    "closed": true,
+    "solids": 1,
+    "volume_mm3": 3125.9806727804994,
+    "facets": 3924,
+    "orientation": "Broad flat source face placed on bed; inspect overhangs and bearing/pin fits in slicer.",
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      13.586456996963213,
+      41.775934705222326,
+      19.5
+    ]
+  },
+  {
+    "basename": "hotend-holder",
+    "quantity_for_six_tools": 6,
+    "valid": true,
+    "closed": true,
+    "solids": 1,
+    "volume_mm3": 6582.6942524024,
+    "facets": 8300,
+    "orientation": "Broad coplanar rear faces at source Y=13.68 placed on bed; inspect supports and pocket quality in slicer.",
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      21.0,
+      62.2,
+      18.180000000000007
+    ]
+  },
+  {
+    "basename": "4020-part-cooling-duct",
+    "quantity_for_six_tools": 1,
+    "valid": true,
+    "closed": true,
+    "solids": 1,
+    "volume_mm3": 8439.601017520185,
+    "facets": 20710,
+    "orientation": "SOURCE ORIENTATION, Z lowered to bed only. Print orientation/supports still need slicer review; thin source membrane retained.",
+    "print_bounds_mm": [
+      -0.0027762385612912777,
+      0.0,
+      0.0,
+      41.85741038381334,
+      49.0,
+      54.7
+    ]
+  }
+]

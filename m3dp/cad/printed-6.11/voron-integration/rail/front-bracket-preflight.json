@@ -1,0 +1,74 @@
+[
+  {
+    "side": "left",
+    "valid": true,
+    "volume_mm3": 23831.865861947146,
+    "bbox_mm": [
+      -250.977205,
+      -488.530002,
+      20.400017,
+      -176.0,
+      -438.779018,
+      64.91343
+    ],
+    "overlaps_mm3": {
+      "head_lower_conservative_full_xy_sweep": 0.0,
+      "head_upper_conservative_full_xy_sweep": 0.0,
+      "new_rail_exterior": 0.0,
+      "vertical_z_belt_full_height": 0.0,
+      "stock_idler_excluding_replaced_M5_screws": 0.0,
+      "xy_joint_front_sweep_max": 0,
+      "new_button_heads_and_washers_to_xy_joint_sweep_max": 0
+    },
+    "worst_joint_forward_translation_mm": null,
+    "conservative_continuous_joint_solid_bbox_sweep_overlap_mm3": 0,
+    "replacement_screw_axes": [
+      [
+        -244.977205,
+        -459.779018,
+        20.400017
+      ],
+      [
+        -244.977205,
+        -444.279018,
+        20.400017
+      ]
+    ]
+  },
+  {
+    "side": "right",
+    "valid": true,
+    "volume_mm3": 23817.571125041763,
+    "bbox_mm": [
+      176.0,
+      -488.530002,
+      20.504002,
+      250.977387,
+      -438.779018,
+      64.91343
+    ],
+    "overlaps_mm3": {
+      "head_lower_conservative_full_xy_sweep": 0.0,
+      "head_upper_conservative_full_xy_sweep": 0.0,
+      "new_rail_exterior": 0.0,
+      "vertical_z_belt_full_height": 0.0,
+      "stock_idler_excluding_replaced_M5_screws": 0.0,
+      "xy_joint_front_sweep_max": 0,
+      "new_button_heads_and_washers_to_xy_joint_sweep_max": 0
+    },
+    "worst_joint_forward_translation_mm": null,
+    "conservative_continuous_joint_solid_bbox_sweep_overlap_mm3": 0,
+    "replacement_screw_axes": [
+      [
+        244.977387,
+        -459.779018,
+        20.504002
+      ],
+      [
+        244.977387,
+        -444.279018,
+        20.504002
+      ]
+    ]
+  }
+]

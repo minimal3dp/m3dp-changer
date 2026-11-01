@@ -1,0 +1,143 @@
+{
+  "status": "superseded_for_4p6",
+  "superseded_by": "../../insert-bore-4p6-validation.json",
+  "prior_result": {
+    "status": "passed",
+    "physical_qualification": "Not performed; integrated fit prototype",
+    "parts": {
+      "adapter_carrier": {
+        "valid": true,
+        "closed": true,
+        "solids": 1,
+        "volume_mm3": 22898.529376253733,
+        "preflight_volume_relative_tolerance": 0.0001,
+        "preflight_default_volume_mm3": 22898.529376253653,
+        "preflight_bidirectional_sampled_surface_distance_mm": 9.835249906529545e-13,
+        "area_mm2": 10861.217897417026,
+        "STEP_sha256": "a2310ee3bf1c18479e98a829f21e3622c8ab505bbcdaff524a6ed91de59bcf05",
+        "volume_difference_mm3": 2.255546860396862e-10,
+        "area_difference_mm2": 9.822542779147625e-11,
+        "center_difference_mm": 1.5899386059784612e-13,
+        "bidirectional_sampled_surface_distance_mm": 8.758479818791277e-12,
+        "roundtrip_tolerances": {
+          "volume_mm3": 0.001,
+          "area_mm2": 0.001,
+          "center_mm": 1e-05,
+          "surface_mm": 0.0001
+        },
+        "meshes": {
+          "tap-adapter-top-fan-carrier-PROTOTYPE-assembly.stl": {
+            "sha256": "297c3f027734cd329a05be4de420f1b7a560a984539400e03e2249df4adc3f2b",
+            "solid": true,
+            "facets": 6894,
+            "points": 3427
+          },
+          "tap-adapter-top-fan-carrier-PROTOTYPE-print-with-external-supports.stl": {
+            "sha256": "c7089a48e64bb4ce14f9f3980fe29061ee6f1302d8c7e991e18acc772561923a",
+            "solid": true,
+            "facets": 6894,
+            "points": 3427
+          }
+        }
+      },
+      "duct": {
+        "valid": true,
+        "closed": true,
+        "solids": 1,
+        "volume_mm3": 16101.662040783527,
+        "preflight_volume_relative_tolerance": 0.0001,
+        "preflight_default_volume_mm3": 16101.50876984613,
+        "preflight_bidirectional_sampled_surface_distance_mm": 4.4162078822954726e-09,
+        "area_mm2": 27614.56135162789,
+        "STEP_sha256": "75df4e7feb0fdbe771250ba251f82c589fe81f2975d0de45f938eeaa80ba62dc",
+        "volume_difference_mm3": 0.9316403345819708,
+        "area_difference_mm2": 0.12315103417859063,
+        "center_difference_mm": 0.0031629028422519782,
+        "bidirectional_sampled_surface_distance_mm": 8.924699616033719e-12,
+        "roundtrip_tolerances": {
+          "volume_mm3": 1.0,
+          "area_mm2": 0.15,
+          "center_mm": 0.004,
+          "surface_mm": 0.0001
+        },
+        "meshes": {
+          "tap-top-fan-duct-PROTOTYPE-assembly.stl": {
+            "sha256": "338c410cc88e81277c25031b96007a0693333f6cc6a1a91b981c9e4f84aac3d6",
+            "solid": true,
+            "facets": 28160,
+            "points": 14074
+          },
+          "tap-top-fan-duct-PROTOTYPE-print-with-external-supports.stl": {
+            "sha256": "29b16af664648ec1a25ae491f59f149e16eb7af7611832bfb69814e7d2d5b3a3",
+            "solid": true,
+            "facets": 28192,
+            "points": 14090
+          }
+        }
+      }
+    },
+    "native_edit_propagates_and_restores": true,
+    "airway": {
+      "independent_pythonOCC": true,
+      "receipt_sha256": "e705a17084a5667ebd56a79d2d484d53c5dc04b11de58937e0afe387644d3d00",
+      "method": "OCC coplanar-face refinement and1e-6mm diagnostic cap fuses; original export geometry unchanged",
+      "files": {
+        "tap-top-fan-duct-PROTOTYPE-native.brep": {
+          "sha256": "5efbbb339a160aeb8bfe5ebe46e2340eb6f85d0430204cacdc56be68058bfe76",
+          "valid": true,
+          "air_solid_volumes_mm3": [
+            524690.5688418724,
+            35376.973105144825
+          ],
+          "air_solids_common_volume_mm3": 0.0,
+          "cavity_bounds_mm": [
+            0.01901947653621518,
+            -85.97876855553098,
+            -22.999183931115283,
+            67.5000001,
+            53.70880638118828,
+            23.750845778067678
+          ],
+          "enclosed": true,
+          "connected_stages": {
+            "neck": true,
+            "side_port": true,
+            "original_plenum": true,
+            "left_jet": true,
+            "right_jet": true
+          },
+          "pass": true
+        },
+        "tap-top-fan-duct-PROTOTYPE.step": {
+          "sha256": "75df4e7feb0fdbe771250ba251f82c589fe81f2975d0de45f938eeaa80ba62dc",
+          "valid": true,
+          "air_solid_volumes_mm3": [
+            524690.5686336923,
+            35378.41460543947
+          ],
+          "air_solids_common_volume_mm3": 0.0,
+          "cavity_bounds_mm": [
+            0.019019476536215187,
+            -85.97876855553078,
+            -22.99918393104746,
+            67.5000001,
+            53.70880638118829,
+            23.750845778067667
+          ],
+          "enclosed": true,
+          "connected_stages": {
+            "neck": true,
+            "side_port": true,
+            "original_plenum": true,
+            "left_jet": true,
+            "right_jet": true
+          },
+          "pass": true
+        }
+      }
+    },
+    "native_sha256": "6b20b58602ac0ea041d6aed0d4bf57ab496936667f49323796f2c965b59e1e5f",
+    "distinct_reopen_copy": "/Users/wilsonm/Documents/Codex/2026-10-25/can/work/cad-integration/tap/native-reopen-top-eci80_8j/CxChangerTopTapPrototype.FCStd",
+    "original_unchanged": true
+  }
+}

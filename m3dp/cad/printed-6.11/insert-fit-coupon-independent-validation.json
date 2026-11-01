@@ -1,0 +1,204 @@
+{
+  "native_feature_types": {
+    "Part::Cylinder": 10,
+    "Part::Cut": 5
+  },
+  "specimens": [
+    {
+      "name": "insert-coupon-4p3",
+      "valid": true,
+      "solids": 1,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore_diameter_mm": 4.3,
+      "cylinders": [
+        {
+          "radius_mm": 5.0,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        },
+        {
+          "radius_mm": 2.15,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        }
+      ],
+      "volume_mm3": 320.0890214926301,
+      "mesh": {
+        "triangles": 720,
+        "vertices": 360,
+        "edges": 1080,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 319.8290664899614,
+        "bounds_mm": [
+          1.0,
+          0.00305,
+          0.0,
+          11.0,
+          9.99695,
+          5.0
+        ]
+      },
+      "relative_mesh_volume_error": 0.0008121334541761565
+    },
+    {
+      "name": "insert-coupon-4p4",
+      "valid": true,
+      "solids": 1,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore_diameter_mm": 4.4,
+      "cylinders": [
+        {
+          "radius_mm": 5.0,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        },
+        {
+          "radius_mm": 2.2,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        }
+      ],
+      "volume_mm3": 316.6725394818512,
+      "mesh": {
+        "triangles": 720,
+        "vertices": 360,
+        "edges": 1080,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 316.4153689135599,
+        "bounds_mm": [
+          13.0,
+          0.00305,
+          0.0,
+          23.0,
+          9.99695,
+          5.0
+        ]
+      },
+      "relative_mesh_volume_error": 0.0008121025230415972
+    },
+    {
+      "name": "insert-coupon-4p5",
+      "valid": true,
+      "solids": 1,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore_diameter_mm": 4.5,
+      "cylinders": [
+        {
+          "radius_mm": 5.0,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        },
+        {
+          "radius_mm": 2.25,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        }
+      ],
+      "volume_mm3": 313.17751765473247,
+      "mesh": {
+        "triangles": 720,
+        "vertices": 360,
+        "edges": 1080,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 312.9231985132051,
+        "bounds_mm": [
+          25.0,
+          0.00305,
+          0.0,
+          35.0,
+          9.99695,
+          5.0
+        ]
+      },
+      "relative_mesh_volume_error": 0.0008120606595005474
+    },
+    {
+      "name": "insert-coupon-4p6",
+      "valid": true,
+      "solids": 1,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore_diameter_mm": 4.6,
+      "cylinders": [
+        {
+          "radius_mm": 5.0,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        },
+        {
+          "radius_mm": 2.3,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        }
+      ],
+      "volume_mm3": 309.60395601127414,
+      "mesh": {
+        "triangles": 720,
+        "vertices": 360,
+        "edges": 1080,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 309.35251170123456,
+        "bounds_mm": [
+          37.0,
+          0.00305,
+          0.0,
+          47.0,
+          9.99695,
+          5.0
+        ]
+      },
+      "relative_mesh_volume_error": 0.0008121482466794369
+    },
+    {
+      "name": "insert-coupon-4p7",
+      "valid": true,
+      "solids": 1,
+      "outside_diameter_mm": 10,
+      "height_mm": 5,
+      "through_bore_diameter_mm": 4.7,
+      "cylinders": [
+        {
+          "radius_mm": 5.0,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        },
+        {
+          "radius_mm": 2.35,
+          "z_min_mm": 0.0,
+          "z_max_mm": 5.0
+        }
+      ],
+      "volume_mm3": 305.951854551476,
+      "mesh": {
+        "triangles": 720,
+        "vertices": 360,
+        "edges": 1080,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 305.7034074466427,
+        "bounds_mm": [
+          49.0,
+          0.00305,
+          0.0,
+          59.0,
+          9.99695,
+          5.0
+        ]
+      },
+      "relative_mesh_volume_error": 0.000812046409058278
+    }
+  ],
+  "assembly_solids": 5
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "joint": "P1",
+    "bolt_tip_z": -27.1,
+    "nut_bottom_z": -25.4,
+    "protrusion_below_nut_mm": 1.7000000000000028,
+    "envelopes": {
+      "cover_pad_OD7_ID3.4_full_web": [],
+      "washer_OD7": [
+        {
+          "placed_index": 54,
+          "part_id": 216950,
+          "name": "简化盖板_简化盖板左",
+          "distance_mm": 1.0658141036401503e-14,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "nut_AF5.5_conservative_circumscribed_cylinder": [
+        {
+          "placed_index": 54,
+          "part_id": 216950,
+          "name": "简化盖板_简化盖板左",
+          "distance_mm": 0.5000000000000107,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "bolt_nominal_shaft": [
+        {
+          "placed_index": 54,
+          "part_id": 216950,
+          "name": "简化盖板_简化盖板左",
+          "distance_mm": 0.025000000003297045,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "socket_tool_OD7_length12_to_washer": [
+        {
+          "placed_index": 54,
+          "part_id": 216950,
+          "name": "简化盖板_简化盖板左",
+          "distance_mm": 0.5000000000000107,
+          "overlap_mm3": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "joint": "rear",
+    "bolt_tip_z": -30.3,
+    "nut_bottom_z": -28.4,
+    "protrusion_below_nut_mm": 1.9000000000000021,
+    "envelopes": {
+      "cover_pad_OD7_ID3.4_full_web": [
+        {
+          "placed_index": 17,
+          "part_id": 283614,
+          "name": "热端固定件",
+          "distance_mm": 0.3300000000020056,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "washer_OD7": [
+        {
+          "placed_index": 17,
+          "part_id": 283614,
+          "name": "热端固定件",
+          "distance_mm": 0.3300000000020056,
+          "overlap_mm3": 0.0
+        },
+        {
+          "placed_index": 55,
+          "part_id": 281567,
+          "name": "简化盖板_简化盖板右",
+          "distance_mm": 0.0,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "nut_AF5.5_conservative_circumscribed_cylinder": [
+        {
+          "placed_index": 17,
+          "part_id": 283614,
+          "name": "热端固定件",
+          "distance_mm": 0.8200107315429491,
+          "overlap_mm3": 0.0
+        },
+        {
+          "placed_index": 55,
+          "part_id": 281567,
+          "name": "简化盖板_简化盖板右",
+          "distance_mm": 0.49999999999999645,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "bolt_nominal_shaft": [
+        {
+          "placed_index": 55,
+          "part_id": 281567,
+          "name": "简化盖板_简化盖板右",
+          "distance_mm": 0.024999999996822453,
+          "overlap_mm3": 0.0
+        }
+      ],
+      "socket_tool_OD7_length12_to_washer": [
+        {
+          "placed_index": 17,
+          "part_id": 283614,
+          "name": "热端固定件",
+          "distance_mm": 0.5940127165893854,
+          "overlap_mm3": 0.0
+        },
+        {
+          "placed_index": 55,
+          "part_id": 281567,
+          "name": "简化盖板_简化盖板右",
+          "distance_mm": 0.49999999999999645,
+          "overlap_mm3": 0.0
+        }
+      ]
+    }
+  }
+]

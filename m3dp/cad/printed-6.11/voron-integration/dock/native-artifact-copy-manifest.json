@@ -1,0 +1,122 @@
+[
+  {
+    "file": "two-station-raised-rail-dock-prototype.FCStd",
+    "sha256": "cd0244fedfe9b7d2976de9b6597233affbd115a05f4f9a663de2669de1de1959"
+  },
+  {
+    "file": "two-station-raised-rail-dock-prototype.step",
+    "sha256": "eb48ef41ae68ea793fde9aa767dcac5f7fdcee0fd80ad5ff85c59121df94edb3"
+  },
+  {
+    "file": "two-station-raised-rail-dock-prototype-print.stl",
+    "sha256": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293"
+  },
+  {
+    "file": "two-station-raised-rail-dock-prototype-preview.png",
+    "sha256": "dea18fac6e9103c923faf18bb6e311aeb8c930ec9cdc6dcebd7d4d5eb48530c9"
+  },
+  {
+    "file": "stl/two-station-dock.stl",
+    "sha256": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293"
+  },
+  {
+    "file": "fan-retainer-left.FCStd",
+    "sha256": "01530cfc024ef7f903a9bdc51a9408e78461703d5784db243114b9d13262fec3"
+  },
+  {
+    "file": "fan-retainer-left.step",
+    "sha256": "ed4cdf60d815860329ff7e1c07dca8a4d140363e5c6d86973401a2997a0bfabe"
+  },
+  {
+    "file": "fan-retainer-left-print.stl",
+    "sha256": "fba70b1efb13df328f168437b920a175c8a6fe444896ee39810709bea84d7d0f"
+  },
+  {
+    "file": "fan-retainer-left-preview.png",
+    "sha256": "97f6d5a98d390400b804c06c3988c339562b629270d61e7e9e1522b0df89ac72"
+  },
+  {
+    "file": "stl/fan-retainer-left.stl",
+    "sha256": "fba70b1efb13df328f168437b920a175c8a6fe444896ee39810709bea84d7d0f"
+  },
+  {
+    "file": "fan-retainer-middle.FCStd",
+    "sha256": "d90a9b93a756cf7c6a0a5fff1d15da0a241814aa9f58dc032127c31cea16b59c"
+  },
+  {
+    "file": "fan-retainer-middle.step",
+    "sha256": "1205c29fa71b9ac65d5ee1594cc2c3cfd8803f1a6891678bb7e1831dd61e6b32"
+  },
+  {
+    "file": "fan-retainer-middle-print.stl",
+    "sha256": "dded61ab5aca82b32d2652925f765c71ff68f25a8e79e4bffc56dbb896e3520f"
+  },
+  {
+    "file": "fan-retainer-middle-preview.png",
+    "sha256": "6af039dc13b24e5413d6714ee43e2c5c40bd0dd91efa07221752fa4104f15fca"
+  },
+  {
+    "file": "stl/fan-retainer-middle.stl",
+    "sha256": "dded61ab5aca82b32d2652925f765c71ff68f25a8e79e4bffc56dbb896e3520f"
+  },
+  {
+    "file": "fan-retainer-right.FCStd",
+    "sha256": "71dc05fdb94db2640efd754c9d48bc73c1cba996d10ee4268a4cf3832d9e4e21"
+  },
+  {
+    "file": "fan-retainer-right.step",
+    "sha256": "8a876469fe7d3eb83bdd8e650eec8c4d1396854467e82dc8306b193896ac35c1"
+  },
+  {
+    "file": "fan-retainer-right-print.stl",
+    "sha256": "427634f6939e98de44816e4b5f3ef8906aa4b2666204fff78657d9c73083920d"
+  },
+  {
+    "file": "fan-retainer-right-preview.png",
+    "sha256": "5ac86f323876bcd66ef348f63dd0a1d25974e573d6d1089e307073c4708751f7"
+  },
+  {
+    "file": "stl/fan-retainer-right.stl",
+    "sha256": "427634f6939e98de44816e4b5f3ef8906aa4b2666204fff78657d9c73083920d"
+  },
+  {
+    "file": "2510-cage-fit-coupon.FCStd",
+    "sha256": "46b983dee904bab8b5fd66d60559782dee0dac7be29c1a882b2d692c88895d49"
+  },
+  {
+    "file": "2510-cage-fit-coupon.step",
+    "sha256": "d5e64d12955a1f9760faad6acc871c55d3dc75cde19b47bc395b11d412151986"
+  },
+  {
+    "file": "2510-cage-fit-coupon-print.stl",
+    "sha256": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+  },
+  {
+    "file": "2510-cage-fit-coupon-preview.png",
+    "sha256": "f59d38f527e954730f5c8859fda97d4275164f65ed5b3688d3cc5c7b04548af5"
+  },
+  {
+    "file": "stl/coupons/2510-cage-fit-coupon.stl",
+    "sha256": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+  },
+  {
+    "file": "raised-2020-saddle-fit-coupon.FCStd",
+    "sha256": "bbee63a6d816d107cb8db44b5751218e2b1ba8a70db5aa49be1a2d2549c91f46"
+  },
+  {
+    "file": "raised-2020-saddle-fit-coupon.step",
+    "sha256": "79772e6a0f773dab833f9fa0671ff205036429c99b7ec4a54cad2d970681a3bb"
+  },
+  {
+    "file": "raised-2020-saddle-fit-coupon-print.stl",
+    "sha256": "6f11768add8773325f30cb7ec4cd090b81100f6105859c015cd1490725247c0a"
+  },
+  {
+    "file": "raised-2020-saddle-fit-coupon-preview.png",
+    "sha256": "db8e2b0d239652e6d161c338efd9bba3d32b301c572ae87a1c702d22ad22018e"
+  },
+  {
+    "file": "stl/coupons/raised-2020-saddle-fit-coupon.stl",
+    "sha256": "6f11768add8773325f30cb7ec4cd090b81100f6105859c015cd1490725247c0a"
+  }
+]

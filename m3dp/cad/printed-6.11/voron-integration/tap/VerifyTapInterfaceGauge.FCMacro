@@ -1,0 +1,49 @@
+from pathlib import Path
+import json
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+
+HERE = Path(__file__).resolve().parent
+(HERE / 'verify-progress.txt').write_text('Opening native document\n')
+doc = App.openDocument(str(HERE / 'ChaoticlabV2InterfaceGauge.FCStd'))
+doc.recompute()
+(HERE / 'verify-progress.txt').write_text('Reopened and recomputed\n')
+final = doc.getObject('GaugeFinal')
+shape = final.Shape
+assert shape.isValid() and len(shape.Solids) == 1
+initial_volume = shape.Volume
+b = shape.BoundBox
+# FreeCAD's conservative curve bounds can exceed the exact STEP bounds.
+assert abs(b.XLength - 43.08) < 0.05
+assert abs(b.YLength - 58.557) < 0.05
+assert abs(b.ZLength - 2) < 0.05
+for i, xy in enumerate([(-15.5,12.903),(15.5,12.903),(17.54,63.46),(-17.54,63.46)]):
+    bore = doc.getObject('HoleTool%d' % i)
+    assert abs(bore.Placement.Base.x - xy[0]) < 1e-6
+    assert abs(bore.Placement.Base.y - xy[1]) < 1e-6
+    assert abs(bore.Radius.Value - 1.65) < 1e-6
+hole = doc.getObject('HoleTool3')
+hole.Radius = 1.75
+doc.recompute()
+assert final.Shape.Volume < initial_volume - 1
+hole.Radius = 1.65
+doc.recompute()
+assert abs(final.Shape.Volume - initial_volume) < 1e-5
+reference = Part.read(str(HERE / 'chaoticlab-v2-interface-fit-gauge.step'))
+assert reference.isValid() and len(reference.Solids) == 1
+assert abs(reference.Volume - initial_volume) < 1e-5
+view = Gui.activeDocument().activeView()
+(HERE / 'verify-progress.txt').write_text('Geometry and editability passed; rendering\n')
+view.viewTop()
+view.fitAll()
+view.saveImage(str(HERE / 'tap-fit-gauge-preview.png'), 1000, 1000, 'White')
+(HERE / 'tap-gauge-native-verification.json').write_text(json.dumps({
+    'reopened_valid_single_solid': True,
+    'editable_bore_propagates_and_restores': True,
+    'native_volume_mm3': initial_volume,
+    'step_volume_mm3': reference.Volume,
+    'dimensions_mm': [b.XLength, b.YLength, b.ZLength],
+    'purpose': 'Nonstructural fit gauge; not a load-bearing TAP adapter.',
+}, indent=2))
+(HERE / 'verify-progress.txt').write_text('Completed\n')

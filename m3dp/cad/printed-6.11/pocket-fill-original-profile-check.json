@@ -1,0 +1,57 @@
+{
+  "valid": true,
+  "solids": 1,
+  "volume_mm3": 1949.3742706849114,
+  "added_material_mm3": 0.34642648945649296,
+  "mesh": {
+    "triangles": 4192,
+    "nonmanifold_edges": 0
+  },
+  "neighbor_checks": [
+    {
+      "placement": 2,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 0.8250000000006095
+    },
+    {
+      "placement": 3,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 0.8328684611895857
+    },
+    {
+      "placement": 14,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 6.312173430302568
+    },
+    {
+      "placement": 17,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 1.1245471749955522
+    },
+    {
+      "placement": 54,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 5.700877125495558
+    },
+    {
+      "placement": 55,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 11.99999999999999
+    },
+    {
+      "placement": 62,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 2.511795467349094
+    },
+    {
+      "placement": 72,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 2.7896758011343907
+    },
+    {
+      "placement": 76,
+      "added_overlap_mm3": 0.0,
+      "added_distance_mm": 2.6936083218148767
+    }
+  ]
+}

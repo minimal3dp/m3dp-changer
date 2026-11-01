@@ -1,0 +1,7 @@
+{
+  "valid_closed_single_solid": true,
+  "volume_mm3": 922.9211078839311,
+  "step_roundtrip_difference_mm3": 0.0,
+  "switch_hole_spacing_mm": 6.500000000000008,
+  "physical_actuation_verified": false
+}

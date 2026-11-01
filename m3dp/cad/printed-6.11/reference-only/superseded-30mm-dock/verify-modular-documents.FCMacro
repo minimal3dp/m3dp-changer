@@ -1,0 +1,44 @@
+# HISTORICAL 30 mm dock — not for the active raised-rail build.
+"""Run separately after generation: native reopen/recompute and editability check."""
+from pathlib import Path
+import json
+import traceback
+import FreeCAD as App
+
+OUT=Path(__file__).resolve().parent
+LOG=OUT/'modular-native-reopen.log'
+LOG.write_text('Started\n')
+try:
+    rows=[]
+    for basename,final_name,params_name in [
+        ('two-station-dock','SecondPinAccessCut','Source611Dock'),
+        ('2020-rail-fit-coupon','CouponClampHeadSeatCut','CouponPlate')]:
+        path=OUT/(basename+'.FCStd')
+        for doc in list(App.listDocuments().values()):
+            if doc.FileName and Path(doc.FileName).resolve()==path.resolve():
+                App.closeDocument(doc.Name)
+        doc=App.openDocument(str(path));doc.recompute()
+        final=doc.getObject(final_name);params=doc.getObject(params_name)
+        assert final.Shape.isValid() and len(final.Shape.Solids)==1 and final.Shape.Solids[0].isClosed()
+        assert not any('Error' in o.State or 'Invalid' in o.State for o in doc.Objects)
+        volume=final.Shape.Volume
+        original=params.SideClearance.Value
+        params.SideClearance=original+0.1;doc.recompute()
+        front=doc.getObject('FrontExteriorRegister')
+        rear=doc.getObject('RearExteriorRegister')
+        assert abs((rear.Placement.Base.y-front.Placement.Base.y-front.Width.Value)-(20+2*(original+0.1)))<0.000001
+        assert final.Shape.isValid() and len(final.Shape.Solids)==1
+        params.SideClearance=original;doc.recompute()
+        assert abs(final.Shape.Volume-volume)<0.0001
+        doc.save()
+        rows.append({'file':basename+'.FCStd','reopened_and_recomputed':True,
+            'valid':True,'closed':True,'solids':1,'volume_mm3':volume,
+            'side_clearance_expression_edit_roundtrip_passed':True,
+            'restored_side_clearance_mm':original,
+            'native_feature_types':[o.TypeId for o in doc.Objects]})
+    (OUT/'modular-native-reopen-validation.json').write_text(json.dumps(rows,indent=2))
+except BaseException:
+    LOG.write_text(traceback.format_exc());raise
+else:
+    LOG.write_text('Completed successfully\n')
+    App.Console.PrintMessage('Both modular native documents reopened and parameter-edit checks passed.\n')

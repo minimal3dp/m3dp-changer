@@ -1,0 +1,65 @@
+[
+  {
+    "name": "front-rail-support-left",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 23831.865861947063,
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      74.977205,
+      49.75098400000002,
+      44.51341300000001
+    ],
+    "print_translation_mm": [
+      250.977205,
+      488.530002,
+      -20.400017
+    ],
+    "step_roundtrip_difference_mm3": 0.0,
+    "stl_facets": 1542
+  },
+  {
+    "name": "front-rail-support-right",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 23817.57112504175,
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      74.977387,
+      49.75098400000002,
+      44.409428000000005
+    ],
+    "print_translation_mm": [
+      -176.0,
+      488.530002,
+      -20.504002
+    ],
+    "step_roundtrip_difference_mm3": 0.0,
+    "stl_facets": 1542
+  },
+  {
+    "name": "front-gantry-fit-coupon",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 11169.468617741077,
+    "print_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      24.97738700000002,
+      28.220981999999992,
+      26.0
+    ],
+    "print_translation_mm": [
+      -225.99999999999997,
+      467.0,
+      -20.504002
+    ],
+    "step_roundtrip_difference_mm3": 0.0,
+    "stl_facets": 784
+  }
+]

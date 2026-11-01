@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Local-only large files (e.g. unzipped upstream STEP)
+m3dp/cad/_local/
+
+# Local tools and scratch renders
+.code-review-graph/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+/tmp/
+
+# Keep only published guide PDFs in output
+/output/*
+!/output/pdf/
+/output/pdf/*
+!/output/pdf/*.pdf
+
+# Machine-specific commissioning files; publish the .example templates
+/m3dp/klipper/printer.cfg
+/m3dp/klipper/hardware.cfg
+/m3dp/klipper/hotends.cfg
+.env
+.env.*
+!.env.example

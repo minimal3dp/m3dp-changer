@@ -1,0 +1,51 @@
+{
+  "native_embedded_brep_sha256": "2c7e7304f4b158b93312be8872c3faed9c41d7300a27c4648568a8e08b2153c5",
+  "method": "native Prism properties plus original/native solid classifications at flat midpoints, corners, bore and bottom plane; 0.001 mm in/out offsets",
+  "parts": [
+    {
+      "feature": "P1_LeftHex_AF6",
+      "axis_xy_mm": [
+        1.7282272905404,
+        -33.7609025868121
+      ],
+      "z_range_mm": [
+        -20,
+        -10
+      ],
+      "across_flats_mm": 6,
+      "rotation_degrees": 30,
+      "bore_diameter_mm": 3.2,
+      "reference_post_brep_sha256": "00bb392896cde1b1bc941c3c5566397b622da7782e6812d8116f5196ab5864f3",
+      "sample_counts": {
+        "native_flat_and_corner_checks": 108,
+        "original_flat_and_corner_checks": 108,
+        "bore_checks": 9,
+        "lower_end_checks": 3
+      },
+      "pass": true
+    },
+    {
+      "feature": "P1_RearHex_AF6",
+      "axis_xy_mm": [
+        26.78,
+        -36.45
+      ],
+      "z_range_mm": [
+        -23.5,
+        -9.5
+      ],
+      "across_flats_mm": 6,
+      "rotation_degrees": 30,
+      "bore_diameter_mm": 3.2,
+      "reference_post_brep_sha256": "f6bff7bc7e8652bf10aa4200902e28aedd252df9dfbc83de1fc79cb6f95041c4",
+      "sample_counts": {
+        "native_flat_and_corner_checks": 108,
+        "original_flat_and_corner_checks": 108,
+        "bore_checks": 9,
+        "lower_end_checks": 3
+      },
+      "pass": true
+    }
+  ],
+  "pass": true
+}

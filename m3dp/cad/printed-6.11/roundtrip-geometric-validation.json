@@ -1,0 +1,119 @@
+[
+  {
+    "part": "P1_Final",
+    "native_embedded_brep_sha256": "2c7e7304f4b158b93312be8872c3faed9c41d7300a27c4648568a8e08b2153c5",
+    "step_sha256": "1459ba4daeafc76e2fd890793c64cbf4a09606330111d0e00ae086dda1c6fae0",
+    "method": "paired area/centroid face correspondence; bidirectional trimmed-face interior/edge-midpoint distance; solid classification grid",
+    "coordinate_tolerance_mm": 1e-06,
+    "matched_faces": 58,
+    "maximum_face_centroid_difference_mm": 7.795356599010925e-10,
+    "maximum_face_area_difference_mm2": 3.566744410932188e-08,
+    "surface_samples": [
+      {
+        "direction": "native_to_STEP",
+        "samples": 1618,
+        "every_face_sampled": true,
+        "maximum_boundary_distance_mm": 9.149658450149001e-12
+      },
+      {
+        "direction": "STEP_to_native",
+        "samples": 1616,
+        "every_face_sampled": true,
+        "maximum_boundary_distance_mm": 9.149647140154039e-12
+      }
+    ],
+    "classification_samples": 3971,
+    "inside_samples": 444,
+    "classification_mismatches": 0,
+    "pass": true
+  },
+  {
+    "part": "P5_Final",
+    "status": "superseded_for_4p6",
+    "superseded_by": "insert-bore-4p6-validation.json (printed-6.11 root)",
+    "prior_result": {
+      "part": "P5_Final",
+      "native_embedded_brep_sha256": "6aa62d093c2612603e9a77b92cbce1b9b7acfa733024243f8a6c15898844af90",
+      "step_sha256": "aa31f507e88b4bb9f961d10510946ccd5116f469addfefedc6b964d277419e3d",
+      "method": "paired area/centroid face correspondence; bidirectional trimmed-face interior/edge-midpoint distance; solid classification grid",
+      "coordinate_tolerance_mm": 1e-06,
+      "matched_faces": 168,
+      "maximum_face_centroid_difference_mm": 1.1184446552516893e-11,
+      "maximum_face_area_difference_mm2": 4.4019543565809727e-10,
+      "surface_samples": [
+        {
+          "direction": "native_to_STEP",
+          "samples": 4750,
+          "every_face_sampled": true,
+          "maximum_boundary_distance_mm": 1.2540632043873381e-11
+        },
+        {
+          "direction": "STEP_to_native",
+          "samples": 4750,
+          "every_face_sampled": true,
+          "maximum_boundary_distance_mm": 1.2541876419834467e-11
+        }
+      ],
+      "classification_samples": 3971,
+      "inside_samples": 1737,
+      "classification_mismatches": 0,
+      "pass": true
+    }
+  },
+  {
+    "part": "P3_Final",
+    "native_embedded_brep_sha256": "d8ded792f22164b080e4114e230fd0af1135f85251a06831c87ee3082329c6ad",
+    "step_sha256": "0bfc5174d6b310a262966751843c1ac0d3a91b3b309776c7f91142d334eb7439",
+    "method": "paired area/centroid face correspondence; bidirectional trimmed-face interior/edge-midpoint distance; solid classification grid",
+    "coordinate_tolerance_mm": 1e-06,
+    "matched_faces": 40,
+    "maximum_face_centroid_difference_mm": 1.5204213366847697e-09,
+    "maximum_face_area_difference_mm2": 3.1727469540498987e-09,
+    "surface_samples": [
+      {
+        "direction": "native_to_STEP",
+        "samples": 1078,
+        "every_face_sampled": true,
+        "maximum_boundary_distance_mm": 1.0784305832292052e-11
+      },
+      {
+        "direction": "STEP_to_native",
+        "samples": 1078,
+        "every_face_sampled": true,
+        "maximum_boundary_distance_mm": 1.078417405661083e-11
+      }
+    ],
+    "classification_samples": 3971,
+    "inside_samples": 1110,
+    "classification_mismatches": 0,
+    "pass": true
+  },
+  {
+    "part": "P4_Final",
+    "native_embedded_brep_sha256": "2c5bbb7a2fba12d63d078dcf1710d9d48f72ea7dc765a18bd8a9ac63514e3c80",
+    "step_sha256": "6cfcca1f833e4156b5a04e7e6f8da92702a68f134cba7819c056eecd1d195491",
+    "method": "paired area/centroid face correspondence; bidirectional trimmed-face interior/edge-midpoint distance; solid classification grid",
+    "coordinate_tolerance_mm": 1e-06,
+    "matched_faces": 32,
+    "maximum_face_centroid_difference_mm": 3.678757529363179e-09,
+    "maximum_face_area_difference_mm2": 3.340699272769143e-07,
+    "surface_samples": [
+      {
+        "direction": "native_to_STEP",
+        "samples": 899,
+        "every_face_sampled": true,
+        "maximum_boundary_distance_mm": 9.171187061725939e-12
+      },
+      {
+        "direction": "STEP_to_native",
+        "samples": 899,
+        "every_face_sampled": true,
+        "maximum_boundary_distance_mm": 9.17117949239082e-12
+      }
+    ],
+    "classification_samples": 3971,
+    "inside_samples": 1852,
+    "classification_mismatches": 0,
+    "pass": true
+  }
+]

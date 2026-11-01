@@ -1,0 +1,58 @@
+# COMMISSIONING TEMPLATE for the confirmed Manta M8P V1.1 and existing SB2209
+# RP2040. Copy to hardware.cfg only after reviewing wiring-plan.md.
+# Required UUIDs and switch polarity remain intentionally invalid until verified.
+[include pins-m8p-v1.1.cfg]
+
+# The original mcu and EBBCan identities remain in printer.cfg.example.
+# These are the two added EBB36 CAN V1.2 boards. Identify them individually;
+# firmware, matching CAN bitrate and host interface must be configured first.
+[mcu ebb_t4]
+canbus_uuid: REPLACE_WITH_T4_BOARD_UUID
+
+[mcu ebb_t5]
+canbus_uuid: REPLACE_WITH_T5_BOARD_UUID
+
+# Proposed spare input: SB2209 RP2040 Probe connector P9 pin 5 (GPIO21),
+# adjacent to pin 4 GND. TAP remains GPIO22; X endstop remains GPIO24.
+# GPIO21 is behind a 74LVC2G17 buffer: Klipper's ^ internal pull-up cannot bias
+# the connector-side signal. A passive dry-contact switch needs an external
+# pull-up (for example 4.7 kohm from P9 pin 5 to pin 2 +5V), with the contact
+# between pin 5 and pin 4 GND. Verify the actual sensor's electrical output and
+# biasing first; do not add a pull-up blindly to an already active sensor.
+# Set EBBCan:gpio21 or !EBBCan:gpio21 only after verifying stable open/closed
+# levels and the correct logical polarity against the official RP2040 pinout.
+# QUERY_FILAMENT_SENSOR SENSOR=cx_tool_sensor must report detected with the
+# mounted head/filament and not detected with the head empty. The boot helper
+# disables runout handling until a tool is physically reconciled/selected.
+[filament_switch_sensor cx_tool_sensor]
+switch_pin: REPLACE_WITH_VERIFIED_GPIO21_POLARITY
+pause_on_runout: True
+runout_gcode:
+    {action_respond_info("CxChanger filament runout: printing is paused. Inspect the mounted tool and filament before resuming.")}
+
+# Existing SB2209 head heatbreak fan, moved from the original printer.cfg so it
+# responds to every hotend. The existing part fan stays on EBBCan:gpio13.
+[heater_fan hotend_fan]
+pin: EBBCan:gpio14
+heater: extruder, extruder1, extruder2, extruder3, extruder4, extruder5
+heater_temp: 50.0
+fan_speed: 1.0
+
+# Proposed two banks of three 24 V dock heatbreak fans. Before wiring, verify
+# EACH bank's startup/continuous current against its EBB36 output, connector,
+# wire and splitter ratings, and select the correct fan supply voltage.
+# All six heater names are intentional: any hot or heating tool keeps both
+# banks running, regardless of where that tool is currently parked.
+# If a bank exceeds its rating, split it over PA0/PA1 with separately named
+# heater_fan sections (all six heater names), or use a rated external fan stage.
+[heater_fan cx_dock_cooling_a]
+pin: ebb_t4:PA0
+heater: extruder, extruder1, extruder2, extruder3, extruder4, extruder5
+heater_temp: 50.0
+fan_speed: 1.0
+
+[heater_fan cx_dock_cooling_b]
+pin: ebb_t5:PA0
+heater: extruder, extruder1, extruder2, extruder3, extruder4, extruder5
+heater_temp: 50.0
+fan_speed: 1.0

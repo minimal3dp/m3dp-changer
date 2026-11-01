@@ -1,0 +1,101 @@
+# TEMPLATE ONLY. Copy to hotends.cfg after verifying every delivered heater and
+# thermistor. Include hardware.cfg with the M8P V1.1 pin profile first.
+# The planned kits are 24 V/48 W with 100K 3950 NTC sensors; the actual delivered
+# parts are not confirmed. Replace every sensor_type below with its verified
+# Klipper type (Generic 3950 only if the sensor specification matches).
+# The 4700-ohm pull-up assumes verified ordinary NTC inputs and matching jumpers.
+# Set nozzle_diameter to the actual fitted nozzle (0.4 mm is the project default).
+# 300 C is a ceiling, not approval to exceed the installed hotend's rated limit.
+# T0-T3 heater pins drive external DC switch CONTROL inputs, not the new PSU
+# directly; see wiring-plan.md. Selected switches must support the default
+# Klipper 0.100 s (10 Hz) heater PWM cycle, or a deliberately reviewed cycle.
+
+# The candidate printer.cfg retains the SB2209 RP2040 motor pins. Complete its
+# required HGX gear ratio, rotation distance and motor settings before use.
+# Remove its old heater/sensor/control/PID/temperature-limit definitions before
+# adding this thermal overlay; reconcile any old extruder SAVE_CONFIG values.
+# Do not delete unrelated bed, probe or motion calibration. Do not copy the
+# upstream Trident motor or printer sections into the Voron configuration.
+# extruder1..5 deliberately have no motor or stepper-driver definitions.
+
+# WATERMARK IS TEMPORARY FOR INITIAL HEATER/PID COMMISSIONING ONLY.
+# Verify one heater/sensor pair at a time, run PID_CALIBRATE for each heater at
+# an appropriate verified operating temperature, and record its measured gains.
+# Before enabling printing, replace each control: watermark with control: pid
+# plus that heater's measured pid_Kp/pid_Ki/pid_Kd. Save the file and RESTART.
+# No sample PID values are supplied. If using SAVE_CONFIG instead of entering
+# the measured values here, remove the corresponding control/PID options from
+# this include before SAVE_CONFIG; otherwise Klipper reports an include conflict.
+# Do not enable simultaneous heating until the full wiring/power budget passes.
+
+[extruder]
+nozzle_diameter: 0.4
+filament_diameter: 1.75
+heater_pin: CX_T0_HEATER
+sensor_pin: CX_T0_SENSOR
+sensor_type: REPLACE_WITH_VERIFIED_SENSOR_TYPE
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 180
+control: watermark
+
+[extruder1]
+nozzle_diameter: 0.4
+filament_diameter: 1.75
+heater_pin: CX_T1_HEATER
+sensor_pin: CX_T1_SENSOR
+sensor_type: REPLACE_WITH_VERIFIED_SENSOR_TYPE
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 180
+control: watermark
+
+[extruder2]
+nozzle_diameter: 0.4
+filament_diameter: 1.75
+heater_pin: CX_T2_HEATER
+sensor_pin: CX_T2_SENSOR
+sensor_type: REPLACE_WITH_VERIFIED_SENSOR_TYPE
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 180
+control: watermark
+
+[extruder3]
+nozzle_diameter: 0.4
+filament_diameter: 1.75
+heater_pin: CX_T3_HEATER
+sensor_pin: CX_T3_SENSOR
+sensor_type: REPLACE_WITH_VERIFIED_SENSOR_TYPE
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 180
+control: watermark
+
+[extruder4]
+nozzle_diameter: 0.4
+filament_diameter: 1.75
+heater_pin: ebb_t4:PB13
+sensor_pin: ebb_t4:PA3
+sensor_type: REPLACE_WITH_VERIFIED_SENSOR_TYPE
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 180
+control: watermark
+
+[extruder5]
+nozzle_diameter: 0.4
+filament_diameter: 1.75
+heater_pin: ebb_t5:PB13
+sensor_pin: ebb_t5:PA3
+sensor_type: REPLACE_WITH_VERIFIED_SENSOR_TYPE
+pullup_resistor: 4700
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 180
+control: watermark

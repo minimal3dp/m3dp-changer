@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "configured_Z_test_range_mm": [
+    -5,
+    310
+  ],
+  "coordinate_frame": "rear crossbrace center, X across, +Y rearward, +Z upward",
+  "rail_center_mm": [
+    0,
+    -482.530002,
+    48.91343
+  ],
+  "rail_cut_length_mm": 400,
+  "rail_in_dock_source_frame": {
+    "Y": [
+      65,
+      85
+    ],
+    "Z": [
+      -11.5,
+      8.5
+    ]
+  },
+  "adapter_standoff_mm": 11,
+  "front_joint_precontact_margin_mm": 4,
+  "parked_nozzle_y_mm": -466.3750018908464,
+  "physical350_bed_front_y_mm": -456.0064116881106,
+  "nozzle_pad_rear_y_mm": -459.8763174062244,
+  "pad_to_bed_front_clearance_mm": 3.8699057181138414,
+  "pad_bottom_below_active_nozzle_mm": 7.3,
+  "bare_rail_to_closed_door_inner_face_mm": 3.476409688195872,
+  "top_clamp_with_1mm_washer_and_M5_button_head_z_mm": 68.66343,
+  "top_hardware_to_front_crossbar_at_Z310_mm": 4.240000200222596,
+  "roof_bottom_z_mm": 394.9040112811351,
+  "gantry_shift_at_Z0_mm": -8.999418818864058,
+  "gantry_shift_at_Z310_mm": 301.00058118113594,
+  "swept_support_and_rail_enclosure_overlaps": [],
+  "limitations": [
+    "This is a reference-model fit check, not physical qualification.",
+    "Measure actual bed size/edge, closed doors, Z travel and all cable loops before commissioning.",
+    "Final blower/duct integration is checked separately; no full350mm printable-area promise is made."
+  ]
+}

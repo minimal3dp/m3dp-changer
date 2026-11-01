@@ -1,0 +1,201 @@
+{
+  "release_status": "INSERT_BORE_4P6_DIGITAL_CHECKS_PASSED_FIT_PROTOTYPE",
+  "staged_native_or_stl_artifacts": true,
+  "native_status": "Current dock/cage 4.6 mm native, STEP and mesh checks are in ../../insert-bore-4p6-validation.json; prior 4.5 mm rows are explicitly superseded.",
+  "native_verifier": "Uses unique temporary copies and asserts original SHA256 unchanged; no document-close operations.",
+  "occ_checks": {
+    "six_designs_valid_single_solids": true,
+    "source_material_removed_mm3": 0,
+    "latch_pin_region_added_mm3": 0,
+    "rail_overlap_mm3": 0,
+    "neighbor_carrier_overlap_mm3": 0
+  },
+  "final11_full_head_motion_audit": {
+    "status": "PASS_FOR_ADDED_GEOMETRY_IN_12_RIGID_SNAPSHOTS",
+    "audited_top_geometry_sha256": {
+      "top-adapter-carrier": "e4b38558f3fa56bb546e707af4afe3fedecab93d10d67713b0ad7ab8de355ef5",
+      "top-duct": "9cbd292cb9c38839e38a553398bbadb7e5c7dd3708a95d6893dab87f59628763",
+      "top-fan-reference": "23daaf941d8dc894614b91a661bc585a38c507237122e57b0cdf134f219bd7c0"
+    },
+    "added_geometry_collisions": 0,
+    "neighbor_collisions": 0,
+    "internal_fan_carrier_retainer_collisions": 0,
+    "minimum_new_duct_neighbor_pin_clearance_mm": 0.776085931088609,
+    "minimum_new_top_structure_actuator_pin_clearance_mm": 0.8060859299999983,
+    "existing_source_contact": "At maximal0.85mm press, source closed-arm bearing74 touches original dock (up to0.499011mm\u00b3); real arm articulation remains unverified.",
+    "continuous_added_hanger_depth_check": "Six source-Y bands stay separated by depth; minimum1.65mm at maximalpress. Lateral motion and positive-depth withdrawal cannot close that gap for the fixed audited head geometry.",
+    "limitations": "Rigid source snapshots and selected continuous depth bounds, not a full articulated/thermal/cable validation.",
+    "bounded_followup": {
+      "report": "final11-duct-plug-bounded-check.json",
+      "full_12_pose_rerun": false,
+      "prior_duct_sha256": "e380a1b1511671e07b97a9e989e7d3951453e2f9d7169f53afa358d57c11e485",
+      "minimum_added_material_depth_separation_mm": 5.47608593,
+      "scope": "Two lower-switch hole-sealing cylinders only; their bounded additions preserve prior collision results."
+    }
+  },
+  "quantities": {
+    "two-station-dock.stl": 3,
+    "fan-retainer-left.stl": 3,
+    "fan-retainer-middle.stl": 3,
+    "fan-retainer-right.stl": 3,
+    "2510-cage-fit-coupon.stl": 1,
+    "raised-2020-saddle-fit-coupon.stl": 1
+  },
+  "production_native_basename": "two-station-raised-rail-dock-prototype",
+  "six_tool_hardware": {
+    "top_rail_M3_clamps": 6,
+    "2020_M3_Tnuts": 6,
+    "M3x8_retainer_screws": 9,
+    "M3_washers_OD_max7_thickness0_5": 9,
+    "M3_inserts_OD5_length4_existing_stock": 9
+  },
+  "staged_source_sha256": {
+    "BuildRaisedDockCarrier.FCMacro": "41ca8216841a7c68a61094d22fe2c143e020d70a9760748587e2a2f6e07b99eb",
+    "VerifyRaisedDockCarrier.FCMacro": "4bf36053fba0b39a3b3f55e9d11e8b21ab9bb82532cc74a4239d11dfadf70006",
+    "build_raised_carrier.py": "35ff16ef9f14ffc2ffe359b77cbfc7bee9d2c9b7187f2d1f2405d591b9b3bc41",
+    "raised-carrier-spec.json": "e3ce98292b0b13579da97090414022cbd372363471e3461d68b2aa5afd66dcd6",
+    "source-two-station-dock-34mm.brep": "27ce86cdc7f0dd2e97e4fbbbee118ac535c9f37cd186d1033f0a24d0c2d659d6",
+    "raised-carrier-occ-validation.json": "78a4ef23995cf4fb9ed38461b6ff26a27467a284aacbf160b51690ec107926d1",
+    "raised-dock-layout.png": "df315a179940e650da77b4d2c4a310aab4a2c2d42db1b4d120efd9f5e0dbb13f",
+    "modular-dock-notes.md": "00449b6eb4a75fa7c9fb45657d340ff4f008f49a73b97245f21bb104f5240abc"
+  },
+  "physical_validation": "Insert sleeve fit and free screw travel reported after heat-setting/cooling; selected 4p6. Dock fit, load, airflow and thermal performance remain unqualified.",
+  "audit_receipts_sha256": {
+    "final11-hanger-motion-check.json": "e17ff620d544bcd48770b90b5ba857e967c9b4e614f3eb775d8aa2f972ca9252",
+    "final11-added-material-depth-check.json": "d83ca81c29557ef3f73cd3e1bf5c2cc6dddec6b40702dc4f5d05b0540a7b9f0d",
+    "final11-actuator-pin-check.json": "0d06538cb6b8ec6da20efad91dfef85861a27d367cf24ca2c3aafb7609ecd19c",
+    "final11-neighbor-minimum.json": "2ac9b8f374f980406dda689ff3806dc3bc4db96de0e35de0eb1547bba95f287c",
+    "six-parked-tools-dock-envelope.json": "33428f8d97134e86ffd104f5dd11ede9be4b319f476ad559cad1e53286a43364",
+    "final11-duct-plug-bounded-check.json": "b7a21818bba1fd02db7bb3ea3c05d07e44ea856b777a928193e76f1b7bab0835"
+  },
+  "independent_mesh_status": "Affected dock/cage meshes passed independent watertight, winding, connectivity and surface checks; other meshes unchanged.",
+  "artifact_manifest": [
+    {
+      "file": "two-station-raised-rail-dock-prototype.FCStd",
+      "sha256": "cd0244fedfe9b7d2976de9b6597233affbd115a05f4f9a663de2669de1de1959"
+    },
+    {
+      "file": "two-station-raised-rail-dock-prototype.step",
+      "sha256": "eb48ef41ae68ea793fde9aa767dcac5f7fdcee0fd80ad5ff85c59121df94edb3"
+    },
+    {
+      "file": "two-station-raised-rail-dock-prototype-print.stl",
+      "sha256": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293"
+    },
+    {
+      "file": "two-station-raised-rail-dock-prototype-preview.png",
+      "sha256": "dea18fac6e9103c923faf18bb6e311aeb8c930ec9cdc6dcebd7d4d5eb48530c9"
+    },
+    {
+      "file": "stl/two-station-dock.stl",
+      "sha256": "9addbef7a6212fbdfdd2408eeafc3524b6944bd173512e3f51dd1f7b10041293"
+    },
+    {
+      "file": "fan-retainer-left.FCStd",
+      "sha256": "01530cfc024ef7f903a9bdc51a9408e78461703d5784db243114b9d13262fec3"
+    },
+    {
+      "file": "fan-retainer-left.step",
+      "sha256": "ed4cdf60d815860329ff7e1c07dca8a4d140363e5c6d86973401a2997a0bfabe"
+    },
+    {
+      "file": "fan-retainer-left-print.stl",
+      "sha256": "fba70b1efb13df328f168437b920a175c8a6fe444896ee39810709bea84d7d0f"
+    },
+    {
+      "file": "fan-retainer-left-preview.png",
+      "sha256": "97f6d5a98d390400b804c06c3988c339562b629270d61e7e9e1522b0df89ac72"
+    },
+    {
+      "file": "stl/fan-retainer-left.stl",
+      "sha256": "fba70b1efb13df328f168437b920a175c8a6fe444896ee39810709bea84d7d0f"
+    },
+    {
+      "file": "fan-retainer-middle.FCStd",
+      "sha256": "d90a9b93a756cf7c6a0a5fff1d15da0a241814aa9f58dc032127c31cea16b59c"
+    },
+    {
+      "file": "fan-retainer-middle.step",
+      "sha256": "1205c29fa71b9ac65d5ee1594cc2c3cfd8803f1a6891678bb7e1831dd61e6b32"
+    },
+    {
+      "file": "fan-retainer-middle-print.stl",
+      "sha256": "dded61ab5aca82b32d2652925f765c71ff68f25a8e79e4bffc56dbb896e3520f"
+    },
+    {
+      "file": "fan-retainer-middle-preview.png",
+      "sha256": "6af039dc13b24e5413d6714ee43e2c5c40bd0dd91efa07221752fa4104f15fca"
+    },
+    {
+      "file": "stl/fan-retainer-middle.stl",
+      "sha256": "dded61ab5aca82b32d2652925f765c71ff68f25a8e79e4bffc56dbb896e3520f"
+    },
+    {
+      "file": "fan-retainer-right.FCStd",
+      "sha256": "71dc05fdb94db2640efd754c9d48bc73c1cba996d10ee4268a4cf3832d9e4e21"
+    },
+    {
+      "file": "fan-retainer-right.step",
+      "sha256": "8a876469fe7d3eb83bdd8e650eec8c4d1396854467e82dc8306b193896ac35c1"
+    },
+    {
+      "file": "fan-retainer-right-print.stl",
+      "sha256": "427634f6939e98de44816e4b5f3ef8906aa4b2666204fff78657d9c73083920d"
+    },
+    {
+      "file": "fan-retainer-right-preview.png",
+      "sha256": "5ac86f323876bcd66ef348f63dd0a1d25974e573d6d1089e307073c4708751f7"
+    },
+    {
+      "file": "stl/fan-retainer-right.stl",
+      "sha256": "427634f6939e98de44816e4b5f3ef8906aa4b2666204fff78657d9c73083920d"
+    },
+    {
+      "file": "2510-cage-fit-coupon.FCStd",
+      "sha256": "46b983dee904bab8b5fd66d60559782dee0dac7be29c1a882b2d692c88895d49"
+    },
+    {
+      "file": "2510-cage-fit-coupon.step",
+      "sha256": "d5e64d12955a1f9760faad6acc871c55d3dc75cde19b47bc395b11d412151986"
+    },
+    {
+      "file": "2510-cage-fit-coupon-print.stl",
+      "sha256": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+    },
+    {
+      "file": "2510-cage-fit-coupon-preview.png",
+      "sha256": "f59d38f527e954730f5c8859fda97d4275164f65ed5b3688d3cc5c7b04548af5"
+    },
+    {
+      "file": "stl/coupons/2510-cage-fit-coupon.stl",
+      "sha256": "7cafcecaf66f45e78c59bfc4044a634ff002aad1e27c3e8d04c23fbeccd323ae"
+    },
+    {
+      "file": "raised-2020-saddle-fit-coupon.FCStd",
+      "sha256": "bbee63a6d816d107cb8db44b5751218e2b1ba8a70db5aa49be1a2d2549c91f46"
+    },
+    {
+      "file": "raised-2020-saddle-fit-coupon.step",
+      "sha256": "79772e6a0f773dab833f9fa0671ff205036429c99b7ec4a54cad2d970681a3bb"
+    },
+    {
+      "file": "raised-2020-saddle-fit-coupon-print.stl",
+      "sha256": "6f11768add8773325f30cb7ec4cd090b81100f6105859c015cd1490725247c0a"
+    },
+    {
+      "file": "raised-2020-saddle-fit-coupon-preview.png",
+      "sha256": "db8e2b0d239652e6d161c338efd9bba3d32b301c572ae87a1c702d22ad22018e"
+    },
+    {
+      "file": "stl/coupons/raised-2020-saddle-fit-coupon.stl",
+      "sha256": "6f11768add8773325f30cb7ec4cd090b81100f6105859c015cd1490725247c0a"
+    }
+  ],
+  "insert_bore_revision": {
+    "diameter_mm": 4.6,
+    "receipt": "../../insert-bore-4p6-validation.json",
+    "receipt_sha256": "df6d11ab8b7c3b14c354d38670a36195db78cc3ddf261822c138db2858e8cc0c",
+    "status": "native_and_independent_export_checks_passed",
+    "scope": "Three dock seats and two cage-coupon seats; previous full assembly motion checks remain historical."
+  }
+}

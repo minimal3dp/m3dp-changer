@@ -1,0 +1,197 @@
+[
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "PTFE_4mm_plus_1mm_clearance",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_0_head",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_0_frontwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_0_rearwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_0_nut",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_0_shaft",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_1_head",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_1_frontwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_1_rearwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_1_nut",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "M2_1_shaft",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "detector_M3_nut",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-adapter-carrier",
+    "envelope": "final_detector_fastener_envelopes",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "PTFE_4mm_plus_1mm_clearance",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_0_head",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_0_frontwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_0_rearwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_0_nut",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_0_shaft",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_1_head",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_1_frontwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_1_rearwasher",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_1_nut",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "M2_1_shaft",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "detector_M3_nut",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-duct",
+    "envelope": "final_detector_fastener_envelopes",
+    "overlap": 0.0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "PTFE_4mm_plus_1mm_clearance",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_0_head",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_0_frontwasher",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_0_rearwasher",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_0_nut",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_0_shaft",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_1_head",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_1_frontwasher",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_1_rearwasher",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_1_nut",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "M2_1_shaft",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "detector_M3_nut",
+    "overlap": 0
+  },
+  {
+    "part": "top-fan-reference",
+    "envelope": "final_detector_fastener_envelopes",
+    "overlap": 0
+  }
+]

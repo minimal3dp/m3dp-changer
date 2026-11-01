@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "method": "OCC coplanar-face refinement and1e-6mm diagnostic cap fuses; original export geometry unchanged",
+  "source_cap_input_sha256": "a0c506fff9b0803228846dd36ff1afbb41221a97a885fdd58925ea29a9e2a6fb",
+  "jet_areas_mm2": [
+    27.140636043377032,
+    27.14226031665986
+  ],
+  "files": {
+    "tap-top-fan-duct-PROTOTYPE-native.brep": {
+      "sha256": "5efbbb339a160aeb8bfe5ebe46e2340eb6f85d0430204cacdc56be68058bfe76",
+      "valid": true,
+      "air_solid_volumes_mm3": [
+        524690.5688418724,
+        35376.973105144825
+      ],
+      "air_solids_common_volume_mm3": 0.0,
+      "cavity_bounds_mm": [
+        0.01901947653621518,
+        -85.97876855553098,
+        -22.999183931115283,
+        67.5000001,
+        53.70880638118828,
+        23.750845778067678
+      ],
+      "enclosed": true,
+      "connected_stages": {
+        "neck": true,
+        "side_port": true,
+        "original_plenum": true,
+        "left_jet": true,
+        "right_jet": true
+      },
+      "pass": true
+    },
+    "tap-top-fan-duct-PROTOTYPE.step": {
+      "sha256": "75df4e7feb0fdbe771250ba251f82c589fe81f2975d0de45f938eeaa80ba62dc",
+      "valid": true,
+      "air_solid_volumes_mm3": [
+        524690.5686336923,
+        35378.41460543947
+      ],
+      "air_solids_common_volume_mm3": 0.0,
+      "cavity_bounds_mm": [
+        0.019019476536215187,
+        -85.97876855553078,
+        -22.99918393104746,
+        67.5000001,
+        53.70880638118829,
+        23.750845778067667
+      ],
+      "enclosed": true,
+      "connected_stages": {
+        "neck": true,
+        "side_port": true,
+        "original_plenum": true,
+        "left_jet": true,
+        "right_jet": true
+      },
+      "pass": true
+    }
+  }
+}

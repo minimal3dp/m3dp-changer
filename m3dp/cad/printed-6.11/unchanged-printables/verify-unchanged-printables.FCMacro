@@ -1,0 +1,20 @@
+"""Reopen separately after generation; validate saved native solids."""
+from pathlib import Path
+import json,traceback
+import FreeCAD as App
+HERE=Path(__file__).resolve().parent
+LOG=HERE/'unchanged-printables-reopen.log'
+try:
+    path=HERE/'unchanged-printables-6.11.FCStd'
+    for d in list(App.listDocuments().values()):
+        if d.FileName and Path(d.FileName).resolve()==path.resolve():App.closeDocument(d.Name)
+    doc=App.openDocument(str(path));doc.recompute()
+    rows=[]
+    for o in doc.Objects:
+        assert o.Shape.isValid() and len(o.Shape.Solids)==1 and o.Shape.Solids[0].isClosed()
+        rows.append({'label':o.Label,'volume_mm3':o.Shape.Volume,'valid':True,'closed':True})
+    assert len(rows)==4
+    (HERE/'unchanged-printables-native-reopen.json').write_text(json.dumps(rows,indent=2))
+except BaseException:
+    LOG.write_text(traceback.format_exc());raise
+else:LOG.write_text('Completed successfully\n')

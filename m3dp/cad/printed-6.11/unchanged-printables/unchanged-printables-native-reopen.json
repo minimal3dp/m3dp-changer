@@ -1,0 +1,26 @@
+[
+  {
+    "label": "p2-spring-support-plate",
+    "volume_mm3": 266.28750384340356,
+    "valid": true,
+    "closed": true
+  },
+  {
+    "label": "p8-printed-bearing-arm",
+    "volume_mm3": 3125.9806727804785,
+    "valid": true,
+    "closed": true
+  },
+  {
+    "label": "hotend-holder",
+    "volume_mm3": 6582.694252402399,
+    "valid": true,
+    "closed": true
+  },
+  {
+    "label": "4020-part-cooling-duct",
+    "volume_mm3": 8439.601017520195,
+    "valid": true,
+    "closed": true
+  }
+]

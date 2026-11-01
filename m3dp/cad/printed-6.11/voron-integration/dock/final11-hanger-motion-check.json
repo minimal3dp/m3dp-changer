@@ -1,0 +1,599 @@
+{
+  "audited_top_geometry_sha256": {
+    "top-adapter-carrier": "e4b38558f3fa56bb546e707af4afe3fedecab93d10d67713b0ad7ab8de355ef5",
+    "top-duct": "9cbd292cb9c38839e38a553398bbadb7e5c7dd3708a95d6893dab87f59628763",
+    "top-fan-reference": "23daaf941d8dc894614b91a661bc585a38c507237122e57b0cdf134f219bd7c0"
+  },
+  "internal_collisions": [],
+  "stages": [
+    {
+      "station": 48,
+      "stage": "entry_press",
+      "hits": [
+        [
+          "74",
+          "carrier0",
+          0.001072502751999522
+        ]
+      ],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier-72",
+          25.81783142458994
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          5.256085929999998
+        ],
+        [
+          "top-duct",
+          "carrier-72",
+          5.835824761087288
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          2.417111255365552
+        ],
+        [
+          "top-duct",
+          "rail0",
+          9.556085929999998
+        ],
+        [
+          "top-fan-reference",
+          "carrier-72",
+          7.0560859300019985
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.16402101496808
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          8.256085929999998
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          6.256085929999998
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          6.581085929999997
+        ]
+      ]
+    },
+    {
+      "station": 48,
+      "stage": "latched_press",
+      "hits": [
+        [
+          "74",
+          "carrier0",
+          0.49901100778756935
+        ]
+      ],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier-72",
+          26.449204514853445
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          5.256085929999998
+        ],
+        [
+          "top-duct",
+          "carrier-72",
+          5.835824761087288
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          4.912635374131967
+        ],
+        [
+          "top-duct",
+          "rail0",
+          9.556085929999998
+        ],
+        [
+          "top-fan-reference",
+          "carrier-72",
+          7.190822462815048
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.16402101496808
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          8.256085929999998
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          6.256085929999998
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          6.581085929999997
+        ]
+      ]
+    },
+    {
+      "station": 48,
+      "stage": "entry",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier-72",
+          26.657893119103466
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          6.106085929999999
+        ],
+        [
+          "top-duct",
+          "carrier-72",
+          6.49733836914386
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          2.4662838853403684
+        ],
+        [
+          "top-duct",
+          "rail0",
+          10.40608593
+        ],
+        [
+          "top-fan-reference",
+          "carrier-72",
+          7.906085930002
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.999714362313046
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          9.106085929999999
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          7.106085929999999
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          7.431085929999998
+        ]
+      ]
+    },
+    {
+      "station": 48,
+      "stage": "latched",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier-72",
+          27.269823350171226
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          6.106085929999999
+        ],
+        [
+          "top-duct",
+          "carrier-72",
+          6.49733836914386
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          4.950884774490634
+        ],
+        [
+          "top-duct",
+          "rail0",
+          10.40608593
+        ],
+        [
+          "top-fan-reference",
+          "carrier-72",
+          8.026828267217882
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.999714362313046
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          9.106085929999999
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          7.106085929999999
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          7.431085929999998
+        ]
+      ]
+    },
+    {
+      "station": 48,
+      "stage": "empty_dodge",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": []
+    },
+    {
+      "station": 48,
+      "stage": "loaded_safe",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": []
+    },
+    {
+      "station": 82,
+      "stage": "entry_press",
+      "hits": [
+        [
+          "74",
+          "carrier0",
+          0.00107250275200056
+        ]
+      ],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          5.256085929999998
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier72",
+          5.469138010557578
+        ],
+        [
+          "top-duct",
+          "carrier-72",
+          13.562359825142225
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          2.4171112553655427
+        ],
+        [
+          "top-duct",
+          "rail0",
+          9.556085929999998
+        ],
+        [
+          "top-duct",
+          "carrier72",
+          11.935980782253539
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.16402101496808
+        ],
+        [
+          "top-fan-reference",
+          "carrier72",
+          7.269138010559732
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          8.256085929999998
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          6.256085929999998
+        ],
+        [
+          "topbolt1_washer",
+          "carrier72",
+          6.46913801055758
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          6.581085929999997
+        ],
+        [
+          "topbolt1_nut",
+          "carrier72",
+          6.794138010557579
+        ]
+      ]
+    },
+    {
+      "station": 82,
+      "stage": "latched_press",
+      "hits": [
+        [
+          "74",
+          "carrier0",
+          0.49901100778758917
+        ]
+      ],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          5.302229984730206
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier72",
+          5.256085929999998
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          4.9126353741319555
+        ],
+        [
+          "top-duct",
+          "rail0",
+          9.556085929999998
+        ],
+        [
+          "top-duct",
+          "carrier72",
+          11.489903204160267
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.16402101496808
+        ],
+        [
+          "top-fan-reference",
+          "carrier72",
+          7.056085930001991
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          8.302229984730205
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier72",
+          8.256085929999998
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          6.302229984730206
+        ],
+        [
+          "topbolt1_washer",
+          "carrier72",
+          6.256085929999998
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          6.627229984730204
+        ],
+        [
+          "topbolt1_nut",
+          "carrier72",
+          6.581085929999997
+        ]
+      ]
+    },
+    {
+      "station": 82,
+      "stage": "entry",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          6.106085929999999
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier72",
+          6.302386715654272
+        ],
+        [
+          "top-duct",
+          "carrier-72",
+          14.26145335199917
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          2.4662838853403635
+        ],
+        [
+          "top-duct",
+          "rail0",
+          10.40608593
+        ],
+        [
+          "top-duct",
+          "carrier72",
+          12.663174027345226
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.999714362313046
+        ],
+        [
+          "top-fan-reference",
+          "carrier72",
+          8.102386715656417
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          9.106085929999999
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          7.106085929999999
+        ],
+        [
+          "topbolt1_washer",
+          "carrier72",
+          7.302386715654276
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          7.431085929999998
+        ],
+        [
+          "topbolt1_nut",
+          "carrier72",
+          7.627386715654273
+        ]
+      ]
+    },
+    {
+      "station": 82,
+      "stage": "latched",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": [
+        [
+          "top-adapter-carrier",
+          "carrier0",
+          6.148547260285976
+        ],
+        [
+          "top-adapter-carrier",
+          "carrier72",
+          6.106085929999999
+        ],
+        [
+          "top-duct",
+          "carrier0",
+          4.950884774490634
+        ],
+        [
+          "top-duct",
+          "rail0",
+          10.40608593
+        ],
+        [
+          "top-duct",
+          "carrier72",
+          12.183739922932999
+        ],
+        [
+          "top-fan-reference",
+          "carrier0",
+          6.999714362313046
+        ],
+        [
+          "top-fan-reference",
+          "carrier72",
+          7.906085930001986
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier0",
+          9.148547260285973
+        ],
+        [
+          "topbolt1_shaft",
+          "carrier72",
+          9.106085929999999
+        ],
+        [
+          "topbolt1_washer",
+          "carrier0",
+          7.148547260285975
+        ],
+        [
+          "topbolt1_washer",
+          "carrier72",
+          7.106085929999999
+        ],
+        [
+          "topbolt1_nut",
+          "carrier0",
+          7.473547260285976
+        ],
+        [
+          "topbolt1_nut",
+          "carrier72",
+          7.431085929999998
+        ]
+      ]
+    },
+    {
+      "station": 82,
+      "stage": "empty_dodge",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": []
+    },
+    {
+      "station": 82,
+      "stage": "loaded_safe",
+      "hits": [],
+      "neighbor_hits": [],
+      "top_near_distances": []
+    }
+  ],
+  "limitation": "Rigid snapshots. At maximum0.85mm press, original closed-arm bearing contacts original dock; articulated motion must be checked physically.",
+  "original_full_snapshot_geometry_sha256": {
+    "top-adapter-carrier": "e4b38558f3fa56bb546e707af4afe3fedecab93d10d67713b0ad7ab8de355ef5",
+    "top-duct": "e380a1b1511671e07b97a9e989e7d3951453e2f9d7169f53afa358d57c11e485",
+    "top-fan-reference": "23daaf941d8dc894614b91a661bc585a38c507237122e57b0cdf134f219bd7c0"
+  },
+  "bounded_followup": {
+    "report": "final11-duct-plug-bounded-check.json",
+    "full_12_pose_rerun": false,
+    "prior_duct_sha256": "e380a1b1511671e07b97a9e989e7d3951453e2f9d7169f53afa358d57c11e485",
+    "minimum_added_material_depth_separation_mm": 5.47608593,
+    "scope": "Two lower-switch hole-sealing cylinders only; their bounded additions preserve prior collision results."
+  }
+}

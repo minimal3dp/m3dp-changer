@@ -1,0 +1,75 @@
+# Run after BuildTopTapPrototype.FCMacro. Does not require licensed V2 CAD.
+from pathlib import Path
+import json,hashlib,shutil,tempfile
+import FreeCAD as App
+import Part,Mesh
+HERE=Path(__file__).resolve().parent
+path=HERE/'CxChangerTopTapPrototype.FCStd'
+report={'status':'running','physical_qualification':'Not performed; integrated fit prototype'}
+receipt=HERE/'top-native-validation.json'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def surface_check(a,b):
+ pts=[v.Point for v in a.Vertexes];sample=a.tessellate(.2)[0]
+ pts+=sample[::max(1,len(sample)//200)]
+ return max(Part.Vertex(p).distToShape(b)[0]for p in pts)
+try:
+ original_hash=sha(path)
+ check_dir=Path(tempfile.mkdtemp(prefix='native-reopen-top-',dir=str(HERE)))
+ copied=check_dir/path.name;shutil.copy2(path,copied)
+ doc=App.openDocument(str(copied));doc.recompute()
+ assert Path(doc.FileName).resolve()==copied.resolve()
+ assert not any('Error' in o.State or 'Invalid' in o.State for o in doc.Objects)
+ finals={o.PartRole:o for o in doc.Objects if hasattr(o,'PartRole')}
+ assert set(finals)=={'adapter_carrier','duct'}
+ report['parts']={}
+ stems={'adapter_carrier':'tap-adapter-top-fan-carrier-PROTOTYPE','duct':'tap-top-fan-duct-PROTOTYPE'}
+ for role,obj in finals.items():
+  a=obj.Shape;assert a.isValid() and a.isClosed() and len(a.Solids)==1,role
+  ref=Part.Shape();ref.read(str(HERE/('final11-top-adapter-carrier.brep' if role=='adapter_carrier' else 'final11-top-duct.brep')))
+  if role=='adapter_carrier':
+   # Preserve the final11 reference and account only for the selected insert-bore change.
+   for x,y in [(9.95,-3.5),(29.95,-3.5),(29.95,-23.5)]:
+    ref=ref.cut(Part.makeCylinder(2.3,5.2,App.Vector(x,y,-.1)))
+    bore=next(o for o in doc.Objects if o.TypeId=='Part::Cylinder' and (o.Placement.Base-App.Vector(x,y,-.1)).Length<1e-5 and abs(o.Height.Value-5.2)<1e-6)
+    assert abs(bore.Radius.Value-2.3)<1e-6
+   report['preflight_insert_bore_adjustment_mm']=4.6
+  preflight_distance=max(surface_check(a,ref),surface_check(ref,a));assert preflight_distance<1e-4,(role,preflight_distance)
+  assert abs(a.Volume-ref.Volume)<=max(.001,ref.Volume*1e-4),(role,a.Volume,ref.Volume)
+  sp=HERE/(stems[role]+'.step');b=Part.read(str(sp))
+  assert b.isValid() and b.isClosed() and len(b.Solids)==1
+  dv=abs(a.Volume-b.Volume);da=abs(a.Area-b.Area);dc=(a.Solids[0].CenterOfMass-b.Solids[0].CenterOfMass).Length
+  dist=max(surface_check(a,b),surface_check(b,a))
+  # STEP rewrites the duct's trimmed BSpline faces; default mass integration
+  # drifts by0.932mm3/0.123mm2/0.00317mm. Keep strict boundary agreement.
+  tolerances={'volume_mm3':1.0,'area_mm2':.15,'center_mm':.004,'surface_mm':1e-4} if role=='duct' else {'volume_mm3':.001,'area_mm2':.001,'center_mm':1e-5,'surface_mm':1e-4}
+  assert dv<tolerances['volume_mm3'] and da<tolerances['area_mm2'] and dc<tolerances['center_mm'] and dist<tolerances['surface_mm'],(role,dv,da,dc,dist)
+  meshes={}
+  for suffix in ['-assembly.stl','-print-with-external-supports.stl']:
+   p=HERE/(stems[role]+suffix);m=Mesh.Mesh(str(p));assert m.isSolid(),str(p)
+   meshes[p.name]={'sha256':sha(p),'solid':True,'facets':m.CountFacets,'points':m.CountPoints}
+  report['parts'][role]={'valid':True,'closed':True,'solids':1,'volume_mm3':a.Volume,'preflight_volume_relative_tolerance':1e-4,'preflight_default_volume_mm3':ref.Volume,'preflight_bidirectional_sampled_surface_distance_mm':preflight_distance,'area_mm2':a.Area,'STEP_sha256':sha(sp),'volume_difference_mm3':dv,'area_difference_mm2':da,'center_difference_mm':dc,'bidirectional_sampled_surface_distance_mm':dist,'roundtrip_tolerances':tolerances,'meshes':meshes}
+ # Test actual native dependency recomputation using a fan clearance cylinder, then restore.
+ bore=next(o for o in doc.Objects if o.TypeId=='Part::Cylinder' and abs(o.Radius.Value-1.65)<1e-6 and (o.Placement.Base-App.Vector(3,-68.15,24.25)).Length<1e-5)
+ old=finals['adapter_carrier'].Shape.Volume;bore.Radius=1.7;doc.recompute()
+ assert finals['adapter_carrier'].Shape.isValid() and finals['adapter_carrier'].Shape.Volume<old-.1
+ bore.Radius=1.65;doc.recompute();assert abs(finals['adapter_carrier'].Shape.Volume-old)<.0001
+ report['native_edit_propagates_and_restores']=True
+ # FreeCAD's diagnostic cap union is unstable for this trimmed loft. Require
+ # the independent PythonOCC test of the exact native BREP and STEP exports.
+ air_path=HERE/'top-export-airway-validation.json';air=json.loads(air_path.read_text())
+ assert air['status']=='passed'
+ assert sha(HERE/'source/cx/original-4020-duct-assembly-reference.brep')==air['source_cap_input_sha256']
+ expected={'neck','side_port','original_plenum','left_jet','right_jet'}
+ for filename in ['tap-top-fan-duct-PROTOTYPE-native.brep','tap-top-fan-duct-PROTOTYPE.step']:
+  check=air['files'][filename]
+  assert sha(HERE/filename)==check['sha256']
+  assert check['pass'] and check['valid'] and check['enclosed']
+  assert len(check['air_solid_volumes_mm3'])==2 and all(v>0 for v in check['air_solid_volumes_mm3'])
+  assert abs(check['air_solids_common_volume_mm3'])<1e-6
+  assert set(check['connected_stages'])==expected and all(check['connected_stages'].values())
+ report['airway']={'independent_pythonOCC':True,'receipt_sha256':sha(air_path),'method':air['method'],'files':air['files']}
+ doc.save();assert sha(path)==original_hash
+ report['native_sha256']=original_hash;report['distinct_reopen_copy']=str(copied);report['original_unchanged']=True;report['status']='passed'
+except Exception as exc:
+ report['status']='failed';report['error']=str(exc);receipt.write_text(json.dumps(report,indent=2));raise
+receipt.write_text(json.dumps(report,indent=2))

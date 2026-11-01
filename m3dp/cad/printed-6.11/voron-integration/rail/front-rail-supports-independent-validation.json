@@ -1,0 +1,80 @@
+[
+  {
+    "name": "front-rail-support-left",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 23831.865861947004,
+    "export_geometry_difference_mm3": 0.0,
+    "mesh": {
+      "triangles": 1542,
+      "vertices": 763,
+      "edges": 2313,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 23833.023351444128,
+      "bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        74.9772,
+        49.75098,
+        44.51341
+      ],
+      "relative_volume_error": 4.8568983386726826e-05
+    },
+    "native_edit_roundtrip": true
+  },
+  {
+    "name": "front-rail-support-right",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 23817.571125041286,
+    "export_geometry_difference_mm3": 0.0,
+    "mesh": {
+      "triangles": 1542,
+      "vertices": 763,
+      "edges": 2313,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 23818.728942819955,
+      "bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        74.97739,
+        49.75098,
+        44.40943
+      ],
+      "relative_volume_error": 4.8611916496026815e-05
+    },
+    "native_edit_roundtrip": true
+  },
+  {
+    "name": "front-gantry-fit-coupon",
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 11169.46861774122,
+    "export_geometry_difference_mm3": 0.0,
+    "mesh": {
+      "triangles": 784,
+      "vertices": 388,
+      "edges": 1176,
+      "connected_components": 1,
+      "watertight": true,
+      "consistent_winding": true,
+      "signed_volume_mm3": 11170.394116694108,
+      "bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        24.97739,
+        28.22098,
+        26.0
+      ],
+      "relative_volume_error": 8.285971200251887e-05
+    },
+    "native_edit_roundtrip": true
+  }
+]

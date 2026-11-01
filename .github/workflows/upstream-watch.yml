@@ -1,0 +1,33 @@
+# Manual upstream review only. M3DP Changer owns main; never mirror over it.
+name: upstream-watch
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Fetch and report upstream changes
+        run: |
+          git remote add upstream https://github.com/cx330-TXY/CxChanger.git
+          git remote set-url --push upstream DISABLE
+          git fetch upstream main
+          count=$(git rev-list --count main..upstream/main)
+          {
+            echo '# Upstream CxChanger review'
+            echo "$count upstream commit(s) are not included in M3DP Changer main."
+            echo 'Review changes individually; this workflow does not merge, push or open issues.'
+            if [ "$count" -gt 0 ]; then
+              echo '```text'
+              git log --format='%h %ci %s' main..upstream/main
+              base=$(git merge-base main upstream/main)
+              git diff --stat "$base" upstream/main
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

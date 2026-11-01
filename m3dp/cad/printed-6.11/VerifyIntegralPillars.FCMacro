@@ -1,0 +1,48 @@
+"""Run after generation to reopen, recompute and inspect the four saved parts."""
+from pathlib import Path
+import json
+import re
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+HERE = Path(__file__).resolve().parent
+doc = App.openDocument(str(HERE / 'CxChanger6_11IntegralPillars.FCStd'))
+doc.recompute()
+assert not any('Error' in obj.State or 'Invalid' in obj.State for obj in doc.Objects)
+items = [('P1_Final','p1-magnet-plate-integral-pillars'),
+         ('P5_Final','p5-backplate-two-inserts-through-bolt'),
+         ('P3_Final','p3-cover-left-clamp-web'),
+         ('P4_Final','p4-cover-right-clamp-web')]
+rows=[]
+for name,stem in items:
+    shape=doc.getObject(name).Shape
+    check=Part.read(str(HERE/(stem+'.step')))
+    assert shape.isValid() and len(shape.Solids)==1 and shape.Solids[0].isClosed()
+    assert check.isValid() and len(check.Solids)==1 and check.Solids[0].isClosed()
+    dv=abs(shape.Volume-check.Volume)
+    dc=(shape.Solids[0].CenterOfMass-check.Solids[0].CenterOfMass).Length
+    assert dv<0.0001 and dc<0.00001
+    rows.append({'name':name,'stem':stem,'valid':True,'closed':True,'solids':1,
+                 'volume_mm3':shape.Volume,'step_volume_difference_mm3':dv,
+                 'step_center_difference_mm':dc})
+    for obj in doc.Objects: obj.Visibility=obj.Name==name
+    view=Gui.activeDocument().activeView()
+    view.viewAxonometric();view.fitAll()
+    camera=view.getCamera()
+    camera=re.sub(r'(\bheight\s+)([0-9.eE+-]+)',lambda m:m.group(1)+str(float(m.group(2))*1.25),camera)
+    view.setCamera(camera)
+    view.saveImage(str(HERE/(stem+'-preview.png')),1200,800,'White')
+for name,_ in items: doc.getObject(name).Visibility=True
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+assert abs(doc.getObject('P1_LeftHex_AF6').Height.Value-10)<0.000001
+assert abs(doc.getObject('P1_RearHex_AF6').Height.Value-14)<0.000001
+for side in ('Left','Right'):
+    assert abs(doc.getObject('P5_'+side+'TrialBore').Radius.Value-2.3)<0.000001
+for n in (3,4):
+    assert abs(doc.getObject('P%d_M3Clearance'%n).Radius.Value-1.7)<0.000001
+doc.save()
+(HERE/'integral-native-validation.json').write_text(json.dumps({
+    'freecad_version':App.Version(),'native_reopened_and_recomputed':True,
+    'parts':rows,'step_readback_method':'mass properties; independent surface checks supplement this report'},indent=2))
+App.Console.PrintMessage('Integral-pillar document reopened and four valid closed parts verified.\n')

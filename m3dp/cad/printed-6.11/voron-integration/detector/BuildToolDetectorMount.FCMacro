@@ -1,0 +1,74 @@
+"""Adapt the earlier CxChanger 6.11 upper detector mount for through fasteners."""
+from pathlib import Path
+import json, math
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part, MeshPart
+
+HERE = Path(__file__).resolve().parent
+(HERE / 'native-build.log').write_text('Started\n')
+doc = App.newDocument('CxToolDetectorMountPrototype')
+source = doc.addObject('Part::Feature', 'Upstream611UpperDetectorMount')
+source.Shape = Part.read(str(HERE / 'source/upstream-611-upper-detector-mount.step'))
+source.addProperty('App::PropertyString', 'Source', 'Provenance')
+source.Source = 'Earlier CxChanger 6.11 upper detector mount, placement84. GPL-3.0. See source-provenance.json.'
+
+def cylinder(name, xy, z, radius, height):
+    o = doc.addObject('Part::Cylinder', name)
+    o.Radius, o.Height = radius, height
+    o.Placement.Base = App.Vector(*xy, z)
+    return o
+
+def boolean(kind, name, a, b):
+    o = doc.addObject('Part::' + kind, name)
+    o.Base, o.Tool, o.Refine = a, b, True
+    doc.recompute()
+    a.Visibility = b.Visibility = False
+    return o
+
+mount = (41.875, -45.5)
+pivot = (39.86351341589972, -61.08497945384334)
+slot_start = (44.074160023070256, -56.133166134510375)
+slot_end = (43.20534932769942, -55.509844232289886)
+angles = [math.degrees(math.atan2(p[1]-pivot[1], p[0]-pivot[0])) for p in (slot_start, slot_end)]
+# The original Z=2 face seats on the retained motor mounting ear.
+# Adding material below it collides with that ear.
+shape = boolean('Cut', 'M3AnchorClearance', source, cylinder('M3Bore', mount, -.1, 1.7, 5.2))
+shape = boolean('Cut', 'M2PivotClearance', shape, cylinder('M2Pivot', pivot, -4.1, 1.1, 9.2))
+outer = cylinder('ArcSlotOuter', pivot, -4.1, 7.6, 9.2)
+inner = cylinder('ArcSlotInner', pivot, -4.2, 5.4, 9.4)
+for o in (outer, inner):
+    o.Angle = angles[1] - angles[0]
+    o.Placement.Rotation = App.Rotation(App.Vector(0, 0, 1), angles[0])
+arc = boolean('Cut', 'ArcSlotTool', outer, inner)
+for name, p in [('Start', slot_start), ('End', slot_end)]:
+    arc = boolean('Fuse', 'RoundedSlot' + name, arc, cylinder('SlotCap' + name, p, -4.1, 1.1, 9.2))
+shape = boolean('Cut', 'DetectorMountFinal', shape, arc)
+shape.Label = 'Upper tool/filament detector mount — prototype'
+shape.addProperty('App::PropertyString', 'Acceptance', 'Prototype')
+shape.Acceptance = 'Physical switch/arm operation is unverified. Must distinguish empty, tool plus filament, and tool without filament before automatic tool changing. Adjustable switch angle; avoid plunger bottoming.'
+doc.recompute()
+assert shape.Shape.isValid() and shape.Shape.isClosed() and len(shape.Shape.Solids) == 1
+printed = doc.addObject('Part::Compound', 'PrintOrientation')
+printed.Links = [shape]
+printed.Placement.Rotation = App.Rotation(App.Vector(1, 0, 0), 180)
+doc.recompute()
+b = printed.Shape.BoundBox
+printed.Placement.Base = App.Vector(-b.XMin, -b.YMin, -b.ZMin)
+doc.recompute()
+for o in doc.Objects:
+    if hasattr(o, 'Visibility'): o.Visibility = o == printed
+doc.saveAs(str(HERE / 'tool-detector-mount.FCStd'))
+Part.export([shape], str(HERE / 'tool-detector-mount.step'))
+shape.Shape.exportBrep(str(HERE / 'tool-detector-mount-native.brep'))
+MeshPart.meshFromShape(Shape=printed.Shape, LinearDeflection=.03, AngularDeflection=.15, Relative=False).write(str(HERE / 'tool-detector-mount.stl'))
+back = Part.read(str(HERE / 'tool-detector-mount.step'))
+delta = shape.Shape.cut(back).Volume + back.cut(shape.Shape).Volume
+assert delta < .0001
+(HERE / 'native-validation.json').write_text(json.dumps({'valid_closed_single_solid': True, 'volume_mm3': shape.Shape.Volume, 'step_roundtrip_difference_mm3': delta, 'switch_hole_spacing_mm': math.dist(pivot, slot_start), 'physical_actuation_verified': False}, indent=2))
+(HERE / 'native-build.log').write_text('Geometry and exports completed\n')
+view = Gui.activeDocument().activeView()
+view.viewAxonometric(); view.fitAll()
+view.saveImage(str(HERE / 'tool-detector-mount-preview.png'), 1000, 800, 'White')
+doc.save()
+(HERE / 'native-build.log').write_text('Completed\n')

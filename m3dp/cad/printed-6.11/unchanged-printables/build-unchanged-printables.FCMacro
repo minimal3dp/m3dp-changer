@@ -1,0 +1,64 @@
+"""Create the selected corrected-6.11 native project and individual STL files.
+
+The included STEP sources contain only printable parts. Placement changes do
+not alter their geometry. Review supports for the duct before slicing it.
+"""
+from pathlib import Path
+import json,math,traceback
+import FreeCAD as App
+import Part
+import MeshPart
+
+HERE=Path(__file__).resolve().parent
+LOG=HERE/'unchanged-printables-native.log'
+LOG.write_text('Started\n')
+try:
+    selection=json.loads((HERE/'source-selection.json').read_text())
+    doc=App.newDocument('CxUnchangedPrintables611')
+    doc.Label='CxChanger corrected 6.11 - remaining printed parts'
+    rows=[]
+    for entry in selection['parts']:
+        name=entry['basename']
+        shape=Part.read(str(HERE/'source'/(name+'.step')))
+        assert shape.isValid() and len(shape.Solids)==1 and shape.Solids[0].isClosed()
+        original_volume=shape.Volume
+        obj=doc.addObject('Part::Feature','Print_'+name.replace('-','_'))
+        obj.Label=name
+        obj.Shape=shape
+        obj.addProperty('App::PropertyInteger','PrintQuantity','Printing')
+        obj.PrintQuantity=entry['quantity_for_six_tools']
+        obj.addProperty('App::PropertyString','SourceProduct','Provenance')
+        obj.SourceProduct=entry['source_product']
+        obj.addProperty('App::PropertyString','OrientationNote','Printing')
+        if name=='hotend-holder':
+            obj.Placement.Rotation=App.Rotation(App.Vector(1,0,0),-90)
+            orientation='Broad coplanar rear faces at source Y=13.68 placed on bed; inspect supports and pocket quality in slicer.'
+        elif name=='4020-part-cooling-duct':
+            orientation='SOURCE ORIENTATION, Z lowered to bed only. Print orientation/supports still need slicer review; thin source membrane retained.'
+        else:
+            orientation='Broad flat source face placed on bed; inspect overhangs and bearing/pin fits in slicer.'
+        obj.OrientationNote=orientation
+        doc.recompute()
+        b=obj.Shape.BoundBox
+        obj.Placement.Base=App.Vector(-b.XMin,-b.YMin,-b.ZMin)
+        doc.recompute()
+        assert abs(obj.Shape.Volume-original_volume)<0.0001
+        assert abs(obj.Shape.BoundBox.ZMin)<0.000001
+        mesh=MeshPart.meshFromShape(Shape=obj.Shape,LinearDeflection=0.035,
+                                   AngularDeflection=math.radians(7),Relative=False)
+        mesh.write(str(HERE/(name+'.stl')))
+        Part.export([obj],str(HERE/(name+'-print-position.step')))
+        obj.ViewObject.ShapeColor=(0.2,0.57,0.72)
+        rows.append({'basename':name,'quantity_for_six_tools':entry['quantity_for_six_tools'],
+            'valid':True,'closed':True,'solids':1,'volume_mm3':obj.Shape.Volume,
+            'facets':mesh.CountFacets,'orientation':orientation,
+            'print_bounds_mm':[obj.Shape.BoundBox.XMin,obj.Shape.BoundBox.YMin,obj.Shape.BoundBox.ZMin,
+                obj.Shape.BoundBox.XMax,obj.Shape.BoundBox.YMax,obj.Shape.BoundBox.ZMax]})
+    doc.recompute()
+    doc.saveAs(str(HERE/'unchanged-printables-6.11.FCStd'))
+    (HERE/'unchanged-printables-native-validation.json').write_text(json.dumps(rows,indent=2))
+except BaseException:
+    LOG.write_text(traceback.format_exc());raise
+else:
+    LOG.write_text('Completed successfully\n')
+    App.Console.PrintMessage('Four remaining printable designs exported to '+str(HERE)+'\n')

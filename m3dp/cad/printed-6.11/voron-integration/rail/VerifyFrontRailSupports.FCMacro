@@ -1,0 +1,31 @@
+"""Native reopen and dependency edit test; do not close documents in this macro."""
+from pathlib import Path
+import json,traceback,shutil,tempfile,hashlib
+import FreeCAD as App
+OUT=Path(__file__).resolve().parent
+LOG=OUT/'front-rail-supports-reopen.log';LOG.write_text('Started\n')
+try:
+    rows=[]
+    check_dir=Path(tempfile.mkdtemp(prefix='native-reopen-',dir=str(OUT)))
+    for name in ['front-rail-support-left','front-rail-support-right','front-gantry-fit-coupon']:
+        original=OUT/(name+'.FCStd')
+        before_hash=hashlib.sha256(original.read_bytes()).hexdigest()
+        copied=check_dir/(name+'.FCStd');shutil.copy2(original,copied)
+        doc=App.openDocument(str(copied));doc.recompute()
+        assert Path(doc.FileName).resolve()==copied.resolve()
+        obj=doc.CouponPrint if name=='front-gantry-fit-coupon' else doc.PrintOrientation
+        shape=obj.Shape;assert shape.isValid() and len(shape.Solids)==1
+        before=shape.Volume
+        doc.ExistingM5Front.Radius=2.85;doc.recompute()
+        assert abs(obj.Shape.Volume-before)>1
+        doc.ExistingM5Front.Radius=2.75;doc.recompute()
+        assert abs(obj.Shape.Volume-before)<.0001
+        assert not any('Error' in o.State or 'Invalid' in o.State for o in doc.Objects)
+        doc.save()
+        assert hashlib.sha256(original.read_bytes()).hexdigest()==before_hash
+        rows.append({'name':name,'reopened_recomputed':True,'distinct_disk_copy_opened':str(copied),
+                     'original_unchanged_sha256':before_hash,'native_bore_edit_roundtrip':True,'volume_mm3':before})
+    (OUT/'front-rail-supports-native-reopen.json').write_text(json.dumps(rows,indent=2))
+    LOG.write_text('Completed successfully\n')
+except Exception:
+    LOG.write_text(traceback.format_exc());raise

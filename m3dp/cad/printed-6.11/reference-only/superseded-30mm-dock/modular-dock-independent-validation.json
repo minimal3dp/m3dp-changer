@@ -1,0 +1,149 @@
+{
+  "protected_original_interface_difference_mm3": 0.0,
+  "latch_port_region_differences_mm3": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "left_end_headseat_wall_mm": 2.8,
+  "preceding_latch_web_mm": 1.55,
+  "rail_envelope_collision_mm3": 0.0,
+  "hook_head_envelope_collision_mm3": 0.0,
+  "adjacent_module_collision_mm3": 0.0,
+  "nominal_hook_head_height_mm": 3,
+  "hook_head_to_rail_clearance_mm": 2,
+  "original_pin_seats_preserved": true,
+  "pin_fastener_access_clear": true,
+  "clamp_holes": [
+    {
+      "center_xy_mm": [
+        31.7,
+        10
+      ],
+      "bore_diameter_mm": 3.4,
+      "bore_z_mm": [
+        0.0,
+        3.0
+      ],
+      "counterbore_diameter_mm": 5.8,
+      "counterbore_z_mm": [
+        3.0,
+        6.0
+      ]
+    },
+    {
+      "center_xy_mm": [
+        61.7,
+        10
+      ],
+      "bore_diameter_mm": 3.4,
+      "bore_z_mm": [
+        0.0,
+        3.0
+      ],
+      "counterbore_diameter_mm": 5.8,
+      "counterbore_z_mm": [
+        3.0,
+        6.0
+      ]
+    }
+  ],
+  "tool_counts_and_width_mm": {
+    "2": 68,
+    "4": 136,
+    "6": 204,
+    "8": 272
+  },
+  "station_center_x_mm_for_8_tools": [
+    48,
+    78,
+    116,
+    146,
+    184,
+    214,
+    252,
+    282
+  ],
+  "native_reopen_and_parameter_edit_checks_passed": true,
+  "outputs": [
+    {
+      "name": "two-station-dock",
+      "valid": true,
+      "solids": 1,
+      "bounds_mm": [
+        26.0,
+        -50.3,
+        -9.0,
+        94.0,
+        26.0,
+        21.153684484622
+      ],
+      "volume_mm3": 18040.613657003305,
+      "native_types": {
+        "Part::Feature": 1,
+        "Part::Box": 8,
+        "Part::Common": 1,
+        "Part::MultiFuse": 1,
+        "Part::Cylinder": 6,
+        "Part::Cut": 6
+      },
+      "mesh": {
+        "triangles": 5240,
+        "vertices": 2602,
+        "edges": 7860,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 18041.07825752486,
+        "bounds_mm": [
+          26.0,
+          -50.3,
+          -9.0,
+          94.0,
+          26.0,
+          21.15339
+        ],
+        "relative_volume_error": 2.5753033149965705e-05
+      }
+    },
+    {
+      "name": "2020-rail-fit-coupon",
+      "valid": true,
+      "solids": 1,
+      "bounds_mm": [
+        0.0,
+        -2.15,
+        -9.0,
+        18.0,
+        22.15,
+        6.0
+      ],
+      "volume_mm3": 3628.500009043306,
+      "native_types": {
+        "Part::Box": 5,
+        "Part::MultiFuse": 1,
+        "Part::Cylinder": 2,
+        "Part::Cut": 2
+      },
+      "mesh": {
+        "triangles": 784,
+        "vertices": 392,
+        "edges": 1176,
+        "connected_components": 1,
+        "watertight": true,
+        "consistent_winding": true,
+        "signed_volume_mm3": 3628.586477814265,
+        "bounds_mm": [
+          0.0,
+          -2.15,
+          -9.0,
+          18.0,
+          22.15,
+          6.0
+        ],
+        "relative_volume_error": 2.3830445292425675e-05
+      }
+    }
+  ]
+}

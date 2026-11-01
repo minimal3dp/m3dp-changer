@@ -1,0 +1,38 @@
+"""Reopen a distinct saved copy and verify the M3 anchor bore remains editable."""
+from pathlib import Path
+import hashlib, json, shutil, tempfile, traceback
+import FreeCAD as App
+
+HERE = Path(__file__).resolve().parent
+log = HERE / 'native-reopen.log'
+log.write_text('Started\n')
+try:
+    original = HERE / 'tool-detector-mount.FCStd'
+    digest = hashlib.sha256(original.read_bytes()).hexdigest()
+    copied = Path(tempfile.mkdtemp(prefix='native-reopen-', dir=str(HERE))) / original.name
+    shutil.copy2(original, copied)
+    doc = App.openDocument(str(copied))
+    doc.recompute()
+    assert Path(doc.FileName).resolve() == copied.resolve()
+    obj = doc.DetectorMountFinal
+    before = obj.Shape.Volume
+    assert obj.Shape.isValid() and obj.Shape.isClosed() and len(obj.Shape.Solids) == 1
+    doc.M3Bore.Radius = 1.8
+    doc.recompute()
+    assert before - obj.Shape.Volume > 1
+    doc.M3Bore.Radius = 1.7
+    doc.recompute()
+    assert abs(obj.Shape.Volume - before) < .0001
+    assert not any('Error' in o.State or 'Invalid' in o.State for o in doc.Objects)
+    doc.save()
+    assert hashlib.sha256(original.read_bytes()).hexdigest() == digest
+    (HERE / 'native-reopen-validation.json').write_text(json.dumps({
+        'distinct_disk_copy_opened': str(copied),
+        'original_unchanged_sha256': digest,
+        'native_bore_edit_roundtrip': True,
+        'volume_mm3': before,
+    }, indent=2))
+    log.write_text('Completed successfully\n')
+except Exception:
+    log.write_text(traceback.format_exc())
+    raise

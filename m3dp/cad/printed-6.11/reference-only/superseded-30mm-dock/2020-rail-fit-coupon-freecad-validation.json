@@ -1,0 +1,25 @@
+{
+  "valid": true,
+  "closed": true,
+  "solids": 1,
+  "volume_mm3": 3628.5000090433055,
+  "bounds_mm": [
+    0.0,
+    -2.15,
+    -9.0,
+    18.0,
+    22.15,
+    6.0
+  ],
+  "step_roundtrip_difference_mm3": 0.0,
+  "stl_facets": 784,
+  "native_saved": true,
+  "native_reopen_validation": "Run verify-modular-documents.FCMacro separately after generation.",
+  "rail_exterior_mm": 20,
+  "rail_side_clearance_mm": 0.15,
+  "stand_off_mm": 5,
+  "plate_thickness_mm": 6,
+  "clamp_clearance_diameter_mm": 3.4,
+  "head_seat_diameter_mm": 5.8,
+  "head_seat_depth_mm": 3
+}

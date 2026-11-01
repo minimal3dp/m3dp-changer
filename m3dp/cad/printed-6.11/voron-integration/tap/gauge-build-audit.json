@@ -1,0 +1,28 @@
+{
+  "status": "independent OCC build; native macro still to run",
+  "valid_one_solid": true,
+  "triangles": 2904,
+  "nonmanifold_edges": 0,
+  "stl_sha256": "887102696c4e95143c0872a0ccfc2b8acb9fe53b5893d4a428ed25cb9bddaf99",
+  "holes_xy_mm": [
+    [
+      -15.5,
+      12.903
+    ],
+    [
+      15.5,
+      12.903
+    ],
+    [
+      17.54,
+      63.46
+    ],
+    [
+      -17.54,
+      63.46
+    ]
+  ],
+  "bore_mm": 3.3,
+  "thickness_mm": 2,
+  "purpose": "nonstructural interface fit verification only"
+}

@@ -1,0 +1,83 @@
+"""Generate separate, unsupported-wall coupons matching the P5 insert seats.
+
+Run in FreeCAD. Each specimen is a 10 mm OD x 5 mm sleeve, without a base,
+floor or entry chamfer. Names identify the trial bore; keep specimens labeled.
+"""
+from pathlib import Path
+import json
+import math
+import traceback
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+import MeshPart
+
+OUT = Path(__file__).resolve().parent
+LOG = OUT / "insert-fit-coupon-macro.log"
+LOG.write_text("Started\n")
+try:
+    doc = App.newDocument("InsertFitCoupon")
+    doc.Label = "M3 insert fit coupons - 5 OD x 4 long inserts"
+    doc.Comment = "Five separate 10 OD x 5 high sleeves; trial bores 4.3 to 4.7 mm. No floor or chamfer. Physical fit testing required."
+    finals = []
+    for i, diameter in enumerate((4.3, 4.4, 4.5, 4.6, 4.7)):
+        tag = str(diameter).replace(".", "p")
+        outside = doc.addObject("Part::Cylinder", "Outside" + tag)
+        outside.Radius = 5
+        outside.Height = 5
+        outside.Placement.Base = App.Vector(6 + i * 12, 5, 0)
+        bore = doc.addObject("Part::Cylinder", "TrialBore" + tag)
+        bore.Label = "EDIT trial bore diameter " + str(diameter) + " mm"
+        bore.Radius = diameter / 2
+        bore.Height = 5.2
+        bore.Placement.Base = App.Vector(6 + i * 12, 5, -0.1)
+        sleeve = doc.addObject("Part::Cut", "Coupon" + tag)
+        sleeve.Label = "PRINT separately - " + str(diameter) + " mm trial bore"
+        sleeve.Base = outside
+        sleeve.Tool = bore
+        sleeve.Refine = True
+        finals.append(sleeve)
+    doc.recompute()
+    for obj in doc.Objects:
+        obj.Visibility = obj in finals
+    for sleeve in finals:
+        sleeve.ViewObject.ShapeColor = (0.85, 0.48, 0.18)
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+    native = OUT / "insert-fit-coupon.FCStd"
+    doc.saveAs(str(native))
+    App.closeDocument(doc.Name)
+    doc = App.openDocument(str(native))
+    doc.recompute()
+    finals = [doc.getObject("Coupon" + tag) for tag in ("4p3", "4p4", "4p5", "4p6", "4p7")]
+    report = {"native_reopened_and_recomputed": True, "specimens": []}
+    for sleeve in finals:
+        diameter = 2 * sleeve.Tool.Radius.Value
+        shape = sleeve.Shape
+        expected = math.pi * (25 - (diameter / 2)**2) * 5
+        assert shape.isValid() and len(shape.Solids) == 1 and shape.Solids[0].isClosed()
+        assert abs(shape.Volume - expected) < 0.00001
+        assert not any("Error" in o.State or "Invalid" in o.State for o in doc.Objects)
+        basename = "insert-coupon-" + str(diameter).replace(".", "p")
+        Part.export([sleeve], str(OUT / (basename + ".step")))
+        check = Part.read(str(OUT / (basename + ".step")))
+        delta = shape.cut(check).Volume + check.cut(shape).Volume
+        assert check.isValid() and delta < 0.00001
+        mesh = MeshPart.meshFromShape(Shape=shape, LinearDeflection=0.03,
+                                     AngularDeflection=math.radians(8), Relative=False)
+        mesh.write(str(OUT / (basename + ".stl")))
+        report["specimens"].append({"basename": basename, "bore_mm": diameter,
+            "outside_diameter_mm": 10, "height_mm": 5, "through_bore": True,
+            "entry_chamfer": False, "floor": False, "volume_mm3": shape.Volume,
+            "step_difference_mm3": delta, "stl_facets": mesh.CountFacets})
+    Part.export(finals, str(OUT / "insert-fit-coupon.step"))
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+    Gui.activeDocument().activeView().saveImage(str(OUT / "insert-fit-coupon-preview.png"), 1200, 650, "White")
+    doc.save()
+    (OUT / "insert-fit-coupon-freecad-validation.json").write_text(json.dumps(report, indent=2))
+except BaseException:
+    LOG.write_text(traceback.format_exc())
+    raise
+else:
+    LOG.write_text("Completed successfully\n")

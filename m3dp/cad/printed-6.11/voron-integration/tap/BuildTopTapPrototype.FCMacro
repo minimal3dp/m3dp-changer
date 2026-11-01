@@ -1,0 +1,121 @@
+# CxChanger/ChaoticlabV2 integration PROTOTYPE. Independent adapter, carrier and duct geometry.
+# Native primitives, extrusions, lofts and Booleans. No licensed V2referencebody is embedded.
+from pathlib import Path
+import math,json
+import FreeCAD as App
+import Part,MeshPart
+HERE=Path(__file__).resolve().parent
+INSERT_BORE=4.6  # Selected from the user's heat-set/cool-down coupon test (4p6).
+PROGRESS=HERE/'top-native-progress.txt'
+PROGRESS.write_text('Starting native top-TAP prototype build\n')
+doc=App.newDocument('CxChangerTopTapPrototype')
+serial=0
+def label(prefix):
+ global serial
+ serial+=1;return prefix+str(serial)
+def box(p,dx,dy,dz):
+ o=doc.addObject('Part::Box',label('Web'));o.Length=dx;o.Width=dy;o.Height=dz;o.Placement.Base=App.Vector(*p);return o
+def cylinder(p,r,h,axis=(0,0,1)):
+ o=doc.addObject('Part::Cylinder',label('Cylinder'));o.Radius=r;o.Height=h;o.Placement=App.Placement(App.Vector(*p),App.Rotation(App.Vector(0,0,1),App.Vector(*axis)));return o
+def cyl(x,y,z,r,h):return cylinder((x,y,z),r,h)
+def ycyl(x,z,y,r,h):return cylinder((x,y,z),r,h,(0,1,0))
+def profile(points):
+ o=doc.addObject('Part::Feature',label('Profile'));o.Shape=Part.makePolygon([App.Vector(*p) for p in points]+[App.Vector(*points[0])]);o.addProperty('App::PropertyVectorList','ControlPoints','Dimensions');o.ControlPoints=[App.Vector(*p) for p in points];return o
+def extrude(points,direction):
+ p=profile(points);o=doc.addObject('Part::Extrusion',label('Extrusion'));o.Base=p;o.DirMode='Custom';o.Dir=App.Vector(*direction);o.LengthFwd=App.Vector(*direction).Length;o.Solid=True;doc.recompute();p.Visibility=False;return o
+def poly(points,z,h):return extrude([(x,y,z)for x,y in points],(0,0,h))
+def ypoly(points,y,h):return extrude([(x,y,z)for x,z in points],(0,h,0))
+def boolean(kind,a,b):
+ o=doc.addObject('Part::'+kind,label(kind));o.Base=a;o.Tool=b;o.Refine=True;doc.recompute();a.Visibility=False;b.Visibility=False;return o
+def fuse(a,b):return boolean('Fuse',a,b)
+def cut(a,b):return boolean('Cut',a,b)
+def common(a,b):return boolean('Common',a,b)
+def beam(p,q,width,z,h):
+ dx=q[0]-p[0];dy=q[1]-p[1];v=width/2/math.hypot(dx,dy);px=-dy*v;py=dx*v
+ return poly([(p[0]+px,p[1]+py),(q[0]+px,q[1]+py),(q[0]-px,q[1]-py),(p[0]-px,p[1]-py)],z,h)
+def ybeam(p,q,width,y,h):
+ dx=q[0]-p[0];dz=q[1]-p[1];v=width/2/math.hypot(dx,dz);px=-dz*v;pz=dx*v
+ return ypoly([(p[0]+px,p[1]+pz),(q[0]+px,q[1]+pz),(q[0]-px,q[1]-pz),(p[0]-px,p[1]-pz)],y,h)
+def capsule_profile(x,r):
+ y=45.5;lo=-4.5;hi=14.5
+ p0=App.Vector(x,y+r,lo);p1=App.Vector(x,y-r,lo);p2=App.Vector(x,y-r,hi);p3=App.Vector(x,y+r,hi)
+ edges=[Part.Arc(p0,App.Vector(x,y,lo-r),p1).toShape(),Part.makeLine(p1,p2),Part.Arc(p2,App.Vector(x,y,hi+r),p3).toShape(),Part.makeLine(p3,p0)]
+ o=doc.addObject('Part::Feature',label('RoundedSidePort'));o.Shape=Part.Wire(edges);o.addProperty('App::PropertyLength','ArcRadius','Dimensions');o.ArcRadius=r;return o
+def loft(sections,wall=0,portx=34.6):
+ wires=[]
+ for center,u,hu,hz in sections:
+  points=[]
+  for pu,pz in [(-1,-1),(1,-1),(1,1),(-1,1)]:points.append(tuple(center[k]+pu*(hu+wall)*u[k]+(pz*(hz+wall) if k==2 else 0) for k in range(3)))
+  wires.append(profile(points))
+ wires.append(capsule_profile(portx,3.5+wall))
+ o=doc.addObject('Part::Loft',label('AirwayLoft'));o.Sections=wires;o.Solid=True;o.Ruled=True;o.Closed=False;doc.recompute()
+ for w in wires:w.Visibility=False
+ return o
+GAP=11.;TAP=[(4.45,-26.46358),(35.45,-26.46358),(37.49,24.09342),(2.41,24.09342)];CX=[(9.95,-3.5),(29.95,-3.5),(29.95,-23.5)]
+a=poly(TAP,1.5,GAP-1.5)
+for p in TAP:a=fuse(a,cyl(*p,1.5,5,GAP-1.5))
+for i,(p,q) in enumerate(zip(TAP,TAP[1:]+TAP[:1])):
+ if i!=2:a=fuse(a,beam(p,q,10,1.5,GAP-1.5))
+for p,q in [(CX[2],TAP[1]),(CX[2],CX[1]),(CX[0],CX[1])]:a=fuse(a,beam(p,q,9,0,GAP))
+for p in CX:a=fuse(a,cyl(*p,0,5,GAP))
+for p in CX:a=cut(cut(a,cyl(*p,-.1,INSERT_BORE/2,5.2)),cyl(*p,-.1,1.65,GAP+.2))
+a=cut(a,box((6.95,15.2,-.1),26,28,GAP+.2))
+for i,p in enumerate(TAP):
+ a=cut(a,cyl(*p,-.1,1.65,GAP+.2))
+ if i<2:a=cut(a,cyl(*p,-.1,3.1,8.4))
+FANM=[(3,24.25),(3,-10.75),(38,24.25)]
+c=None
+for p in FANM:
+ q=ycyl(*p,-68.05,4.5,3);c=q if c is None else fuse(c,q)
+for p,q in [(FANM[0],FANM[1]),(FANM[0],FANM[2])]:c=fuse(c,ybeam(p,q,8,-68.05,3))
+c=cut(c,ycyl(20.5,6.75,-68.15,19,3.2))
+boxes=[((-9.5,-68.05,1.5),(3,56.05,4.2)),((46.4,-68.05,7.8),(3,56.05,4)),((-9.5,-68.05,1.5),(12.5,3,4.2)),((38,-68.05,20.25),(11.4,3,8)),((46.4,-68.05,7.8),(3,3,20.45)),((-9.5,-15,1.5),(13.95,3,4.2)),((35.45,-15,7),(13.95,3,2))]
+for p,sz in boxes:c=fuse(c,box(p,*sz))
+for p in FANM:c=cut(c,ycyl(*p,-68.15,1.65,3.2))
+a=cut(a,cyl(19.95,-45.5,-.1,19.05,GAP+.2))
+adapter=fuse(a,c);adapter.Label='TAP adapter and top-fan carrier — PROTOTYPE'
+PROGRESS.write_text('Carrier generated; building duct\n')
+sq=math.sqrt(.5)
+S=[((40.7,-77.55,1.75),(0,1,0),8.5,14),((56.7,-76.5,-2.75),(-sq,sq,0),9,7.25),((59,-58,1),(-1,0,0),8.5,4.5),((59,-38,1),(-1,0,0),8.5,4.5),((56,-34,1),(-1,0,0),9,4.5),((56,39.5,1),(-1,0,0),9,4.5),((49,46.5,3),(-sq,-sq,0),9,8)]
+outer=loft(S,1.2,34.6)
+inside=loft([((40.6,-77.55,1.75),(0,1,0),8.5,14)]+S,0,34.5)
+original=Part.read(str(HERE/'source/cx/original-4020-duct.step'))
+# The extracted STEP uses the original part-local frame; restore its assembly placement.
+original.rotate(App.Vector(0,0,0),App.Vector(1,0,0),90);original.translate(App.Vector(-.05,50.7,25))
+main=doc.addObject('Part::Feature','OriginalDuctMain');main.Shape=max(original.Solids,key=lambda s:s.Volume);main.Label='Original corrected6.11 duct main solid (old intake membrane omitted)'
+main.addProperty('App::PropertyString','Source','Review');main.Source='Corrected6.11 assembly product330402; largest duct solid. Original nozzlejets retained. Oldtopinlet is deliberately capped because the newairfeed enters the side.'
+lower=common(main,box((-10,40.5,-40),70,30,80))
+assert len(lower.Shape.Solids)==1 and lower.Shape.Volume>100,'Original lower duct missing from assembly frame'
+duct=fuse(lower,outer)
+duct=fuse(duct,box((10,40.5,6),30,1.2,19))
+for p in TAP[2:]:
+ duct=fuse(duct,cyl(*p,-1.5,4.25,3));duct=fuse(duct,beam(p,(p[0],41.2),7,-1.5,3))
+ duct=cut(duct,cyl(*p,-1.6,1.65,3.2));duct=cut(duct,cyl(*p,-1.6,3.1,1.1))
+for x in [4.185,35.715]:duct=fuse(duct,ycyl(x,3,45.8,1.35,6.3))
+for x in [16.7,23.2]:duct=fuse(duct,cyl(x,46.2,0,1.05,2))
+duct=cut(duct,inside);duct.Label='Top-fan side-feed duct — PROTOTYPE'
+for obj in [adapter,duct]:
+ obj.addProperty('App::PropertyString','Status','Review');obj.Status='11mmgap, originalMGNheight; source-to-MGN(X-19.95,Z-24.52053,-Y-13.5). Unqualified prototype. Physical interface, heatsetpullout, carrierstiffness, airflow, TAPtravel, retention and cableclearance tests required.'
+adapter.addProperty('App::PropertyString','PartRole','Review');adapter.PartRole='adapter_carrier'
+duct.addProperty('App::PropertyString','PartRole','Review');duct.PartRole='duct'
+adapter.addProperty('App::PropertyString','Fasteners','Review');adapter.Fasteners='TopTAPpair M3x6SHCS seatZ8.3→3.3mm engagement. Lowerpair sharesduct: M3x14SHCS seatZ-0.5→2.5mm engagement. Three5ODx4Lheatsets fromZ0, selected4.6bore5.1deep; P5upperM3x10, lower-rightM3x8. Top fan:3 original M3x22 button screws;12.75mm flange+3mm carrier+0.5mm washer+2.4mm nut=18.65mm,3.35mm tip projection. Adds3 nuts; whole build32 M3 nuts. Verify actual fan stack.'
+duct.addProperty('App::PropertyString','Airway','Review');duct.Airway='153mm2 definedneck; roundedsideport171.485mm2;2.82x originalcombined54.2829mm2 nozzlejetarea. Originalnozzlejetsretained; longerpath/bendsrequirepoweredairflowtest. No internal supports.'
+for obj in doc.Objects:obj.Visibility=False
+adapter.Visibility=True;duct.Visibility=True
+doc.recompute();report={}
+for key,obj in [('adapter_carrier',adapter),('duct',duct)]:
+ if not obj.Shape.isValid() or len(obj.Shape.Solids)!=1:
+  diagnostic=HERE/'diagnostics'/'latest-build-failure';diagnostic.mkdir(parents=True,exist_ok=True)
+  doc.saveAs(str(diagnostic/'FailedTopTap.FCStd'))
+  for feature in doc.Objects:
+   if hasattr(feature,'PartRole') or feature.TypeId=='Part::Loft':feature.Shape.exportBrep(str(diagnostic/(feature.Name+'.brep')))
+  raise RuntimeError('Invalid '+key+'; diagnostic model saved to '+str(diagnostic))
+ report[key]={'valid':obj.Shape.isValid(),'closed':obj.Shape.isClosed(),'solids':len(obj.Shape.Solids),'volume':obj.Shape.Volume,'area':obj.Shape.Area}
+doc.saveAs(str(HERE/'CxChangerTopTapPrototype.FCStd'))
+PROGRESS.write_text('Native model saved; exporting STEP and STL\n')
+for stem,obj,angle in [('tap-adapter-top-fan-carrier-PROTOTYPE',adapter,-90),('tap-top-fan-duct-PROTOTYPE',duct,90)]:
+ Part.export([obj],str(HERE/(stem+'.step')));obj.Shape.exportBrep(str(HERE/(stem+'-native.brep')))
+ MeshPart.meshFromShape(Shape=obj.Shape,LinearDeflection=.03,AngularDeflection=.15,Relative=False).write(str(HERE/(stem+'-assembly.stl')))
+ p=obj.Shape.copy();p.rotate(App.Vector(0,0,0),App.Vector(0,1,0),angle);b=p.BoundBox;p.translate(App.Vector(-b.XMin,-b.YMin,-b.ZMin))
+ MeshPart.meshFromShape(Shape=p,LinearDeflection=.03,AngularDeflection=.15,Relative=False).write(str(HERE/(stem+'-print-with-external-supports.stl')))
+(HERE/'top-native-build.json').write_text(json.dumps(report,indent=2));PROGRESS.write_text('Completed native model, STEP, STL and report\n')

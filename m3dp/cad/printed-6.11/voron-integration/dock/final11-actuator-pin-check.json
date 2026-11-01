@@ -1,0 +1,146 @@
+[
+  {
+    "station": 48,
+    "dx": -3,
+    "dz": -0.85,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 1,
+      "distance": 0.8060859299999983,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 48,
+    "dx": 0,
+    "dz": -0.85,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 1,
+      "distance": 0.843963581290071,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 48,
+    "dx": -3,
+    "dz": 0,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 1,
+      "distance": 1.6560859299999997,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 48,
+    "dx": 0,
+    "dz": 0,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 1,
+      "distance": 1.6748494283200397,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 48,
+    "dx": 0,
+    "dz": 14,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 1,
+      "distance": 15.658081831678611,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 48,
+    "dx": -3,
+    "dz": 30,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 1,
+      "distance": 31.656085929999996,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 82,
+    "dx": -3,
+    "dz": -0.85,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 2,
+      "distance": 0.8060859299999983,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 82,
+    "dx": 0,
+    "dz": -0.85,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 2,
+      "distance": 0.8060859299999983,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 82,
+    "dx": -3,
+    "dz": 0,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 2,
+      "distance": 1.6560859299999997,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 82,
+    "dx": 0,
+    "dz": 0,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 2,
+      "distance": 1.6560859299999997,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 82,
+    "dx": 0,
+    "dz": 14,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 2,
+      "distance": 15.656085929999996,
+      "overlap": 0.0
+    },
+    "collisions": []
+  },
+  {
+    "station": 82,
+    "dx": -3,
+    "dz": 30,
+    "nearest": {
+      "part": "top-duct",
+      "pin": 2,
+      "distance": 31.656085929999996,
+      "overlap": 0.0
+    },
+    "collisions": []
+  }
+]

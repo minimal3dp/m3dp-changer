@@ -1,0 +1,67 @@
+﻿Chinese,English,Note
+17 44双联齿轮,HGX gear 17T-44T double (compound) gear,Extruder reduction gear
+2510风扇,2510 fan,"Hotend heatsink fan, 25x25x10"
+36圆饼步进电机,NEMA14 36mm pancake stepper,Extruder motor
+36齿挤出齿轮,36T extruder drive gear,3 in assembly
+4020离心风扇_По умолчанию,4020 blower fan_Default,Part cooling; suffix was Russian 'Default'
+M3螺母,M3 hex nut,
+M4六角隔离柱10,M4 hex standoff 10mm,
+M4六角隔离柱14,M4 hex standoff 14mm,
+M4带孔螺栓,M4 hollow through-hole bolt,Filament/PTFE pass-through
+N52磁铁 6 4,N52 magnet 6x4mm,
+Odebrat vysunutím3,Cut-Extrude3,SolidWorks body/feature name
+Odebrat vysunutím4[1],Cut-Extrude4[1],SolidWorks body/feature name
+Odebrat vysunutím4[2],Cut-Extrude4[2],SolidWorks body/feature name
+P1P陶瓷加热片,Bambu P1P ceramic heater,
+倒角1,Chamfer1,SolidWorks body/feature name
+凸台-拉伸1,Boss-Extrude1,SolidWorks body/feature name
+凸台-拉伸10,Boss-Extrude10,SolidWorks body/feature name
+凸台-拉伸17,Boss-Extrude17,SolidWorks body/feature name
+凸台-拉伸4,Boss-Extrude4,SolidWorks body/feature name
+切除-拉伸1,Cut-Extrude1,SolidWorks body/feature name
+切除-拉伸13,Cut-Extrude13,SolidWorks body/feature name
+切除-拉伸3,Cut-Extrude3,SolidWorks body/feature name
+切除-拉伸63,Cut-Extrude63,SolidWorks body/feature name
+切除-拉伸7,Cut-Extrude7,SolidWorks body/feature name
+切除-拉伸9,Cut-Extrude9,SolidWorks body/feature name
+半圆头螺栓_M3*16,Button head screw M3x16 ISO7380,
+半圆头螺栓_M3*22,Button head screw M3x22 ISO7380,
+压簧,Compression spring,Idler spring
+喷嘴+喉管_拓竹,Nozzle + heatbreak (Bambu Lab style),
+圆头销外径3长4,Round head pin OD3 x L4,Kinematic coupling ball
+圆柱头螺栓_M2.5*14,Socket head cap screw M2.5x14 DIN912,
+圆柱头螺栓_M3*10,Socket head cap screw M3x10 DIN912,
+圆柱头螺栓_M3*15,Socket head cap screw M3x15 DIN912,
+圆柱头螺栓_M3*22,Socket head cap screw M3x22 DIN912,
+圆柱头螺栓_M3*8,Socket head cap screw M3x8 DIN912,
+圆柱销外径1.5长5,Dowel pin OD1.5 x L5,Kinematic coupling V-groove
+圆角1,Fillet1,SolidWorks body/feature name
+垫圈_3.2*6*0.5,Washer 3.2x6x0.5,
+基体零件-bambulab-P1_hotend-1,Base part-bambulab-P1_hotend-1,SolidWorks body/feature name
+基体零件-hgx-1,Base part-hgx-1,SolidWorks body/feature name
+带轴承摆臂打印一体式,Swing arm with bearing - printed one-piece version,Alternative to the CNC swing arm
+弹簧撑板,Spring support plate,
+打印头6.11,Printhead 6.11,Top-level assembly
+打印头背板cnc（三叉戟）,Printhead back plate CNC (Trident),
+拓竹P1P热端组件,Bambu P1P hotend assembly,
+摆杆外带轴承（CNC）,Swing lever outer with bearing (CNC),
+摆杆外带轴承（CNC）_摆杆内,Swing lever outer with bearing (CNC)_inner lever,
+散热翅片_拓竹,Heatsink (Bambu Lab style),
+新热端模块,Hotend module (new),Repeated once per tool
+旋转1,Revolve1,SolidWorks body/feature name
+沉头螺栓_M3*16,Countersunk screw M3x16 DIN7991,
+涡流调平,Eddy current leveling probe,BTT Eddy-style
+热端固定件,Hotend holder,
+百瑞特防滑螺母_M4,M4 anti-loosening lock nut,
+直径3长16圆柱销,Dowel pin D3 x 16,
+直径3长24圆柱销,Dowel pin D3 x 24,
+硅胶套,Silicone sock,
+简化盖板_简化盖板右,Simplified cover_right,
+简化盖板_简化盖板左,Simplified cover_left,
+耗材丝,Filament (reference body),
+轴承_3x7x3,Bearing 3x7x3 (683ZZ),
+轴承外径6内径3厚2.5,Bearing OD6 ID3 W2.5 (MR63ZZ),
+输入1,Imported1,SolidWorks body/feature name
+输入2,Imported2,SolidWorks body/feature name
+顶部磁铁固定板,Top magnet retaining plate,
+风道改,Part cooling duct (modified),

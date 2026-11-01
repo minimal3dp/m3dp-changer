@@ -1,0 +1,130 @@
+[
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 17,
+    "distance_mm": 1.7760859310886232
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 27,
+    "distance_mm": 3.7760859310886374
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 31,
+    "distance_mm": 0.7760859310886303
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 33,
+    "distance_mm": 0.776085931088609
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 17,
+    "distance_mm": 1.7760859310886232
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 27,
+    "distance_mm": 3.7760859310886374
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 31,
+    "distance_mm": 0.7760859310886303
+  },
+  {
+    "station": 48,
+    "neighbor": 10,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 33,
+    "distance_mm": 0.776085931088609
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 17,
+    "distance_mm": 1.7760859310886232
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 27,
+    "distance_mm": 3.7760859310886374
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 31,
+    "distance_mm": 0.7760859310886303
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": -3,
+    "dz": -0.85,
+    "neighbor_part": 33,
+    "distance_mm": 1.9889127582805188
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 17,
+    "distance_mm": 1.7760859310886232
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 27,
+    "distance_mm": 3.7760859310886374
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 31,
+    "distance_mm": 0.7760859310886303
+  },
+  {
+    "station": 82,
+    "neighbor": 48,
+    "dx": 0,
+    "dz": -0.85,
+    "neighbor_part": 33,
+    "distance_mm": 0.776085931088609
+  }
+]

@@ -1,0 +1,28 @@
+from pathlib import Path
+import json,traceback,shutil,hashlib,uuid
+import FreeCAD as App
+import Part
+OUT=Path(__file__).resolve().parent
+reports=[]
+try:
+ spec=json.loads((OUT/'raised-carrier-spec.json').read_text())
+ for entry in spec['designs']:
+  name=entry['basename'];path=OUT/(name+'.FCStd')
+  original_sha=hashlib.sha256(path.read_bytes()).hexdigest()
+  tempdir=OUT/'verification-work';tempdir.mkdir(exist_ok=True)
+  copy=tempdir/(name+'-'+uuid.uuid4().hex+'.FCStd');shutil.copy2(path,copy)
+  doc=App.openDocument(str(copy));doc.recompute();final=doc.getObject('AssemblyPart')
+  for bore in (o for o in doc.Objects if o.Name.endswith('InsertTrialBore')):
+   assert abs(bore.Radius.Value-2.3)<1e-6
+  assert final.Shape.isValid()and final.Shape.isClosed()and len(final.Shape.Solids)==1
+  assert not any('Error'in o.State or 'Invalid'in o.State for o in doc.Objects)
+  base=final.Shape.Volume;cylinder=next(o for o in doc.Objects if o.TypeId=='Part::Cylinder');r=cylinder.Radius.Value
+  cylinder.Radius=r+.05;doc.recompute();assert final.Shape.isValid()and final.Shape.Volume<base-1e-4
+  cylinder.Radius=r;doc.recompute();assert abs(final.Shape.Volume-base)<1e-5
+  step=Part.read(str(OUT/(name+'.step')));delta=final.Shape.cut(step).Volume+step.cut(final.Shape).Volume;assert delta<.0001
+  reports.append({'name':name,'reopened_valid_closed_single_solid':True,'edit_restore_passed':True,'volume':base,'step_difference_mm3':delta,'original_sha256':original_sha,'verified_copy':str(copy)})
+  doc.save()
+  assert hashlib.sha256(path.read_bytes()).hexdigest()==original_sha
+ (OUT/'raised-carrier-native-reopen-verification.json').write_text(json.dumps(reports,indent=2))
+except Exception:
+ (OUT/'raised-carrier-native-reopen-error.log').write_text(traceback.format_exc());raise

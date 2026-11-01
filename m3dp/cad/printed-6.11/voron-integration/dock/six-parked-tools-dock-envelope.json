@@ -1,0 +1,21 @@
+{
+  "bbox_dock_frame": [
+    26.0,
+    -50.3,
+    -11.5,
+    247.0,
+    91.5,
+    26.03
+  ],
+  "max_dock_z_mm": 26.03,
+  "rear_extreme": "Lower coupling pins31/33 at sourceC.Z\u22126.32608593 +32.35608593 =26.03 mm",
+  "station_centers": [
+    48,
+    82,
+    120,
+    154,
+    192,
+    226
+  ],
+  "excludes": "Crossrail support arms, cables/connectors, silicone deformation; conservative actuator pins20mm fromD.Z6 andfastenerenvelopes included."
+}

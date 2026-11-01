@@ -1,0 +1,35 @@
+{
+  "valid_single_solid": true,
+  "step_volume_mm3": 1996.3758175528478,
+  "step_bounds_mm": [
+    -21.54,
+    8.903,
+    0.0,
+    21.54,
+    67.46000000000001,
+    2.0
+  ],
+  "mesh": {
+    "triangles": 2048,
+    "vertices": 1016,
+    "edges": 3072,
+    "connected_components": 1,
+    "watertight": true,
+    "consistent_winding": true,
+    "signed_volume_mm3": 1996.2650164761665,
+    "bounds_mm": [
+      0.00062,
+      0.00059,
+      0.0,
+      43.08,
+      58.55642,
+      2.0
+    ]
+  },
+  "sha256": {
+    "ChaoticlabV2InterfaceGauge.FCStd": "b21887e84a569d193b39c0016752862e749586abffe78130cfa392c01a7a5c50",
+    "chaoticlab-v2-interface-fit-gauge.step": "4fcef4d75ec4b1c9d02eb849e04f74275a406f82725a2a40859d61f8a14b23db",
+    "chaoticlab-v2-interface-fit-gauge.stl": "990e0c4c44dd4344a6c85be452009c3f09f24bb9db5127b7b8291481df157682"
+  },
+  "physical_fit_test": false
+}
