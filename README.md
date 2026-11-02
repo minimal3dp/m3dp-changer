@@ -31,10 +31,10 @@ The [STL guide](stl/README.md) is the detailed progress and print-order record. 
 
 The canonical repository is [minimal3dp/m3dp-changer](https://github.com/minimal3dp/m3dp-changer), with `main` as the development baseline. The existing `m3dp/` paths and working STL/configuration filenames are retained so the build instructions and firmware includes remain usable.
 
-Use [m3dp/README.md](m3dp/README.md) for the development workflow and folder map. [Project transition notes](docs/PROJECT-TRANSITION.md) explain the preserved Git history and the relationship to CxChanger. Original root-level CAD, `klipper/`, `img/`, panel files and English translations are historical references; use the linked M3DP guides for this build.
+Use [m3dp/README.md](m3dp/README.md) for the development workflow and folder map. [Project transition notes](docs/PROJECT-TRANSITION.md) explain the preserved Git history and the relationship to CxChanger. The [repository layout](docs/REPOSITORY-LAYOUT.md) separates the active build from [retained CxChanger references](reference/cxchanger/README.md). Unused upstream archives, photos and older panel/BOM copies have been removed from the working tree and remain recoverable from Git history.
 
 ## Attribution and license
 
 The mechanism is derived from **CxChanger by cx330-TXY**. Its coupling and latch interfaces remain the basis of this build; the selected P8 arm and hotend holder are unchanged source exports. Minimal3DP adaptations include printed pillar/clamp structures, Voron mounting and cooling, paired raised docks, calibrated insert bores, and build-specific configuration and documentation.
 
-Retain the [GPLv3 license](LICENSE), original notices, [CAD source provenance](m3dp/cad/printed-6.11/source-provenance.json), and the third-party reference attributions for [Voron rail geometry](m3dp/cad/printed-6.11/voron-integration/rail/REFERENCE-ATTRIBUTION.md) and the [TAP interface](m3dp/cad/printed-6.11/voron-integration/tap/REFERENCE-ATTRIBUTION.md). The [original CxChanger README](README-CxChanger-upstream.md) is preserved for reference.
+Retain the [GPLv3 license](LICENSE), original notices, [CAD source provenance](m3dp/cad/printed-6.11/source-provenance.json), and the third-party reference attributions for [Voron rail geometry](m3dp/cad/printed-6.11/voron-integration/rail/REFERENCE-ATTRIBUTION.md) and the [TAP interface](m3dp/cad/printed-6.11/voron-integration/tap/REFERENCE-ATTRIBUTION.md). The [original CxChanger README](reference/cxchanger/README-original.md) is preserved for reference.

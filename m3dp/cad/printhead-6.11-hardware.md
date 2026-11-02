@@ -2,8 +2,8 @@
 
 This is the upstream occurrence inventory. For the printed adaptation, use the joint-specific hardware changes in [printed-6.11](printed-6.11/README.md); its integral pillars and matching covers replace two metal spacers and their paired short screws with through-bolts, nuts and washers. Do not order this table as an additional full kit.
 
-Source: `CAD/打印头6.11修正.zip` (SolidWorks 2024 STEP), assembly tree parsed 2026-10-01.
-English copy: `m3dp/cad/printhead-6.11-corrected-EN.zip` (names translated, geometry byte-for-byte unchanged).
+Source: `CAD/打印头6.11修正.zip` (SolidWorks 2024 STEP), assembly tree parsed 2026-10-01; the original archive remains in Git history at `upstream-2026-09-29`.
+Retained English assembly: [printhead-6.11-corrected-EN.STEP](printhead-6.11-corrected-EN.STEP), with translated names and unchanged geometry; see its [name map](printhead-6.11-name-map.csv). The redundant ZIP copy has been removed.
 The model has **1 hotend module**; multiply those lines by the tool count.
 The head inventory below counts CAD occurrences, including both alternative swing
 arms. It is not an installed-quantity list until one arm is selected. In particular,

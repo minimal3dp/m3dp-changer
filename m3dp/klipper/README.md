@@ -12,8 +12,9 @@ HGX motor calibration, delivered thermistor types, dock positions and thermal
 calibration require physical verification. No printer commands have been sent.
 The required peripheral includes are preserved in `../voron/`; see its
 [snapshot notes](../voron/README.md). Personal printer backups and host settings
-remain in the original checkout. Upstream examples remain in the root `klipper/`
-directory for reference and regression tests. The `cxchanger.cfg` filename and
+remain in the original checkout. Upstream examples are isolated in
+[reference/cxchanger/klipper](../../reference/cxchanger/klipper/) for reference
+and regression tests. The `cxchanger.cfg` filename and
 `CX_*` commands are retained for compatibility.
 
 ## Prepare the candidate

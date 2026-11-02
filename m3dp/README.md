@@ -39,13 +39,12 @@ credit and provenance when incorporating changes.
 ## Folder map
 
 - `cad/` — source references, editable models, generators and validation records;
-  [printed-6.11](cad/printed-6.11/README.md) describes the current adaptation.
+  [CAD layout](cad/README.md) distinguishes current models from source references.
 - `bom/` — [BOM notes](bom/README.md). The linked Google Sheet is the working BOM;
   `CxChanger_BOM_6tool.xlsx` retains its original filename as a 2026-09-30 snapshot.
 - `build-log/` — dated build notes (copy `_template.md`).
 - `klipper/` — [six-tool configuration and commissioning instructions](klipper/README.md).
 - `voron/` — retained printer configuration references and credited macro sources.
-- `translations/` — English notes on source documents beyond `EN-translation/`.
 - `tools/` — upstream review and STEP translation utilities.
 - `UPSTREAM-CHANGELOG.md` — historical upstream changes and their build impact.
 

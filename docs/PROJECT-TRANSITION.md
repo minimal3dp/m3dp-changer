@@ -13,7 +13,7 @@ The transition joins two existing histories in a merge:
 
 The existing `upstream-2026-09-29` tag retains the upstream snapshot at `f5e88ce87f0204d034d888ffd2aa6d259816f5d3`. The migration also captures the reviewed, previously uncommitted CAD, print files, configuration, tests and assembly-guide deliverables from the build workspace.
 
-The original CxChanger checkout is left unchanged. Its root README is preserved in [README-CxChanger-upstream.md](../README-CxChanger-upstream.md). Existing licenses, source-provenance records and reference attributions remain with the files they describe.
+The original CxChanger checkout is left unchanged. Its root README is preserved in [the original CxChanger README](../reference/cxchanger/README-original.md). Existing licenses, source-provenance records and reference attributions remain with the files they describe.
 
 ## Repository policy
 
@@ -40,6 +40,10 @@ Temporary PDF renders, caches, local tool state, and redundant dated printer bac
 - All 64 local Markdown links in the reviewed active guides resolve. The upstream review script and workflow shell passed syntax checks.
 
 Existing CAD audit files and release checksum manifests are preserved as historical records of the artifacts they originally tested. Documentation, path-resolution edits and the rebranded PDF can differ from those earlier checksums; the migration does not claim to rerun geometric or physical qualification.
+
+## Subsequent repository cleanup
+
+After the migration commit `06b1a171de5f6fdf35802d782ec9ee03c5c41643`, retained upstream documentation and regression configurations moved to `reference/cxchanger/`. Unused upstream archives, photos, older panel/BOM copies and the duplicate English STEP ZIP were removed from the working tree. The migration verification above records the original transition, before this cleanup. See the [repository layout and recovery notes](REPOSITORY-LAYOUT.md) for the current organization.
 
 ## Continued build work
 

@@ -29,7 +29,9 @@ The test run during development used Klipper commit
 Jinja2 3.1.6, and pytest 9.0.3.
 
 `test_original_regressions.py` asserts the intended safe behavior against the
-untouched original examples. Its six strict expected failures document the
+untouched original examples in
+[reference/cxchanger/klipper](../../../reference/cxchanger/klipper/).
+Its six strict expected failures document the
 baseline defects. To see the actual failing assertions:
 
 ```sh

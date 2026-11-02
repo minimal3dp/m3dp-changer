@@ -4,7 +4,7 @@ import os
 import pytest
 from klipper_harness import Printer, CommandError
 
-ORIGINAL = Path(os.environ.get('CXCHANGER_SOURCE', str(Path(__file__).resolve().parents[3]))) / 'klipper'
+ORIGINAL = Path(os.environ.get('CXCHANGER_SOURCE', str(Path(__file__).resolve().parents[3]))) / 'reference' / 'cxchanger' / 'klipper'
 pytestmark = pytest.mark.xfail(strict=True, reason='Original reference macro defect reproduced')
 
 
